@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+  DirectorySlash Off
+  DirectoryIndex index.html
+  RewriteEngine On
+  RewriteOptions AllowNoSlash
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
