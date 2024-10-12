@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 function Login() {
     const loginSchema = Yup.object().shape({
         user: Yup.string()
-          .required('Username is required'),
+          .required('User ID is required'),
         password: Yup.string()
           .required('Password is required'),
       });
@@ -64,7 +64,7 @@ function Login() {
                 </div>
                 
                 <div className="p-2">
-                    <input type='text' placeholder='Username' value={user} onChange={(e) => setuser(e.target.value)} className="flex flex-col w-[252px] h-[30.54px] items-start justify-center gap-[10px] px-[26px] py-[18px] relative bg-white rounded-[30px] border border-solid border-[#0575e64c] focus:outline-none active:border-[#0575e6] focus:border-[#0575e6]" />
+                    <input type='text' placeholder='User ID' value={user} onChange={(e) => setuser(e.target.value)} className="flex flex-col w-[252px] h-[30.54px] items-start justify-center gap-[10px] px-[26px] py-[18px] relative bg-white rounded-[30px] border border-solid border-[#0575e64c] focus:outline-none active:border-[#0575e6] focus:border-[#0575e6]" />
 
                     {/* <img className="absolute w-[24px] h-[24px] top-0 left-0" alt="Codicon mail" src="codicon-mail.svg" /> */}
 
@@ -76,7 +76,6 @@ function Login() {
 
                 </div>
                 <span className='text-xs bold text-red-500'>
-
                 {loginError}
                 </span>
                 <div className="p-2">

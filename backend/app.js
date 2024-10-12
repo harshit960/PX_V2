@@ -11,22 +11,21 @@ const multer = require('multer');
 const sql = require('mssql');  // Import mssql
 const path = require('path');
 const fs = require('fs');
-const corsOptions = {   origin: 'http://veuwcore1202.jdadelivers.com',  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',   credentials: true,optionsSuccessStatus: 204 }; app.use(cors(corsOptions));
-app.options('*', cors(corsOptions));
+// const corsOptions = {   origin: 'http://veuwcore1202.jdadelivers.com',  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',   credentials: true,optionsSuccessStatus: 204 }; app.use(cors(corsOptions));
+// app.options('*');
 app.use(bodyParser.json());
-// app.use(cors());
+app.use(cors());
 require('dotenv').config();
 
 // Create connection pool
 const connection = new sql.ConnectionPool({
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  server: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  port: parseInt(process.env.DB_PORT),
+  user: 'newuser',
+  password: 'admin1234',
+  server: 'HARSHIT', // You can use 'localhost\\instance' to connect to named instance
+  database: 'data2',
   options: {
     encrypt: true, // Use this if you're on Windows Azure
-    trustServerCertificate: true // Change to true for local dev / self-signed certs
+    trustServerCertificate: true // Use this if your SQL Server uses self-signed certificate
   }
 });
 
