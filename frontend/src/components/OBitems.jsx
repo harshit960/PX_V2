@@ -977,20 +977,20 @@ function OBitems(props) {
                                     {/* Note: Ensure that the document contains all the necessary details required for the trading partner setup. */}
                                     {fileUploadError}
                                 </div>
-                                <div className="mt-4 p-3  self-center rounded-lg border-[#0575e6] flex items-center justify-center">
+                                <div className="mt-4 p-3  self-center rounded-lg border-[#01b6ee] flex items-center justify-center">
                                     {/* <svg width="25" height="18" viewBox="0 0 25 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12.5052 17.3636V10M12.5052 10L16.1002 12.8636M12.5052 10L8.91016 12.8636" stroke="#0575E6" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M20.7227 13.7696C22.257 13.2908 23.8042 12.2 23.8042 10C23.8042 6.72727 20.3804 5.90909 18.6684 5.90909C18.6684 4.27273 18.6684 1 12.5056 1C6.34274 1 6.34274 4.27273 6.34274 5.90909C4.63083 5.90909 1.20703 6.72727 1.20703 10C1.20703 12.2 2.75419 13.2908 4.28846 13.7696" stroke="#0575E6" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M12.5052 17.3636V10M12.5052 10L16.1002 12.8636M12.5052 10L8.91016 12.8636" stroke="#01b6ee" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M20.7227 13.7696C22.257 13.2908 23.8042 12.2 23.8042 10C23.8042 6.72727 20.3804 5.90909 18.6684 5.90909C18.6684 4.27273 18.6684 1 12.5056 1C6.34274 1 6.34274 4.27273 6.34274 5.90909C4.63083 5.90909 1.20703 6.72727 1.20703 10C1.20703 12.2 2.75419 13.2908 4.28846 13.7696" stroke="#01b6ee" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg> */}
                                     <div className='mx-2'>
-                                        <input type="file" onChange={handleFileUpload} className='text-gray-500 file:text-white block w-52 border-2 border-[#0575e6] rounded text-sm disabled:opacity-50 disabled:pointer-events-none file:bg-[#0575e6] file:border-0 file:me-2 file:py-2 file:px-1' />
+                                        <input type="file" onChange={handleFileUpload} className='text-gray-500 file:text-white block w-52 border-2 border-[#01b6ee] rounded text-sm disabled:opacity-50 disabled:pointer-events-none file:bg-[#01b6ee] file:border-0 file:me-2 file:py-2 file:px-1' />
 
                                     </div>
                                 </div>
                                 <div className="flex justify-around mt-6">
-                                    <button onClick={(e) => settoggleFileUpload("hidden")} className="border h-8 w-24 flex items-center justify-center rounded-lg border-[#0575e6] text-[#0575e6]">Cancel</button>
+                                    <button onClick={(e) => settoggleFileUpload("hidden")} className="border h-8 w-24 flex items-center justify-center rounded-lg border-[#01b6ee] text-[#01b6ee]">Cancel</button>
 
-                                    <div onClick={handlheSubmit} className="cursor-pointer border h-8 w-24 flex items-center justify-center rounded-lg bg-[#0575e6] text-white">Submit</div>
+                                    <div onClick={handlheSubmit} className="cursor-pointer border h-8 w-24 flex items-center justify-center rounded-lg bg-[#01b6ee] text-white">Submit</div>
                                 </div>
 
                             </div>
@@ -1033,7 +1033,7 @@ function OBitems(props) {
                                 <textarea onChange={(e) => settempByRemark(dayjs().format("DD/MM/YY") + ": " + e.target.value)} className="flex flex-col m-2 h-36">
 
                                 </textarea>
-                                <button onClick={handleAddnotes} className="flex flex-col m-2 bg-[#0575e6] rounded h-10 items-center justify-center text-white font-medium">
+                                <button onClick={handleAddnotes} className="flex flex-col m-2 bg-[#01b6ee] rounded h-10 items-center justify-center text-white font-medium">
                                     Add Note
                                 </button>
                             </div>
@@ -1077,7 +1077,7 @@ function OBitems(props) {
                                 <textarea onChange={(e) => settempNotes(dayjs().format("DD/MM/YY") + ": " + e.target.value)} className="flex flex-col m-2 h-36">
 
                                 </textarea>
-                                <button onClick={handleAddNotes} className="flex flex-col m-2 bg-[#0575e6] rounded h-10 items-center justify-center text-white font-medium">
+                                <button onClick={handleAddNotes} className="flex flex-col m-2 bg-[#01b6ee] rounded h-10 items-center justify-center text-white font-medium">
                                     Add Note
                                 </button>
                             </div>
@@ -1148,7 +1148,7 @@ function OBitems(props) {
                     </select>
 
                     {OCValidation == "Completed" && props.data.CQDoc != null ?
-                        <a href={import.meta.env.VITE_REACT_APP_BASE_URL+props.data.CQDoc} className='text-xs pt-2 text-[#0575e6] underline font-semibold'>Carrier Questionnaire</a>
+                        <a href={import.meta.env.VITE_REACT_APP_BASE_URL+props.data.CQDoc} className='text-xs pt-2 text-[#01b6ee] underline font-semibold'>Carrier Questionnaire</a>
                         : <></>}
 
                 </td>
@@ -1261,13 +1261,13 @@ function OBitems(props) {
                     <div className='flex items-center justify-center'>
                         {localStorage.getItem('type') == "admin" || localStorage.getItem('type') == "User-OB" || props.data.IPOwner == localStorage.getItem('name') || props.data.TPSpecialist == localStorage.getItem('name') ?
                             <>
-                                <button onClick={() => sync("")} className="border- border-[#0575E6] rounded-md  mx-2 ">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className=" w-4 h-4 text-[#0575E6]">
+                                <button onClick={() => sync("")} className="border- border-[#01b6ee] rounded-md  mx-2 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className=" w-4 h-4 text-[#01b6ee]">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
                                     </svg>
 
                                 </button>
-                                <button className='text-sm text-[#0575e6] px-2' onClick={() => { props.settogglrEdit(""); props.seteditdata(props.data) }}>
+                                <button className='text-sm text-[#01b6ee] px-2' onClick={() => { props.settogglrEdit(""); props.seteditdata(props.data) }}>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
                                     </svg>

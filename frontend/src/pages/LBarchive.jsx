@@ -44,7 +44,7 @@ function LBarchive() {
         <div className="table basis-3/4">
           <div class="relative overflow-x-auto rounded mx-20">
             <table class="w-full text-sm text-left rtl:text-right  ">
-              <thead class="text-xs  uppercase bg-[#0575e6] text-white font-light">
+              <thead class="text-xs  uppercase bg-[#01b6ee] text-white font-light">
                 <tr>
                   <th scope="col" class="px-6 py-3">
                     Date

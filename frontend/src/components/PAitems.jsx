@@ -129,7 +129,7 @@ export default function PAitems(props) {
             </td>
             <td class="px-6 py-4 ">
                 {props.data.MappingSpecification ?
-                    <a href={props.data.MappingSpecification} className='text-[#0575E6] underline'>
+                    <a href={props.data.MappingSpecification} className='text-[#01b6ee] underline'>
                         {props.data.MappingSpecification.substring(props.data.MappingSpecification.lastIndexOf("/") + 1)}
                     </a>
                     : <></>}

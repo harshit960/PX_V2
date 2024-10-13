@@ -34,7 +34,7 @@ function LBAitems(props) {
 
                         </div>
                         {props.data.files?
-                        <a className='text-xs text-[#0575E6] underline' href={import.meta.env.VITE_REACT_APP_BASE_URL+props.data.files}>Approval</a>
+                        <a className='text-xs text-[#01b6ee] underline' href={import.meta.env.VITE_REACT_APP_BASE_URL+props.data.files}>Approval</a>
                     :<></>}
                     </div>
                 </td>

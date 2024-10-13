@@ -34,15 +34,15 @@ function OBarchive() {
                     <div>
                         <table class="table-auto w-full text-sm text-left rtl:text-right  ">
                             {/* <table class="w-full text-sm text-left rtl:text-right  "> */}
-                            <thead class="text-xs  uppercase bg-[#0575e6] text-white font-light">
+                            <thead class="text-xs  uppercase bg-[#01b6ee] text-white font-light">
                                 <tr>
-                                    <th scope="col" class="px-6 py-3 whitespace-nowrap sticky left-0 bg-[#0575e6]">
+                                    <th scope="col" class="px-6 py-3 whitespace-nowrap sticky left-0 bg-[#01b6ee]">
                                         Request ID
                                     </th>
-                                    <th scope="col" class="px-6 py-3 sticky left-[116px] bg-[#0575e6]">
+                                    <th scope="col" class="px-6 py-3 sticky left-[116px] bg-[#01b6ee]">
                                         Customer
                                     </th>
-                                    <th scope="col" class="px-6 py-3 whitespace-nowrap left-[228px] sticky bg-[#0575e6] z-20">
+                                    <th scope="col" class="px-6 py-3 whitespace-nowrap left-[228px] sticky bg-[#01b6ee] z-20">
                                         Carrier Name
                                     </th>
                                     <th scope="col" class="px-6 py-3">
@@ -77,10 +77,10 @@ function OBarchive() {
                                         Go Live
                                     </th>
                                     <th scope="col" class="px-6 py-3 whitespace-nowrap">
-                                        BY Remarks
+                                        Status/Next Steps
                                     </th>
                                     <th scope="col" class="px-6 py-3 whitespace-nowrap">
-                                        Notes
+                                        Internal Notes
                                     </th>
                                     <th scope="col" class="px-6 py-3 whitespace-nowrap">
 

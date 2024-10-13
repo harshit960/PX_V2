@@ -35,60 +35,60 @@ function ProjArchive() {
                     <div>
                         <table class="table-auto w-full text-sm text-left rtl:text-right  ">
                             {/* <table class="w-full text-sm text-left rtl:text-right  "> */}
-                            <thead class="text-xs  uppercase bg-[#0575e6] text-white font-light">
+                            <thead class="text-xs  uppercase bg-[#01b6ee] text-white font-light">
                                 <tr>
-                                    <th scope="col" class="bg-[#0575e6] sticky top-0 px-6 py-3 whitespace-nowrap left-0 z-20">
+                                    <th scope="col" class="bg-[#01b6ee] sticky top-0 px-6 py-3 whitespace-nowrap left-0 z-20">
                                         Request ID
                                     </th>
-                                    <th scope="col" class="bg-[#0575e6] sticky top-0 px-6 py-3 z-20 left-[116px]">
+                                    <th scope="col" class="bg-[#01b6ee] sticky top-0 px-6 py-3 z-20 left-[116px]">
                                         Customer
                                     </th>
-                                    <th scope="col" class="bg-[#0575e6] sticky top-0 px-6 py-3 whitespace-nowrap">
+                                    <th scope="col" class="bg-[#01b6ee] sticky top-0 px-6 py-3 whitespace-nowrap">
                                         Customer Code
                                     </th>
-                                    <th scope="col" class="bg-[#0575e6] sticky top-0 px-3 py-3">
+                                    <th scope="col" class="bg-[#01b6ee] sticky top-0 px-3 py-3">
                                         Jira
                                     </th>
-                                    <th scope="col" class="bg-[#0575e6] sticky top-0 px-9 py-3">
+                                    <th scope="col" class="bg-[#01b6ee] sticky top-0 px-9 py-3">
                                         Severity
                                     </th>
-                                    <th scope="col" class="bg-[#0575e6] sticky top-0 px-6 py-3 whitespace-nowrap">
+                                    <th scope="col" class="bg-[#01b6ee] sticky top-0 px-6 py-3 whitespace-nowrap">
                                         Projected Go Live
                                     </th>
-                                    <th scope="col" class="bg-[#0575e6] sticky top-0 px-6 py-3 whitespace-nowrap">
+                                    <th scope="col" class="bg-[#01b6ee] sticky top-0 px-6 py-3 whitespace-nowrap">
                                         Carrier Onboarding
                                     </th>
-                                    <th scope="col" class="bg-[#0575e6] sticky top-0 px-9 py-3 whitespace-nowrap">
+                                    <th scope="col" class="bg-[#01b6ee] sticky top-0 px-9 py-3 whitespace-nowrap">
                                         Project Lead
                                     </th>
-                                    <th scope="col" class="bg-[#0575e6] sticky top-0 px-9 py-3">
+                                    <th scope="col" class="bg-[#01b6ee] sticky top-0 px-9 py-3">
                                         Environment
                                     </th>
-                                    <th scope="col" class="bg-[#0575e6] sticky top-0 px-9 py-3 whitespace-nowrap">
+                                    <th scope="col" class="bg-[#01b6ee] sticky top-0 px-9 py-3 whitespace-nowrap">
                                         Dev Environment
                                     </th>
-                                    <th scope="col" class="bg-[#0575e6] sticky top-0 px-9 py-3 whitespace-nowrap">
+                                    <th scope="col" class="bg-[#01b6ee] sticky top-0 px-9 py-3 whitespace-nowrap">
                                         QA Environment
                                     </th>
-                                    <th scope="col" class="bg-[#0575e6] sticky top-0 px-9 py-3">
+                                    <th scope="col" class="bg-[#01b6ee] sticky top-0 px-9 py-3">
                                         Production
                                     </th>
-                                    <th scope="col" class=" bg-[#0575e6] sticky top-0 px-3 py-3 whitespace-nowrap">
+                                    <th scope="col" class=" bg-[#01b6ee] sticky top-0 px-3 py-3 whitespace-nowrap">
                                         Go Live
                                     </th>
-                                    <th scope="col" class=" bg-[#0575e6] sticky top-0 px-6 py-3 whitespace-nowrap">
+                                    <th scope="col" class=" bg-[#01b6ee] sticky top-0 px-6 py-3 whitespace-nowrap">
                                         EDI Version
                                     </th>
-                                    <th scope="col" class=" bg-[#0575e6] sticky top-0 px-6 py-3 whitespace-nowrap">
+                                    <th scope="col" class=" bg-[#01b6ee] sticky top-0 px-6 py-3 whitespace-nowrap">
                                         EDI Message Type
                                     </th>
-                                    <th scope="col" class=" bg-[#0575e6] sticky top-0 px-6 py-3 whitespace-nowrap">
+                                    <th scope="col" class=" bg-[#01b6ee] sticky top-0 px-6 py-3 whitespace-nowrap">
                                         By Remark
                                     </th>
-                                    <th scope="col" class=" bg-[#0575e6] sticky top-0 px-6 py-3 whitespace-nowrap">
+                                    <th scope="col" class=" bg-[#01b6ee] sticky top-0 px-6 py-3 whitespace-nowrap">
                                         Notes
                                     </th>
-                                    <th scope="col" class=" bg-[#0575e6] sticky top-0 px-6 py-3 whitespace-nowrap">
+                                    <th scope="col" class=" bg-[#01b6ee] sticky top-0 px-6 py-3 whitespace-nowrap">
                                     Mapping Specification
                                     </th>
 

@@ -64,13 +64,13 @@ function Login() {
                 </div>
                 
                 <div className="p-2">
-                    <input type='text' placeholder='User ID' value={user} onChange={(e) => setuser(e.target.value)} className="flex flex-col w-[252px] h-[30.54px] items-start justify-center gap-[10px] px-[26px] py-[18px] relative bg-white rounded-[30px] border border-solid border-[#0575e64c] focus:outline-none active:border-[#0575e6] focus:border-[#0575e6]" />
+                    <input type='text' placeholder='User ID' value={user} onChange={(e) => setuser(e.target.value)} className="flex flex-col w-[252px] h-[30.54px] items-start justify-center gap-[10px] px-[26px] py-[18px] relative bg-white rounded-[30px] border border-solid border-[#01b6ee4c] focus:outline-none active:border-[#01b6ee] focus:border-[#01b6ee]" />
 
                     {/* <img className="absolute w-[24px] h-[24px] top-0 left-0" alt="Codicon mail" src="codicon-mail.svg" /> */}
 
                 </div>
                 <div className="p-2">
-                    <input type='password' placeholder='Password' value={password} onChange={(e) => setpassword(e.target.value)} className="flex flex-col w-[252px] h-[30.54px] items-start justify-center gap-[10px] px-[26px] py-[18px] relative bg-white rounded-[30px] border border-solid border-[#0575e64c] focus:outline-none active:border-[#0575e6] focus:border-[#0575e6]" />
+                    <input type='password' placeholder='Password' value={password} onChange={(e) => setpassword(e.target.value)} className="flex flex-col w-[252px] h-[30.54px] items-start justify-center gap-[10px] px-[26px] py-[18px] relative bg-white rounded-[30px] border border-solid border-[#01b6ee4c] focus:outline-none active:border-[#01b6ee] focus:border-[#01b6ee]" />
 
                     {/* <img className="absolute w-[24px] h-[24px] top-0 left-0" alt="Codicon mail" src="codicon-mail.svg" /> */}
 
@@ -79,7 +79,7 @@ function Login() {
                 {loginError}
                 </span>
                 <div className="p-2">
-                    <button onClick={login} className="flex flex-col w-[252px] h-[30.27px] items-center justify-center gap-[10px] px-[26px] py-[18px] relative bg-[#0575e6] rounded-[30px]">
+                    <button onClick={login} className="flex flex-col w-[252px] h-[30.27px] items-center justify-center gap-[10px] px-[26px] py-[18px] relative bg-[#01b6ee] rounded-[30px]">
                         <div className="relative w-[39px] h-[21px] mt-[-6.87px] mb-[-6.87px]">
                             <div className="absolute top-0 left-0 [font-family:'Poppins-Regular',Helvetica] font-normal text-white text-[14px] tracking-[0] leading-[normal]">
                                 Login

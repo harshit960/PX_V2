@@ -466,8 +466,8 @@ function Project() {
                 <div className="flex mt-5 text-gray-500">
                   <div className="basis-1/2 flex flex-col">
 
-                    <input type="text" value={Cname} onChange={(e) => setCname(e.target.value)} className='border-2 border-[#0575e6] p-2 w-52 my-3 rounded' placeholder='Customer name' />
-                    {/* <select name="cars" onChange={(e) => setEDIVersion(e.target.value)} id="cars" className='border-2 p-2 border-[#0575e6] w-52 my-3 rounded'>
+                    <input type="text" value={Cname} onChange={(e) => setCname(e.target.value)} className='border-2 border-[#01b6ee] p-2 w-52 my-3 rounded' placeholder='Customer name' />
+                    {/* <select name="cars" onChange={(e) => setEDIVersion(e.target.value)} id="cars" className='border-2 p-2 border-[#01b6ee] w-52 my-3 rounded'>
                       <option value="" selected className='hidden'>EDI Version</option>
                       <option value="X12 4010">X12 4010</option>
                       <option value="X12 5010">X12 5010</option>
@@ -478,7 +478,7 @@ function Project() {
                       isMulti
                       name="colors"
                       options={[{ value: 'X12 4010', label: 'X12 4010' }, { value: 'X12 5010', label: 'X12 5010' }, { value: 'EDIFACT D-09A', label: 'EDIFACT D-09A' }]}
-                      className="basic-multi-select rounded border-2 border-[#0575e6] my-3 w-52"
+                      className="basic-multi-select rounded border-2 border-[#01b6ee] my-3 w-52"
                       classNamePrefix="select"
                       placeholder="EDI Version"
                       isSearchable={false}
@@ -491,7 +491,7 @@ function Project() {
                         setSelected(e)
                       }}
                     />
-                    {/* <select onChange={(e) => setProjectLead(e.target.value)} id="cars" className='border-2 p-2 border-[#0575e6] w-52 my-3 rounded'>
+                    {/* <select onChange={(e) => setProjectLead(e.target.value)} id="cars" className='border-2 p-2 border-[#01b6ee] w-52 my-3 rounded'>
                       <option selected className='hidden'>Project Lead</option>
                       {Users.map((item) => (
 
@@ -512,7 +512,7 @@ function Project() {
                         }
                     }).filter(Boolean)}
                     
-                      className="basic-multi-select rounded border-2 border-[#0575e6] my-3 w-52"
+                      className="basic-multi-select rounded border-2 border-[#01b6ee] my-3 w-52"
                       classNamePrefix="select"
                       placeholder="Project Lead"
                       isSearchable={false}
@@ -533,7 +533,7 @@ function Project() {
                           var n = dayjs(e);
                           console.log(n.format("ll"));
                           setProjectedGoLive(n.format("ll"))
-                        }} value={ProjectedGoLive} className='border-2 border-[#0575e6] w-40 my-3 rounded '
+                        }} value={ProjectedGoLive} className='border-2 border-[#01b6ee] w-40 my-3 rounded '
                           slotProps={{
                             textField: {
                               placeholder: 'Projected Go Live',
@@ -548,7 +548,7 @@ function Project() {
                           sx={{
                             width: 208,
                             border: 1,
-                            borderColor: "#0575e6",
+                            borderColor: "#01b6ee",
                             fontSize: 2, // This reduces the font size
                             lineHeight: 4,
                             padding: 0,
@@ -557,7 +557,7 @@ function Project() {
                       </LocalizationProvider>
 
                     </div>
-                    <select name="cars" onChange={(e) => setProjectType(e.target.value)} id="cars" className='border-2 p-2 border-[#0575e6] w-52 my-3 rounded'>
+                    <select name="cars" onChange={(e) => setProjectType(e.target.value)} id="cars" className='border-2 p-2 border-[#01b6ee] w-52 my-3 rounded'>
                       <option value="" selected className='hidden'>Project Type</option>
                       <option value="New">New</option>
                       <option value="New">Live</option>
@@ -567,8 +567,8 @@ function Project() {
                   </div>
                   <div className="basis-1/2 flex flex-col">
 
-                    {/* <input type="text" onChange={(e) => setCCode(e.target.value)} value={CCode} className='border-2 border-[#0575e6] p-2 w-52 my-3 rounded' placeholder='Customer Code' /> */}
-                    <div className="border-[#0575e6] my-3  w-52 border-2 rounded">
+                    {/* <input type="text" onChange={(e) => setCCode(e.target.value)} value={CCode} className='border-2 border-[#01b6ee] p-2 w-52 my-3 rounded' placeholder='Customer Code' /> */}
+                    <div className="border-[#01b6ee] my-3  w-52 border-2 rounded">
 
                       <ReactTags
                         inline
@@ -578,7 +578,7 @@ function Project() {
                           tagInput: 'w-auto border-0 focus:outline-none',
                           tagInputField: 'border-0 focus:outline-none',
                           selected: 'flex flex-wrap gap-2',
-                          tag: 'bg-[#0575e6] p-[2px] m-[2px] text-white rounded text-xs',
+                          tag: 'bg-[#01b6ee] p-[2px] m-[2px] text-white rounded text-xs',
                           remove: 'ml-1 cursor-pointer'
                         }}
                         delimiters={delimiters}
@@ -599,7 +599,7 @@ function Project() {
                       isMulti
                       name="colors"
                       options={options}
-                      className="basic-multi-select rounded border-2 border-[#0575e6] my-3 w-52"
+                      className="basic-multi-select rounded border-2 border-[#01b6ee] my-3 w-52"
                       classNamePrefix="select"
                       placeholder="EDI Message Type"
                       isSearchable={false}
@@ -615,7 +615,7 @@ function Project() {
                     {/* <input type='file' onChange={handleFileUpload} /> */}
 
                     {/* <label for="file-input" class="sr-only">Upload Mapping Documents</label> */}
-                    <select name="cars" onChange={(e) => setDeveloper(e.target.value)} id="cars" className='border-2 p-2 border-[#0575e6] w-52 my-3 rounded'>
+                    <select name="cars" onChange={(e) => setDeveloper(e.target.value)} id="cars" className='border-2 p-2 border-[#01b6ee] w-52 my-3 rounded'>
                       <option value="" selected className='hidden'>Developer</option>
                       {Users.map((item) => (<>
                         {item.Developer == "Yes" ?
@@ -627,7 +627,7 @@ function Project() {
                       </>))}
 
                     </select>
-                    <select name="cars" onChange={(e) => setImplementor(e.target.value)} id="cars" className='border-2 p-2 border-[#0575e6] w-52 my-3 rounded'>
+                    <select name="cars" onChange={(e) => setImplementor(e.target.value)} id="cars" className='border-2 p-2 border-[#01b6ee] w-52 my-3 rounded'>
                       <option value="" selected className='hidden'>Implementor</option>
                       {Users.map((item) => (<>
                         {item.Implementor == "Yes" ?
@@ -640,15 +640,15 @@ function Project() {
 
                     </select>
 
-                    <input type="file" onChange={handleFileUpload} name="file-input" id="file-input" className="text-gray-500 file:text-white my-3 block w-52 border-2 border-[#0575e6] rounded text-sm disabled:opacity-50 disabled:pointer-events-none file:bg-[#0575e6] file:border-0 file:me-2 file:py-2 file:px-1" />
+                    <input type="file" onChange={handleFileUpload} name="file-input" id="file-input" className="text-gray-500 file:text-white my-3 block w-52 border-2 border-[#01b6ee] rounded text-sm disabled:opacity-50 disabled:pointer-events-none file:bg-[#01b6ee] file:border-0 file:me-2 file:py-2 file:px-1" />
                   </div>
                 </div>
                 <div className='flex mt-5'>
 
-                  <button onClick={() => { window.location.reload() }} className=" p-1 border-2 w-28 text-center border-[#0575e6] rounded-md">Cancel</button>
+                  <button onClick={() => { window.location.reload() }} className=" p-1 border-2 w-28 text-center border-[#01b6ee] rounded-md">Cancel</button>
 
 
-                  <button onClick={handleSubmit} className="border-2 w-28 mx-14 text-center bg-[#0575e6] border-black rounded-md text-white">Submit</button>
+                  <button onClick={handleSubmit} className="border-2 w-28 mx-14 text-center bg-[#01b6ee] border-black rounded-md text-white">Submit</button>
 
                 </div>
               </div>
@@ -666,10 +666,10 @@ function Project() {
               <div className="text-xs mt-3 text-[#E84500]">
                 Note: Ensure that the document contains all the necessary details required for the trading partner setup.
               </div>
-              <div className="border mt-4 p-3 w-60 self-center rounded-lg border-[#0575e6] flex items-center justify-center">
+              <div className="border mt-4 p-3 w-60 self-center rounded-lg border-[#01b6ee] flex items-center justify-center">
                 <svg width="25" height="18" viewBox="0 0 25 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12.5052 17.3636V10M12.5052 10L16.1002 12.8636M12.5052 10L8.91016 12.8636" stroke="#0575E6" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M20.7227 13.7696C22.257 13.2908 23.8042 12.2 23.8042 10C23.8042 6.72727 20.3804 5.90909 18.6684 5.90909C18.6684 4.27273 18.6684 1 12.5056 1C6.34274 1 6.34274 4.27273 6.34274 5.90909C4.63083 5.90909 1.20703 6.72727 1.20703 10C1.20703 12.2 2.75419 13.2908 4.28846 13.7696" stroke="#0575E6" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M12.5052 17.3636V10M12.5052 10L16.1002 12.8636M12.5052 10L8.91016 12.8636" stroke="#01b6ee" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M20.7227 13.7696C22.257 13.2908 23.8042 12.2 23.8042 10C23.8042 6.72727 20.3804 5.90909 18.6684 5.90909C18.6684 4.27273 18.6684 1 12.5056 1C6.34274 1 6.34274 4.27273 6.34274 5.90909C4.63083 5.90909 1.20703 6.72727 1.20703 10C1.20703 12.2 2.75419 13.2908 4.28846 13.7696" stroke="#01b6ee" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 <form onSubmit={submitFile} enctype="multipart/form-data">
                   <input type='file' onChange={handleFileUpload} />
@@ -680,9 +680,9 @@ function Project() {
                 </form>
               </div>
               <div className="flex justify-around mt-6">
-                <div className="border h-8 w-24 flex items-center justify-center rounded-lg border-[#0575e6] text-[#0575e6]">Cancel</div>
+                <div className="border h-8 w-24 flex items-center justify-center rounded-lg border-[#01b6ee] text-[#01b6ee]">Cancel</div>
 
-                <div className="border h-8 w-24 flex items-center justify-center rounded-lg bg-[#0575e6] text-white">Submit</div>
+                <div className="border h-8 w-24 flex items-center justify-center rounded-lg bg-[#01b6ee] text-white">Submit</div>
               </div>
 
             </div>
@@ -699,79 +699,79 @@ function Project() {
         <div className="mt-5">
           <div class=" relative h-96 overflow-x-auto rounded">
             <table class="w-full text-sm text-left rtl:text-right ">
-              <thead class="text-xs  uppercase bg-[#0575e6] text-white font-light">
+              <thead class="text-xs  uppercase bg-[#01b6ee] text-white font-light">
                 <tr>
-                  <th scope="col" class="bg-[#0575e6] sticky top-0 px-6 py-3 whitespace-nowrap left-0 z-40">
+                  <th scope="col" class="bg-[#01b6ee] sticky top-0 px-6 py-3 whitespace-nowrap left-0 z-40">
                     Requset Id
                   </th>
-                  <th scope="col" class="bg-[#0575e6] sticky top-0 px-6 py-3 left-[116px] z-40">
+                  <th scope="col" class="bg-[#01b6ee] sticky top-0 px-6 py-3 left-[116px] z-40">
                     Customer
                   </th>
-                  <th scope="col" class="bg-[#0575e6] sticky top-0 px-6 py-3 whitespace-nowrap">
+                  <th scope="col" class="bg-[#01b6ee] sticky top-0 px-6 py-3 whitespace-nowrap">
                     Customer Code
                   </th>
-                  <th scope="col" class="bg-[#0575e6] sticky top-0 px-9 py-3 whitespace-nowrap">
+                  <th scope="col" class="bg-[#01b6ee] sticky top-0 px-9 py-3 whitespace-nowrap">
                     Project Type
                   </th>
-                  <th scope="col" class="bg-[#0575e6] sticky top-0 px-3 py-3">
+                  <th scope="col" class="bg-[#01b6ee] sticky top-0 px-3 py-3">
                     Jira
                   </th>
-                  <th scope="col" class="bg-[#0575e6] sticky top-0 px-9 py-3">
+                  <th scope="col" class="bg-[#01b6ee] sticky top-0 px-9 py-3">
                     Severity
                   </th>
-                  <th scope="col" class="bg-[#0575e6] sticky top-0 px-6 py-3 whitespace-nowrap">
+                  <th scope="col" class="bg-[#01b6ee] sticky top-0 px-6 py-3 whitespace-nowrap">
                     Projected Go Live
                   </th>
-                  <th scope="col" class="bg-[#0575e6] sticky z-30 top-0 px-6 py-3 whitespace-nowrap">
+                  <th scope="col" class="bg-[#01b6ee] sticky z-30 top-0 px-6 py-3 whitespace-nowrap">
                     Completion %
                   </th>
-                  <th scope="col" class="bg-[#0575e6] sticky top-0 px-6 py-3">
+                  <th scope="col" class="bg-[#01b6ee] sticky top-0 px-6 py-3">
                     Milestone
                   </th>
-                  <th scope="col" class="bg-[#0575e6] sticky top-0 px-6 py-3 whitespace-nowrap">
+                  <th scope="col" class="bg-[#01b6ee] sticky top-0 px-6 py-3 whitespace-nowrap">
                     Carrier Onboarding
                   </th>
-                  <th scope="col" class="bg-[#0575e6] sticky top-0 px-9 z-20 py-3 whitespace-nowrap">
+                  <th scope="col" class="bg-[#01b6ee] sticky top-0 px-9 z-20 py-3 whitespace-nowrap">
                     Project Lead
                   </th>
 
-                  <th scope="col" class="bg-[#0575e6] sticky top-0 px-9 py-3 whitespace-nowrap">
+                  <th scope="col" class="bg-[#01b6ee] sticky top-0 px-9 py-3 whitespace-nowrap">
                     Developer
                   </th>
-                  <th scope="col" class="bg-[#0575e6] sticky top-0 px-9 py-3 whitespace-nowrap">
+                  <th scope="col" class="bg-[#01b6ee] sticky top-0 px-9 py-3 whitespace-nowrap">
                     Implementor
                   </th>
-                  <th scope="col" class="bg-[#0575e6] sticky top-0 px-9 py-3">
+                  <th scope="col" class="bg-[#01b6ee] sticky top-0 px-9 py-3">
                     Environment
                   </th>
-                  <th scope="col" class="bg-[#0575e6] sticky top-0 px-9 py-3 whitespace-nowrap">
+                  <th scope="col" class="bg-[#01b6ee] sticky top-0 px-9 py-3 whitespace-nowrap">
                     Dev Environment
                   </th>
-                  <th scope="col" class="bg-[#0575e6] sticky top-0 px-9 py-3 whitespace-nowrap">
+                  <th scope="col" class="bg-[#01b6ee] sticky top-0 px-9 py-3 whitespace-nowrap">
                     QA Environment
                   </th>
-                  <th scope="col" class="bg-[#0575e6] sticky top-0 px-9 py-3">
+                  <th scope="col" class="bg-[#01b6ee] sticky top-0 px-9 py-3">
                     Production
                   </th>
-                  <th scope="col" class=" bg-[#0575e6] sticky top-0 px-3 py-3 whitespace-nowrap">
+                  <th scope="col" class=" bg-[#01b6ee] sticky top-0 px-3 py-3 whitespace-nowrap">
                     Go Live
                   </th>
-                  <th scope="col" class=" bg-[#0575e6] sticky top-0 px-6 py-3 whitespace-nowrap">
+                  <th scope="col" class=" bg-[#01b6ee] sticky top-0 px-6 py-3 whitespace-nowrap">
                     EDI Version
                   </th>
-                  <th scope="col" class=" bg-[#0575e6] sticky top-0 px-6 py-3 whitespace-nowrap">
+                  <th scope="col" class=" bg-[#01b6ee] sticky top-0 px-6 py-3 whitespace-nowrap">
                     EDI Message Type
                   </th>
-                  <th scope="col" class=" bg-[#0575e6] sticky top-0 px-6 py-3 whitespace-nowrap">
+                  <th scope="col" class=" bg-[#01b6ee] sticky top-0 px-6 py-3 whitespace-nowrap">
                     Mapping Specification
                   </th>
-                  <th scope="col" class="sticky bg-[#0575e6] top-0 px-6 py-3 whitespace-nowrap">
+                  <th scope="col" class="sticky bg-[#01b6ee] top-0 px-6 py-3 whitespace-nowrap">
                     BY Remarks
                   </th>
-                  <th scope="col" class="sticky bg-[#0575e6] top-0 px-6 py-3 whitespace-nowrap">
+                  <th scope="col" class="sticky bg-[#01b6ee] top-0 px-6 py-3 whitespace-nowrap">
                     Notes
                   </th>
-                  <th scope="col" class=" bg-[#0575e6] sticky top-0 px-6 py-3 whitespace-nowrap">
+                  <th scope="col" class=" bg-[#01b6ee] sticky top-0 px-6 py-3 whitespace-nowrap">
 
                   </th>
 

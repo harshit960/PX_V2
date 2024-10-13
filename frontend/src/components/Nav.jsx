@@ -227,13 +227,13 @@ function Nav(props) {
                 <div className='flex items-center text-xl font-semibold justify-between '>
                     <div className="btn cursor-pointer" >
 
-                        <img src="/menuIcon.png" alt="" srcSet="" className='w-10 ' onClick={menuStateChange} />
+                        <img src="/menuIcon.png" alt="" srcSet="" className='w-10 hover:[#01b6ee]' onClick={menuStateChange} />
                         <div className={menuBar} ref={ref2}>
 
                             <div className="absolute flex z-[45] w-48 bg-white font-semibold rounder flex-col border-2 p-4 text-sm pb-8">
                                 {location.pathname == "/" || location.pathname == "/archive" ?
                                     <div className="flex items-center h-8 ">
-                                        <span className="relative rounded-full h-2 w-2 mr-5 bg-[#0575e6]"></span>
+                                        <span className="relative rounded-full h-2 w-2 mr-5 bg-[#01b6ee]"></span>
                                         <Link to="/" className=" ">Onboarding</Link>
                                     </div>
                                     :
@@ -243,7 +243,7 @@ function Nav(props) {
                                     </div>}
                                 {location.pathname == "/projects" || location.pathname == "/projects/archive" ?
                                     <div className="flex items-center h-8 ">
-                                        <span className="relative rounded-full h-2 w-2 mr-5 bg-[#0575e6]"></span>
+                                        <span className="relative rounded-full h-2 w-2 mr-5 bg-[#01b6ee]"></span>
                                         <Link to="/projects" className=" ">Projects</Link>
                                     </div>
                                     :
@@ -253,7 +253,7 @@ function Nav(props) {
                                     </div>}
                                 {location.pathname == "/leaderboard" || location.pathname == "/leaderboard/archive" ?
                                     <div className="flex items-center h-8 ">
-                                        <span className="relative rounded-full h-2 w-2 mr-5 bg-[#0575e6]"></span>
+                                        <span className="relative rounded-full h-2 w-2 mr-5 bg-[#01b6ee]"></span>
                                         <a href="/leaderboard" className=" ">Leaderboard</a>
                                     </div>
                                     :
@@ -263,7 +263,7 @@ function Nav(props) {
                                     </div>}
                                 {/* {location.pathname == "/calendar"?
                                     <div className="flex items-center h-8 ">
-                                        <span className="relative rounded-full h-2 w-2 mr-5 bg-[#0575e6]"></span>
+                                        <span className="relative rounded-full h-2 w-2 mr-5 bg-[#01b6ee]"></span>
                                         <Link to="/calendar" className=" ">Calendar</Link>
                                     </div>
                                     :
@@ -277,16 +277,16 @@ function Nav(props) {
                     </div>
 
                     {location.pathname == "/" || location.pathname == "/archive" ?
-                        <Link to="/" className="mx-2 duration-100 border-[#0575e6] ">Onboarding</Link> :
+                        <Link to="/" className="mx-2 duration-100 border-[#01b6ee] ">Onboarding</Link> :
                         <></>}
                     {location.pathname == "/projects" || location.pathname == "/projects/archive" ?
-                        <Link to="/projects" className="mx-2  focus:border-b-4 duration-100 border-[#0575e6]">Projects</Link> :
+                        <Link to="/projects" className="mx-2  focus:border-b-4 duration-100 border-[#01b6ee]">Projects</Link> :
                         <></>}
                     {location.pathname == "/leaderboard" || location.pathname == "/leaderboard/archive" ?
-                        <a href="/leaderboard" className="mx-4 focus:border-b-4 duration-100 border-[#0575e6]">Leaderboard</a> :
+                        <a href="/leaderboard" className="mx-4 focus:border-b-4 duration-100 border-[#01b6ee]">Leaderboard</a> :
                         <></>}
                     {location.pathname == "/calendar" ?
-                        <Link to="/Calendar" className="mx-4 focus:border-b-4 duration-100 border-[#0575e6]">Calendar</Link> :
+                        <Link to="/Calendar" className="mx-4 focus:border-b-4 duration-100 border-[#01b6ee]">Calendar</Link> :
                         <></>}
 
 
@@ -312,7 +312,7 @@ function Nav(props) {
                                 placeholder="Search..."
                                 value={props.searchTerm}
                                 onChange={e => props.setSearchTerm(e.target.value)}
-                                className='py-1 px-4 text-sm font-normal border-[#0575e6] border-2 my-1 mx-2 rounded-full justify-end'
+                                className='py-1 px-4 text-sm font-normal border-[#01b6ee] border-2 my-1 mx-2 rounded-full justify-end'
                             /> : <></>}
                         {location.pathname == "/" ? <Link to={"/archive"} className='flex items-center justify-center  mx-2 border-2  w-8 h-8 border-black rounded-full'>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-4 h-4">

@@ -278,7 +278,7 @@ function LBitems(props) {
                             <textarea onChange={(e) => settempNotes(dayjs().format("DD/MM/YY") + ": " + e.target.value)} className="flex flex-col m-2 h-36">
 
                             </textarea>
-                            <button onClick={handleAddNotes} className="flex flex-col m-2 bg-[#0575e6] rounded h-10 items-center justify-center text-white font-medium">
+                            <button onClick={handleAddNotes} className="flex flex-col m-2 bg-[#01b6ee] rounded h-10 items-center justify-center text-white font-medium">
                                 Add Note
                             </button>
                         </div>
@@ -318,13 +318,13 @@ function LBitems(props) {
                 <div className="absolute drop-shadow-xl	bg-white p-5 rounded -translate-x-16 translate-y-16">
                     <div className="flex flex-col justify-center">
                         <div className="text-sm flex whitespace-nowrap">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 mx-1 text-[#0575E6]">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 mx-1 text-[#01b6ee]">
                                 <path fillRule="evenodd" d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393 3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293 1.41-3.393A.75.75 0 0 1 8 1.75Z" clipRule="evenodd" />
                             </svg>
 
                             Total Ticket: {props.data.milestone ? String(JSON.parse(props.data.milestone).length).padStart(2, '0') : "00"}</div>
                         <div className="text-sm flex whitespace-nowrap">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 mx-1 text-[#0575E6]">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 mx-1 text-[#01b6ee]">
                                 <path fillRule="evenodd" d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393 3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293 1.41-3.393A.75.75 0 0 1 8 1.75Z" clipRule="evenodd" />
                             </svg>
 
@@ -358,8 +358,8 @@ function LBitems(props) {
             <td className="px-2 py-4 mt-0">
                 <div className="flex justify-center">
                     {localStorage.getItem('type') == 'admin' || props.data.user == localStorage.getItem('name') ?
-                        <button onClick={changeTime} className="border-2 h-6 border-[#0575E6] rounded-md  mx-2 ">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 text-[#0575E6]">
+                        <button onClick={changeTime} className="border-2 h-6 border-[#01b6ee] rounded-md  mx-2 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 text-[#01b6ee]">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button> : <></>}
@@ -367,7 +367,7 @@ function LBitems(props) {
                         {(props.data.dateRange && JSON.parse(props.data.dateRange).type !="" && dayjs().isBetween(dayjs(JSON.parse(props.data.dateRange).dateRange[0]), dayjs(JSON.parse(props.data.dateRange).dateRange[1]).add(1,"day"))) ? JSON.parse(props.data.dateRange).type : dayjs(JSON.parse(ShiftHour).ShiftStart).format("LT") + " to " + dayjs(JSON.parse(ShiftHour).ShiftEnds).format("LT") + " " + JSON.parse(ShiftHour).timeZone}
                         {/* {dayjs(JSON.parse(ShiftHour).ShiftStart).format("LT") } to {dayjs(JSON.parse(ShiftHour).ShiftEnds).format("LT") }  {JSON.parse(ShiftHour).timeZone } */}
                         {props.data.files ?
-                            <a href={import.meta.env.VITE_REACT_APP_BASE_URL + props.data.files} className='text-xs text-[#0575E6] underline'>File</a>
+                            <a href={import.meta.env.VITE_REACT_APP_BASE_URL + props.data.files} className='text-xs text-[#01b6ee] underline'>File</a>
                             : <></>}
                     </div>
                 </div>
@@ -384,8 +384,8 @@ function LBitems(props) {
             </td>
             <td>
                 {localStorage.getItem('type') == "admin" || props.data.user == localStorage.getItem('name') ?
-                    <button onClick={sync} className="border- border-[#0575E6] rounded-md  mx-2 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 text-[#0575E6]">
+                    <button onClick={sync} className="border- border-[#01b6ee] rounded-md  mx-2 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 text-[#01b6ee]">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
                         </svg>
 

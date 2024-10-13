@@ -177,7 +177,7 @@ function Leaderboard() {
     }
     function setOnCall() {
         setdateRangeType("On Call")
-        setactiveStateOnCall({ background: "#0575E6", color: "#ffff" })
+        setactiveStateOnCall({ background: "#01b6ee", color: "#ffff" })
     }
     const [activeState, setactiveState] = useState({});
     const [activeStateOnCall, setactiveStateOnCall] = useState({});
@@ -225,11 +225,11 @@ function Leaderboard() {
                                         <div className='whitespace-nowrap text-xs text-gray-400'>
                                             {filedata}
                                         </div>
-                                        <div className="border-2 mx-2 border-[#0575E6] rounded-md p-1">
+                                        <div className="border-2 mx-2 border-[#01b6ee] rounded-md p-1">
                                             <input type="file" name="file-input" id="file-input" onChange={handleFileUpload} className="w-10 file:hidden opacity-0 absolute" />
                                             <label>
 
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-[#0575E6] ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-[#01b6ee] ">
                                                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z" />
                                                 </svg>
                                             </label>
@@ -253,7 +253,7 @@ function Leaderboard() {
                                                 : <>
                                                 </>}
                                         </button>
-                                        <button onClick={setOnCall} style={activeStateOnCall} className=" border-2 mx-2 border-[#0575E6] text-[#0575E6] p-1 text-sm rounded-md w-28">On Call
+                                        <button onClick={setOnCall} style={activeStateOnCall} className=" border-2 mx-2 border-[#01b6ee] text-[#01b6ee] p-1 text-sm rounded-md w-28">On Call
                                             {dateRangeType == "On Call" ?
 
                                                 <Flatpickr
@@ -307,13 +307,13 @@ function Leaderboard() {
 
                                             }} />
                                     </LocalizationProvider>
-                                    <button onClick={(e) => settimeZone("CST")} className="ml-4 mr-2 border-2 w-16 text-center rounded-md focus:border-[#0575E6]"> CST</button>
-                                    <button onClick={(e) => settimeZone("EST")} className="mx-1 border-2 w-16 text-center rounded-md focus:border-[#0575E6]"> EST</button>
-                                    <button onClick={(e) => settimeZone("IST")} className="mx-1 border-2 w-16 text-center rounded-md focus:border-[#0575E6]"> IST</button>
+                                    <button onClick={(e) => settimeZone("CST")} className="ml-4 mr-2 border-2 w-16 text-center rounded-md focus:border-[#01b6ee]"> CST</button>
+                                    <button onClick={(e) => settimeZone("EST")} className="mx-1 border-2 w-16 text-center rounded-md focus:border-[#01b6ee]"> EST</button>
+                                    <button onClick={(e) => settimeZone("IST")} className="mx-1 border-2 w-16 text-center rounded-md focus:border-[#01b6ee]"> IST</button>
                                 </div>
                                 <div className="flex justify-center items-center text-sm font-semibold">
-                                    <button onClick={() => window.location.reload()} className="mx-4 border-2 h-8 w-24 flex items-center justify-center rounded-lg border-[#0575e6] text-[#0575e6]"> Cancel </button>
-                                    <input type='submit' onClick={handleSubmit} className="mx-4 border-2 h-8 w-24 flex items-center justify-center rounded-lg border-[#0575e6] bg-[#0575e6] text-white" />
+                                    <button onClick={() => window.location.reload()} className="mx-4 border-2 h-8 w-24 flex items-center justify-center rounded-lg border-[#01b6ee] text-[#01b6ee]"> Cancel </button>
+                                    <input type='submit' onClick={handleSubmit} className="mx-4 border-2 h-8 w-24 flex items-center justify-center rounded-lg border-[#01b6ee] bg-[#01b6ee] text-white" />
                                 </div>
                             </div>
                         </div>
@@ -328,33 +328,33 @@ function Leaderboard() {
                             <table className="w-full text-sm text-left rtl:text-right  ">
 
 
-                                <thead className=" uppercase bg-[#0575e6] text-white text-xs">
+                                <thead className=" uppercase bg-[#01b6ee] text-white text-xs">
                                     <tr>
-                                        <th className='sticky bg-[#0575e6] top-0 px-4 '>
+                                        <th className='sticky bg-[#01b6ee] top-0 px-4 '>
 
                                         </th>
-                                        <th scope="col" className="sticky bg-[#0575e6] top-0 pr-0 py-3">
+                                        <th scope="col" className="sticky bg-[#01b6ee] top-0 pr-0 py-3">
                                             <div className="flex items-center justify-center">
 
                                                 Rank
                                             </div>
                                         </th>
-                                        <th scope="col" className="sticky bg-[#0575e6] top-0 text-left py-3 px-7 whitespace-nowrap">
+                                        <th scope="col" className="sticky bg-[#01b6ee] top-0 text-left py-3 px-7 whitespace-nowrap">
                                             Team Members
                                         </th>
-                                        <th scope="col" className="sticky bg-[#0575e6] top-0  py-3 text-center whitespace-nowrap">
+                                        <th scope="col" className="sticky bg-[#01b6ee] top-0  py-3 text-center whitespace-nowrap">
                                             Onboarding Capacity
                                         </th>
-                                        <th scope="col" className="sticky bg-[#0575e6] top-0 px-4 py-3 text-center whitespace-nowrap">
+                                        <th scope="col" className="sticky bg-[#01b6ee] top-0 px-4 py-3 text-center whitespace-nowrap">
                                             Project Capacity
                                         </th>
-                                        <th scope="col" className="sticky bg-[#0575e6] top-0 px-7 py-3 text-left whitespace-nowrap">
+                                        <th scope="col" className="sticky bg-[#01b6ee] top-0 px-7 py-3 text-left whitespace-nowrap">
                                             Shift Hours
                                         </th>
-                                        <th scope="col" className="sticky bg-[#0575e6] top-0 text-center whitespace-nowrap">
+                                        <th scope="col" className="sticky bg-[#01b6ee] top-0 text-center whitespace-nowrap">
                                             Notes
                                         </th>
-                                        <th scope="col" className="sticky bg-[#0575e6] top-0 px-2 py-3">
+                                        <th scope="col" className="sticky bg-[#01b6ee] top-0 px-2 py-3">
 
                                         </th>
                                     </tr>

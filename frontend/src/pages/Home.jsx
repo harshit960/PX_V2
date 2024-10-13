@@ -496,7 +496,7 @@ function Home() {
                                 {errors}
                             </div>
                             <div className="basis-1/2 my-2 flex flex-wrap text-gray-500">
-                                <select  name="cars" onChange={(e) => { setCustomer(e.target.value); }} id="cars" className='border-2 p-2 mx-2 border-[#0575e6] w-40 my-3 rounded'>
+                                <select  name="cars" onChange={(e) => { setCustomer(e.target.value); }} id="cars" className='border-2 p-2 mx-2 border-[#01b6ee] w-40 my-3 rounded'>
                                     <option selected className='hidden'>Select Customer</option>
                                     {Projects.map((item) => {
                                         // Exclude items where GoLive, Production, DevEnvironment, or QAEnvironment is 'Cancelled'
@@ -518,14 +518,14 @@ function Home() {
 
 
                                 </select>
-                                <select type="text" onChange={(e) => setPhase(e.target.value)} className='border-2 border-[#0575e6] p-2 mx-2 w-40 my-3 rounded' placeholder='Phase' >
+                                <select type="text" onChange={(e) => setPhase(e.target.value)} className='border-2 border-[#01b6ee] p-2 mx-2 w-40 my-3 rounded' placeholder='Phase' >
                                     <option selected className='hidden'>Select Phase</option>
                                     <option >Phase 1</option>
                                     <option >Phase 2</option>
                                     <option >Phase 3</option>
                                 </select>
 
-                                {/* <select type="text" className='border-2 border-[#0575e6] p-2 mx-2  my-3 rounded' placeholder='Phase' >
+                                {/* <select type="text" className='border-2 border-[#01b6ee] p-2 mx-2  my-3 rounded' placeholder='Phase' >
                                     <option >Select EDI Message Type</option>
 
 
@@ -535,7 +535,7 @@ function Home() {
                                         isMulti
                                         name="colors"
                                         options={options}
-                                        className="basic-multi-select border-2 border-[#0575e6] w-40 rounded"
+                                        className="basic-multi-select border-2 border-[#01b6ee] w-40 rounded"
                                         classNamePrefix="select"
                                         placeholder="Select EDI Message type"
                                         value={selected}
@@ -567,15 +567,15 @@ function Home() {
                                         }}
                                     />
                                 </div>
-                                <input type="text" value={CarrierName} onChange={(e) => setCarrierName(e.target.value)} className='border-2 border-[#0575e6] p-2 mx-2 w-40 my-3 rounded' placeholder='CarrierName' />
-                                <input type="text" value={TicketNumber} onChange={(e) => setTicketNumber(e.target.value)} className='border-2 border-[#0575e6] p-2 mx-2 w-40 my-3 rounded' placeholder='TicketNumber' />
-                                <input type="text" value={SCAC} onChange={(e) => setSCAC(e.target.value)} className='border-2 border-[#0575e6] p-2 mx-2 w-40 my-3 rounded' placeholder='SCAC' />
-                                {/* <input type="text" value={RequestID} onChange={(e) => setCname(e.target.value)} className='border-2 border-[#0575e6] p-2 w-40 my-3 rounded' placeholder='Customer name' /> */}
+                                <input type="text" value={CarrierName} onChange={(e) => setCarrierName(e.target.value)} className='border-2 border-[#01b6ee] p-2 mx-2 w-40 my-3 rounded' placeholder='CarrierName' />
+                                <input type="text" value={TicketNumber} onChange={(e) => setTicketNumber(e.target.value)} className='border-2 border-[#01b6ee] p-2 mx-2 w-40 my-3 rounded' placeholder='TicketNumber' />
+                                <input type="text" value={SCAC} onChange={(e) => setSCAC(e.target.value)} className='border-2 border-[#01b6ee] p-2 mx-2 w-40 my-3 rounded' placeholder='SCAC' />
+                                {/* <input type="text" value={RequestID} onChange={(e) => setCname(e.target.value)} className='border-2 border-[#01b6ee] p-2 w-40 my-3 rounded' placeholder='Customer name' /> */}
                             </div>
                             <div className="flex my-1">
 
-                                <button onClick={() => { window.location.reload() }} className="mx-2 p-1 border-2 w-28 text-center border-[#0575e6] rounded-md">Cancel</button>
-                                <button onClick={handleSubmit} className="border-2 w-28 mx-14 text-center bg-[#0575e6] border-black rounded-md text-white">Submit</button>
+                                <button onClick={() => { window.location.reload() }} className="mx-2 p-1 border-2 w-28 text-center border-[#01b6ee] rounded-md">Cancel</button>
+                                <button onClick={handleSubmit} className="border-2 w-28 mx-14 text-center bg-[#01b6ee] border-black rounded-md text-white">Submit</button>
                             </div>
                         </div>
                         <div className="basis-1/2">
@@ -606,12 +606,12 @@ function Home() {
                                 <div className='flex  pt-2 flex-col'>
 
                                     <label htmlFor="" className=' mx-2'>Carrier Name</label>
-                                    <input type="text" onChange={(e) => seteCarrierName(e.target.value)} className='border-2 border-[#0575e6] p-2 mx-2 w-60  rounded' placeholder={editdata.CarrierName} value={eCarrierName} />
+                                    <input type="text" onChange={(e) => seteCarrierName(e.target.value)} className='border-2 border-[#01b6ee] p-2 mx-2 w-60  rounded' placeholder={editdata.CarrierName} value={eCarrierName} />
                                 </div>
                                 <div className='flex flex-col'>
 
                                     <label htmlFor="" className='pt-2 mx-2'>SCAC</label>
-                                    <input type="text" onChange={(e) => seteSCAC(e.target.value)} className='border-2 border-[#0575e6] p-2 mx-2 w-60  rounded' value={eSCAC} />
+                                    <input type="text" onChange={(e) => seteSCAC(e.target.value)} className='border-2 border-[#01b6ee] p-2 mx-2 w-60  rounded' value={eSCAC} />
                                 </div>
 
                                 {localStorage.getItem('type') == "admin" || localStorage.getItem('type') == "User-OB" ?
@@ -619,7 +619,7 @@ function Home() {
                                         <div className='flex flex-col'>
 
                                             <label htmlFor="" className='pt-2 mx-2'>Ticket Number</label>
-                                            <input type="text" onChange={(e) => seteTicketNumber(e.target.value)} className='border-2 border-[#0575e6] p-2 mx-2 w-60  rounded' value={eTicketNumber} />
+                                            <input type="text" onChange={(e) => seteTicketNumber(e.target.value)} className='border-2 border-[#01b6ee] p-2 mx-2 w-60  rounded' value={eTicketNumber} />
                                         </div>
                                         <div className='mt-2'>
 
@@ -636,7 +636,7 @@ function Home() {
                                                             seteTPS(n.format("ll"))
                                                         }}
                                                         // value={eTPS}
-                                                        className='border-2 border-[#0575e6] p-2  w-60 my-3 rounded '
+                                                        className='border-2 border-[#01b6ee] p-2  w-60 my-3 rounded '
                                                         slotProps={{
                                                             textField: {
                                                                 placeholder: `${editdata.TradingPartnerSetup}`,
@@ -652,7 +652,7 @@ function Home() {
                                                         sx={{
                                                             width: 240,
                                                             border: 1,
-                                                            borderColor: "#0575e6",
+                                                            borderColor: "#01b6ee",
                                                             fontSize: 2, // This reduces the font size
                                                             lineHeight: 4,
                                                             padding: 0,
@@ -674,7 +674,7 @@ function Home() {
                                                             seteSFTP(n.format("ll"))
                                                         }}
                                                         // value={eSFTP}
-                                                        className='border-2 border-[#0575e6] p-2  w-60 my-3 rounded '
+                                                        className='border-2 border-[#01b6ee] p-2  w-60 my-3 rounded '
                                                         slotProps={{
                                                             textField: {
                                                                 placeholder: `${editdata.SFTP}`,
@@ -690,7 +690,7 @@ function Home() {
                                                         sx={{
                                                             width: 240,
                                                             border: 1,
-                                                            borderColor: "#0575e6",
+                                                            borderColor: "#01b6ee",
                                                             fontSize: 2, // This reduces the font size
                                                             lineHeight: 4,
                                                             padding: 0,
@@ -710,7 +710,7 @@ function Home() {
                                                             seteGoLive(n.format("ll"))
                                                         }}
                                                         // value={eGoLive}
-                                                        className='border-2 border-[#0575e6] p-2  w-60 my-3 rounded '
+                                                        className='border-2 border-[#01b6ee] p-2  w-60 my-3 rounded '
                                                         slotProps={{
                                                             textField: {
                                                                 placeholder: `${editdata.GoLive}`,
@@ -726,7 +726,7 @@ function Home() {
                                                         sx={{
                                                             width: 240,
                                                             border: 1,
-                                                            borderColor: "#0575e6",
+                                                            borderColor: "#01b6ee",
                                                             fontSize: 2, // This reduces the font size
                                                             lineHeight: 4,
                                                             padding: 0,
@@ -735,7 +735,7 @@ function Home() {
                                                 </LocalizationProvider>
                                             </div></div>
 
-                                        {/* <input type="text"  className='border-2 border-[#0575e6] p-2 mx-2 w-60 my-3 rounded' placeholder='TESTING 214 ETA' /> */}
+                                        {/* <input type="text"  className='border-2 border-[#01b6ee] p-2 mx-2 w-60 my-3 rounded' placeholder='TESTING 214 ETA' /> */}
                                         {editdata.TestingJSON ? JSON.parse(editdata.TestingJSON).map((item) => <>
                                             <div className='mt-2'>
 
@@ -745,7 +745,7 @@ function Home() {
                                                     <LocalizationProvider dateAdapter={AdapterDayjs} >
 
                                                         <MobileDatePicker
-                                                            className='border-2 border-[#0575e6] p-2  w-60 my-3 rounded '
+                                                            className='border-2 border-[#01b6ee] p-2  w-60 my-3 rounded '
                                                             onChange={(e) => {
                                                                 let x = JSON.parse(editTestingJSON);
                                                                 console.log(x);
@@ -779,7 +779,7 @@ function Home() {
                                                             sx={{
                                                                 width: 240,
                                                                 border: 1,
-                                                                borderColor: "#0575e6",
+                                                                borderColor: "#01b6ee",
                                                                 fontSize: 2, // This reduces the font size
                                                                 lineHeight: 4,
                                                                 padding: 0,
@@ -795,8 +795,8 @@ function Home() {
                             </div>
                             <div className="flex pt-4 justify-between">
                                 {/* <div onClick={() => settogglrEdit("hidden")}>Cancel</div> */}
-                                <button onClick={() => { settogglrEdit("hidden") }} className="mx-2 p-1 border-2 w-28 text-center border-[#0575e6] rounded-md">Cancel</button>
-                                <div onClick={handleEditSubmit} className="border-2 w-28 cursor-pointer text-center bg-[#0575e6] border-black rounded-md text-white mr-3">Submit</div>
+                                <button onClick={() => { settogglrEdit("hidden") }} className="mx-2 p-1 border-2 w-28 text-center border-[#01b6ee] rounded-md">Cancel</button>
+                                <div onClick={handleEditSubmit} className="border-2 w-28 cursor-pointer text-center bg-[#01b6ee] border-black rounded-md text-white mr-3">Submit</div>
 
                             </div>
                         </div>
@@ -811,60 +811,60 @@ function Home() {
 
                 <div class=" relative h-96 overflow-x-auto rounded">
                     <table class="table-auto relative w-full text-sm text-left rtl:text-right  ">
-                        <thead class="text-xs  uppercase bg-[#0575e6] text-white font-light">
+                        <thead class="text-xs  uppercase bg-[#01b6ee] text-white font-light">
                             <tr>
-                                <th scope="col" class="sticky bg-[#0575e6] z-30 top-0 px-6 py-3 whitespace-nowrap left-0">
+                                <th scope="col" class="sticky bg-[#01b6ee] z-30 top-0 px-6 py-3 whitespace-nowrap left-0">
                                     Request ID
                                 </th>
-                                <th scope="col" class="sticky bg-[#0575e6] z-30 top-0 px-6 py-3  left-[116px]">
+                                <th scope="col" class="sticky bg-[#01b6ee] z-30 top-0 px-6 py-3  left-[116px]">
                                     Customer
                                 </th>
-                                <th scope="col" class="sticky bg-[#0575e6] z-30 top-0 px-6 py-3 whitespace-nowrap left-[228px]">
+                                <th scope="col" class="sticky bg-[#01b6ee] z-30 top-0 px-6 py-3 whitespace-nowrap left-[228px]">
                                     Carrier Name
                                 </th>
-                                <th scope="col" class="sticky bg-[#0575e6] z-20 top-0 px-6 py-3">
+                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3">
                                     SCAC
                                 </th>
-                                <th scope="col" class="sticky bg-[#0575e6] z-20 top-0 px-6 py-3">
+                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3">
                                     Phase
                                 </th>
-                                <th scope="col" class="sticky bg-[#0575e6] z-20 top-0 px-6 py-3">
+                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3">
                                     Completion
                                 </th>
-                                <th scope="col" class="sticky bg-[#0575e6] z-20 top-0 px-6 py-3">
+                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3">
                                     Milestone
                                 </th>
-                                <th scope="col" class="sticky bg-[#0575e6] z-20 top-0 px-6 py-3">
+                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3">
                                     Ticket
                                 </th>
-                                <th scope="col" class="sticky bg-[#0575e6] z-20 top-0 px-6 py-3 whitespace-nowrap">
+                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3 whitespace-nowrap">
                                     TP Specialist
                                 </th>
-                                <th scope="col" class="sticky bg-[#0575e6] z-20 top-0 px-9 py-3 whitespace-nowrap">
+                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-9 py-3 whitespace-nowrap">
                                     Action Owner
                                 </th>
-                                <th scope="col" class="sticky bg-[#0575e6] z-20 top-0 px-9 py-3 whitespace-nowrap">
+                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-9 py-3 whitespace-nowrap">
                                     CQ Validation
                                 </th>
-                                <th scope="col" class="sticky bg-[#0575e6] z-20 top-0 px-9 py-3 whitespace-nowrap">
+                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-9 py-3 whitespace-nowrap">
                                     Trading Partner Setup
                                 </th>
-                                <th scope="col" class="sticky bg-[#0575e6] z-20 top-0 px-9 py-3 whitespace-nowrap">
+                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-9 py-3 whitespace-nowrap">
                                     SFTP Testing
                                 </th>
-                                <th scope="col" class="sticky bg-[#0575e6] z-20 top-0 px-6 py-3">
+                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3">
                                     Testing
                                 </th>
-                                <th scope="col" class="sticky bg-[#0575e6] z-20 top-0 px-9 py-3 whitespace-nowrap">
+                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-9 py-3 whitespace-nowrap">
                                     Go Live
                                 </th>
-                                <th scope="col" class="sticky bg-[#0575e6] z-20 top-0 px-6 py-3 whitespace-nowrap">
-                                    BY Remarks
+                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3 whitespace-nowrap">
+                                    Status/Next Steps
                                 </th>
-                                <th scope="col" class="sticky bg-[#0575e6] z-20 top-0 px-6 py-3 whitespace-nowrap">
-                                    Notes
+                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3 whitespace-nowrap">
+                                    Internal Notes
                                 </th>
-                                <th scope="col" class="sticky bg-[#0575e6] z-20 top-0 px-6 py-3 whitespace-nowrap">
+                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3 whitespace-nowrap">
 
                                 </th>
                             </tr>

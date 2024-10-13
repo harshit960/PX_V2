@@ -92,7 +92,7 @@ export default function OBAitems(props) {
             <td class="px-9 py-4">
                 {props.data.OCValidation}
                 <div className=" whitespace-nowrap">
-                <a href={import.meta.env.VITE_REACT_APP_BASE_URL+props.data.CQDoc} className='text-xs pt-2 text-[#0575e6] underline font-semibold'>Carrier Questionnaire</a>
+                <a href={import.meta.env.VITE_REACT_APP_BASE_URL+props.data.CQDoc} className='text-xs pt-2 text-[#01b6ee] underline font-semibold'>Carrier Questionnaire</a>
                 </div>
 
             </td>
