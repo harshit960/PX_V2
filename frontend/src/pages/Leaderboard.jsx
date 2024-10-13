@@ -348,9 +348,9 @@ function Leaderboard() {
                                         <th scope="col" className="sticky bg-[#01b6ee] top-0 px-4 py-3 text-center whitespace-nowrap">
                                             Project Capacity
                                         </th>
-                                        <th scope="col" className="sticky bg-[#01b6ee] top-0 px-7 py-3 text-left whitespace-nowrap">
+                                        {/* <th scope="col" className="sticky bg-[#01b6ee] top-0 px-7 py-3 text-left whitespace-nowrap">
                                             Shift Hours
-                                        </th>
+                                        </th> */}
                                         <th scope="col" className="sticky bg-[#01b6ee] top-0 text-center whitespace-nowrap">
                                             Internal Notes
                                         </th>

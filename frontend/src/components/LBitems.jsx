@@ -355,7 +355,7 @@ function LBitems(props) {
                 </div>
 
             </td>
-            <td className="px-2 py-4 mt-0">
+            {/* <td className="px-2 py-4 mt-0">
                 <div className="flex justify-center">
                     {localStorage.getItem('type') == 'admin' || props.data.user == localStorage.getItem('name') ?
                         <button onClick={changeTime} className="border-2 h-6 border-[#01b6ee] rounded-md  mx-2 ">
@@ -365,13 +365,14 @@ function LBitems(props) {
                         </button> : <></>}
                     <div className='w-60 flex flex-col text-sm' >
                         {(props.data.dateRange && JSON.parse(props.data.dateRange).type !="" && dayjs().isBetween(dayjs(JSON.parse(props.data.dateRange).dateRange[0]), dayjs(JSON.parse(props.data.dateRange).dateRange[1]).add(1,"day"))) ? JSON.parse(props.data.dateRange).type : dayjs(JSON.parse(ShiftHour).ShiftStart).format("LT") + " to " + dayjs(JSON.parse(ShiftHour).ShiftEnds).format("LT") + " " + JSON.parse(ShiftHour).timeZone}
-                        {/* {dayjs(JSON.parse(ShiftHour).ShiftStart).format("LT") } to {dayjs(JSON.parse(ShiftHour).ShiftEnds).format("LT") }  {JSON.parse(ShiftHour).timeZone } */}
+                       
                         {props.data.files ?
                             <a href={import.meta.env.VITE_REACT_APP_BASE_URL + props.data.files} className='text-xs text-[#01b6ee] underline'>File</a>
                             : <></>}
                     </div>
                 </div>
-            </td>
+            </td> */}
+            
             <td >
                 <div class="px-6 py-6 flex items-center justify-center">
 
