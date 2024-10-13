@@ -336,7 +336,7 @@ function Leaderboard() {
                                         <th scope="col" className="sticky bg-[#01b6ee] top-0 pr-0 py-3">
                                             <div className="flex items-center justify-center">
 
-                                                Rank
+                                               No.
                                             </div>
                                         </th>
                                         <th scope="col" className="sticky bg-[#01b6ee] top-0 text-left py-3 px-7 whitespace-nowrap">
@@ -352,7 +352,7 @@ function Leaderboard() {
                                             Shift Hours
                                         </th>
                                         <th scope="col" className="sticky bg-[#01b6ee] top-0 text-center whitespace-nowrap">
-                                            Notes
+                                            Internal Notes
                                         </th>
                                         <th scope="col" className="sticky bg-[#01b6ee] top-0 px-2 py-3">
 

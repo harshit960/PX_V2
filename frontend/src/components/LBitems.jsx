@@ -333,7 +333,7 @@ function LBitems(props) {
                 </div>
             </div>
             <td className="px-6 py-4 flex items-center justify-start">
-                <img src={`Avatar/` + props.data.pp} alt="" className='rounded-full w-10 h-10' />
+                <img src={`Avatar/` + props.data.pp} alt="" className='rounded-full w-12 h-12' />
                 <div className='ml-3 '>{props.data.user}</div>
 
             </td>

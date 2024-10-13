@@ -148,7 +148,7 @@ export default function NewUser() {
                                         <input
                                             className="flex h-10 w-full rounded border border-[#01b6ee]  bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                                             type="text"
-                                            placeholder="Username"
+                                            placeholder="User ID"
                                             value={username}
                                             onChange={(e) => setusername(e.target.value)}
                                         ></input>
