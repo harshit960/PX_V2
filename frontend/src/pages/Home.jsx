@@ -496,7 +496,7 @@ function Home() {
                                 {errors}
                             </div>
                             <div className="basis-1/2 my-2 flex flex-wrap text-gray-500">
-                                <select  name="cars" onChange={(e) => { setCustomer(e.target.value); }} id="cars" className='border-2 p-2 mx-2 border-[#01b6ee] w-40 my-3 rounded'>
+                                <select  name="cars" onChange={(e) => { setCustomer(e.target.value); }} id="cars" className='border-2 p-2 mx-2 border-gray-300 w-40 my-3 rounded'>
                                     <option selected className='hidden'>Select Customer</option>
                                     {Projects.map((item) => {
                                         // Exclude items where GoLive, Production, DevEnvironment, or QAEnvironment is 'Cancelled'
@@ -518,7 +518,7 @@ function Home() {
 
 
                                 </select>
-                                <select type="text" onChange={(e) => setPhase(e.target.value)} className='border-2 border-[#01b6ee] p-2 mx-2 w-40 my-3 rounded' placeholder='Phase' >
+                                <select type="text" onChange={(e) => setPhase(e.target.value)} className='border-2 border-gray-300 p-2 mx-2 w-40 my-3 rounded' placeholder='Phase' >
                                     <option selected className='hidden'>Select Phase</option>
                                     <option >Phase 1</option>
                                     <option >Phase 2</option>
@@ -535,7 +535,7 @@ function Home() {
                                         isMulti
                                         name="colors"
                                         options={options}
-                                        className="basic-multi-select border-2 border-[#01b6ee] w-40 rounded"
+                                        className="basic-multi-select border-2 border-gray-300 w-40 rounded"
                                         classNamePrefix="select"
                                         placeholder="Select EDI Message type"
                                         value={selected}
@@ -567,15 +567,15 @@ function Home() {
                                         }}
                                     />
                                 </div>
-                                <input type="text" value={CarrierName} onChange={(e) => setCarrierName(e.target.value)} className='border-2 border-[#01b6ee] p-2 mx-2 w-40 my-3 rounded' placeholder='CarrierName' />
-                                <input type="text" value={TicketNumber} onChange={(e) => setTicketNumber(e.target.value)} className='border-2 border-[#01b6ee] p-2 mx-2 w-40 my-3 rounded' placeholder='TicketNumber' />
-                                <input type="text" value={SCAC} onChange={(e) => setSCAC(e.target.value)} className='border-2 border-[#01b6ee] p-2 mx-2 w-40 my-3 rounded' placeholder='SCAC' />
+                                <input type="text" value={CarrierName} onChange={(e) => setCarrierName(e.target.value)} className='border-2 border-gray-300 p-2 mx-2 w-40 my-3 rounded' placeholder='CarrierName' />
+                                <input type="text" value={TicketNumber} onChange={(e) => setTicketNumber(e.target.value)} className='border-2 border-gray-300 p-2 mx-2 w-40 my-3 rounded' placeholder='TicketNumber' />
+                                <input type="text" value={SCAC} onChange={(e) => setSCAC(e.target.value)} className='border-2 border-gray-300 p-2 mx-2 w-40 my-3 rounded' placeholder='SCAC' />
                                 {/* <input type="text" value={RequestID} onChange={(e) => setCname(e.target.value)} className='border-2 border-[#01b6ee] p-2 w-40 my-3 rounded' placeholder='Customer name' /> */}
                             </div>
                             <div className="flex my-1">
 
-                                <button onClick={() => { window.location.reload() }} className="mx-2 p-1 border-2 w-28 text-center border-[#01b6ee] rounded-md">Cancel</button>
-                                <button onClick={handleSubmit} className="border-2 w-28 mx-14 text-center bg-[#01b6ee] border-black rounded-md text-white">Submit</button>
+                                <button onClick={() => { window.location.reload() }} className="mx-2 p-1 border-2 w-28 text-center border-gray-300 rounded-md">Cancel</button>
+                                <button onClick={handleSubmit} className="border-0 w-28 mx-14 text-center bg-[#01b6ee]  border-black rounded-md text-white">Submit</button>
                             </div>
                         </div>
                         <div className="basis-1/2">
@@ -795,8 +795,8 @@ function Home() {
                             </div>
                             <div className="flex pt-4 justify-between">
                                 {/* <div onClick={() => settogglrEdit("hidden")}>Cancel</div> */}
-                                <button onClick={() => { settogglrEdit("hidden") }} className="mx-2 p-1 border-2 w-28 text-center border-[#01b6ee] rounded-md">Cancel</button>
-                                <div onClick={handleEditSubmit} className="border-2 w-28 cursor-pointer text-center bg-[#01b6ee] border-black rounded-md text-white mr-3">Submit</div>
+                                <button onClick={() => { settogglrEdit("hidden") }} className="mx-2 p-1 border-2 w-28 text-center  rounded-md">Cancel</button>
+                                <div onClick={handleEditSubmit} className="border-2 w-28 cursor-pointer flex items-center justify-center text-center bg-[#01b6ee]  rounded-md text-white mr-3">Submit</div>
 
                             </div>
                         </div>
