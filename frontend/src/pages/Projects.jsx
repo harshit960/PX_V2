@@ -616,7 +616,7 @@ function Project() {
 
                     {/* <label for="file-input" class="sr-only">Upload Mapping Documents</label> */}
                     <select name="cars" onChange={(e) => setDeveloper(e.target.value)} id="cars" className='border-2 p-2 border-[#01b6ee] w-52 my-3 rounded'>
-                      <option value="" selected className='hidden'>Developer</option>
+                      <option value="" selected className='hidden'>Mapper</option>
                       {Users.map((item) => (<>
                         {item.Developer == "Yes" ?
                           <option>
@@ -736,7 +736,7 @@ function Project() {
                   </th>
 
                   <th scope="col" class="bg-[#01b6ee] sticky top-0 px-9 py-3 whitespace-nowrap">
-                    Developer
+                    Mapper
                   </th>
                   <th scope="col" class="bg-[#01b6ee] sticky top-0 px-9 py-3 whitespace-nowrap">
                     Implementor
@@ -766,10 +766,10 @@ function Project() {
                     Mapping Specification
                   </th>
                   <th scope="col" class="sticky bg-[#01b6ee] top-0 px-6 py-3 whitespace-nowrap">
-                    BY Remarks
+                    Status/Next Steps
                   </th>
                   <th scope="col" class="sticky bg-[#01b6ee] top-0 px-6 py-3 whitespace-nowrap">
-                    Notes
+                    Internal Notes
                   </th>
                   <th scope="col" class=" bg-[#01b6ee] sticky top-0 px-6 py-3 whitespace-nowrap">
 

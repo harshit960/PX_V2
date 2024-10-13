@@ -601,17 +601,17 @@ function Pitems(props) {
                                     <div className='flex  pt-2 flex-col'>
 
                                         <label htmlFor="" className=' mx-2'>Customer</label>
-                                        <input type="text" onChange={(e) => seteditCustomer(dayjs().format("mmss") + e.target.value)} placeholder={editCustomer.slice(4)} className='border-2 border-[#01b6ee] p-2 mx-2 w-60  rounded' />
+                                        <input type="text" onChange={(e) => seteditCustomer(dayjs().format("mmss") + e.target.value)} placeholder={editCustomer.slice(4)} className='border-2 border-gray-300 p-2 mx-2 w-60  rounded' />
                                     </div>
                                     <div className='flex  pt-2 flex-col'>
 
                                         <label htmlFor="" className=' mx-2'>Customer Code</label>
-                                        <input type="text" onChange={(e) => seteditCC(e.target.value)} value={editCC} className='border-2 border-[#01b6ee] p-2 mx-2 w-60  rounded' />
+                                        <input type="text" onChange={(e) => seteditCC(e.target.value)} value={editCC} className='border-2 border-gray-300 p-2 mx-2 w-60  rounded' />
                                     </div>
                                     <div className='flex  pt-2 flex-col'>
 
                                         <label htmlFor="" className=' mx-2'>EDI Version</label>
-                                        {/* <select onChange={(e) => seteditEDIVersion(e.target.value)} className='border-2 p-2 text-gray-600 border-[#01b6ee] w-[240px] mx-2 rounded'>
+                                        {/* <select onChange={(e) => seteditEDIVersion(e.target.value)} className='border-2 p-2 text-gray-600 border-gray-300 w-[240px] mx-2 rounded'>
                                             <option value="" selected className='hidden'>{editEDIVersion.slice(1)}</option>
                                             <option value="X12 4010">X12 4010</option>
                                             <option value="X12 5010">X12 5010</option>
@@ -622,7 +622,7 @@ function Pitems(props) {
                                             isMulti
                                             name="colors"
                                             options={[{ value: 'X12 4010', label: 'X12 4010' }, { value: 'X12 5010', label: 'X12 5010' }, { value: 'EDIFACT D-09A', label: 'EDIFACT D-09A' }]}
-                                            className="basic-multi-select rounded border-2 border-[#01b6ee] mx-2 w-[240px]"
+                                            className="basic-multi-select rounded border-2 border-gray-300 mx-2 w-[240px]"
                                             classNamePrefix="select"
                                             placeholder={props.data.EDIVersion.slice(1)}
                                             isSearchable={false}
@@ -654,7 +654,7 @@ function Pitems(props) {
                                             isMulti
                                             name="colors"
                                             options={options}
-                                            className="basic-multi-select rounded border-2 border-[#01b6ee] mx-2 w-[240px]"
+                                            className="basic-multi-select rounded border-2 border-gray-300 mx-2 w-[240px]"
                                             classNamePrefix="select"
                                             placeholder={props.data.EDIMessageType.slice(1)}
                                             isSearchable={false}
@@ -687,7 +687,7 @@ function Pitems(props) {
                                                         seteditPGOLive(n.format("ll"))
                                                     }}
                                                     // value={editPGOLive}
-                                                    className='border-2 border-[#01b6ee] p-2  w-60 my-3 rounded '
+                                                    className='border-2 border-gray-300 p-2  w-60 my-3 rounded '
                                                     slotProps={{
                                                         textField: {
                                                             placeholder: `${props.data.ProjectedGoLive}`,
@@ -702,7 +702,7 @@ function Pitems(props) {
                                                     }}
                                                     sx={{
                                                         width: 240,
-                                                        border: 1,
+                                                        border: 0,
                                                         borderColor: "#01b6ee",
                                                         fontSize: 2, // This reduces the font size
                                                         lineHeight: 4,
@@ -725,7 +725,7 @@ function Pitems(props) {
                                                         seteditDEV(n.format("ll"))
                                                     }}
                                                     // value={editDEV}
-                                                    className='border-2 border-[#01b6ee] p-2  w-60 my-3 rounded '
+                                                    className='border-2 border-gray-300 p-2  w-60 my-3 rounded '
                                                     slotProps={{
                                                         textField: {
                                                             placeholder: `${props.data.DevEnviornment}`,
@@ -740,7 +740,7 @@ function Pitems(props) {
                                                     }}
                                                     sx={{
                                                         width: 240,
-                                                        border: 1,
+                                                        border: 0,
                                                         borderColor: "#01b6ee",
                                                         fontSize: 2, // This reduces the font size
                                                         lineHeight: 4,
@@ -763,7 +763,7 @@ function Pitems(props) {
                                                         seteditQA(n.format("ll"))
                                                     }}
                                                     // value={editQA}
-                                                    className='border-2 border-[#01b6ee] p-2  w-60 my-3 rounded '
+                                                    className='border-2 border-gray-300 p-2  w-60 my-3 rounded '
                                                     slotProps={{
                                                         textField: {
                                                             placeholder: `${props.data.QAEnviornment}`,
@@ -778,7 +778,7 @@ function Pitems(props) {
                                                     }}
                                                     sx={{
                                                         width: 240,
-                                                        border: 1,
+                                                        border: 0,
                                                         borderColor: "#01b6ee",
                                                         fontSize: 2, // This reduces the font size
                                                         lineHeight: 4,
@@ -801,7 +801,7 @@ function Pitems(props) {
                                                         seteditPro(n.format("ll"))
                                                     }}
                                                     // value={editPro}
-                                                    className='border-2 border-[#01b6ee] p-2  w-60 my-3 rounded '
+                                                    className='border-2 border-gray-300 p-2  w-60 my-3 rounded '
                                                     slotProps={{
                                                         textField: {
                                                             placeholder: `${props.data.Production}`,
@@ -816,7 +816,7 @@ function Pitems(props) {
                                                     }}
                                                     sx={{
                                                         width: 240,
-                                                        border: 1,
+                                                        border: 0,
                                                         borderColor: "#01b6ee",
                                                         fontSize: 2, // This reduces the font size
                                                         lineHeight: 4,
@@ -839,7 +839,7 @@ function Pitems(props) {
                                                         seteditGOLive(n.format("ll"))
                                                     }}
                                                     // value={editGOLive}
-                                                    className='border-2 border-[#01b6ee] p-2  w-60 my-3 rounded '
+                                                    className='border-2 border-gray-300 p-2  w-60 my-3 rounded '
                                                     slotProps={{
                                                         textField: {
                                                             placeholder: `${props.data.GoLive}`,
@@ -854,7 +854,7 @@ function Pitems(props) {
                                                     }}
                                                     sx={{
                                                         width: 240,
-                                                        border: 1,
+                                                        border: 0,
                                                         borderColor: "#01b6ee",
                                                         fontSize: 2, // This reduces the font size
                                                         lineHeight: 4,
@@ -866,7 +866,7 @@ function Pitems(props) {
                                     </div>
                                     <div className='flex  pt-2 flex-col'>
                                         <label htmlFor="" className=' mx-2 pb-1'>Project Type</label>
-                                        <select onChange={(e) => seteditPT(e.target.value)} className='text-gray-600 border-2 p-2 border-[#01b6ee] w-[240px] mx-2 rounded'>
+                                        <select onChange={(e) => seteditPT(e.target.value)} className='text-gray-600 border-2 p-2 border-gray-300 w-[240px] mx-2 rounded'>
                                             <option value="" selected className='hidden'>{editPT}</option>
                                             <option value="New">New</option>
                                             <option value="Live">Live</option>
@@ -875,8 +875,8 @@ function Pitems(props) {
                                         </select>
                                     </div>
                                     <div className='flex  pt-2 flex-col'>
-                                        <label htmlFor="" className=' mx-2 pb-1'>Developer</label>
-                                        <select onChange={(e) => seteditDeveloper(e.target.value)} className='text-gray-600 border-2 p-2 border-[#01b6ee] w-[240px] mx-2 rounded'>
+                                        <label htmlFor="" className=' mx-2 pb-1'>Mapper</label>
+                                        <select onChange={(e) => seteditDeveloper(e.target.value)} className='text-gray-600 border-2 p-2 border-gray-300 w-[240px] mx-2 rounded'>
                                             <option value="" selected className='hidden'>{editDeveloper}</option>
                                             {props.Users.map((item) => (<>
                                                 {item.Developer == "Yes" ?
@@ -891,7 +891,7 @@ function Pitems(props) {
                                     </div>
                                     <div className='flex  pt-2 flex-col'>
                                         <label htmlFor="" className=' mx-2 pb-1'>Implementor</label>
-                                        <select onChange={(e) => seteditImplemnetor(e.target.value)} className='text-gray-600 border-2 p-2 border-[#01b6ee] w-[240px] mx-2 rounded'>
+                                        <select onChange={(e) => seteditImplemnetor(e.target.value)} className='text-gray-600 border-2 p-2 border-gray-300 w-[240px] mx-2 rounded'>
                                             <option value="" selected className='hidden'>{editImplemnetor}</option>
                                             {props.Users.map((item) => (<>
                                                 {item.Implementor == "Yes" ?
@@ -907,12 +907,12 @@ function Pitems(props) {
                                     <div className='flex  pt-2 flex-col'>
 
                                         <label htmlFor="" className=' mx-2 pb-1'>Mapping Specification</label>
-                                        <input type="file" onChange={handleFileUpload} name="file-input" id="file-input" className="text-gray-500 file:text-white mx-2 block w-[240px] border-2 border-[#01b6ee] rounded text-sm disabled:opacity-50 disabled:pointer-events-none file:bg-[#01b6ee] file:border-0 file:me-2 file:py-2 file:px-1" />
+                                        <input type="file" onChange={handleFileUpload} name="file-input" id="file-input" className="text-gray-500 file:text-white mx-2 block w-[240px] border-2 border-gray-300 rounded text-sm disabled:opacity-50 disabled:pointer-events-none file:bg-[#01b6ee] file:border-0 file:me-2 file:py-2 file:px-1" />
                                     </div>
                                 </div>
                                 <div className="flex pt-4 ">
                                     {/* <div onClick={() => settogglrEdit("hidden")}>Cancel</div> */}
-                                    <button onClick={() => { settogglrEdit("hidden") }} className="mx-2 p-1 border-2 w-28 text-center border-[#01b6ee] rounded-md">Cancel</button>
+                                    <button onClick={() => { settogglrEdit("hidden") }} className="mx-2 p-1 border-2 w-28 text-center border-gray-300 rounded-md">Cancel</button>
                                     <div onClick={handleEditSubmit} className="flex items-center justify-center border-2 ml-[136px] w-28 cursor-pointer text-center bg-[#01b6ee] border-black rounded-md text-white mr-3">Submit</div>
 
                                 </div>
@@ -1210,7 +1210,7 @@ function Pitems(props) {
                     <div className='flex items-center justify-center pr-6'>
                         {localStorage.getItem('type') == "admin" || localStorage.getItem('type') == "User-PR"  || props.data.ProjectLead.split(', ').includes(localStorage.getItem('name')) ?
                             <>
-                                <button onClick={sync} className="border- border-[#01b6ee] rounded-md  mx-2 ">
+                                <button onClick={sync} className="border- border-gray-300 rounded-md  mx-2 ">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 text-[#01b6ee]">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
                                     </svg>

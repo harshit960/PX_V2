@@ -83,13 +83,13 @@ function ProjArchive() {
                                         EDI Message Type
                                     </th>
                                     <th scope="col" class=" bg-[#01b6ee] sticky top-0 px-6 py-3 whitespace-nowrap">
-                                        By Remark
+                                        Status/Next Steps
                                     </th>
                                     <th scope="col" class=" bg-[#01b6ee] sticky top-0 px-6 py-3 whitespace-nowrap">
-                                        Notes
+                                        Internal Notes
                                     </th>
                                     <th scope="col" class=" bg-[#01b6ee] sticky top-0 px-6 py-3 whitespace-nowrap">
-                                    Mapping Specification
+                                        Mapping Specification
                                     </th>
 
                                 </tr>
@@ -105,7 +105,7 @@ function ProjArchive() {
 
                 </div>
             </div>
-                <div className='mt-[20px]'>Total Count: {archive.length}</div>
+            <div className='mt-[20px]'>Total Count: {archive.length}</div>
         </div>
     )
 }
