@@ -560,7 +560,7 @@ function Project() {
                     <select name="cars" onChange={(e) => setProjectType(e.target.value)} id="cars" className='border-2 p-2 border-[#01b6ee] w-52 my-3 rounded'>
                       <option value="" selected className='hidden'>Project Type</option>
                       <option value="New">New</option>
-                      <option value="New">Live</option>
+                      <option value="Live">Live</option>
                       <option value="Upgrade">Upgrade</option>
 
                     </select>
@@ -697,7 +697,7 @@ function Project() {
           {delError}
         </div>
         <div className="mt-5">
-          <div class=" relative h-96 overflow-x-auto rounded">
+          <div class=" relative min-h-96 overflow-x-auto rounded">
             <table class="w-full text-sm text-left rtl:text-right ">
               <thead class="text-xs  uppercase bg-[#01b6ee] text-white font-light">
                 <tr>

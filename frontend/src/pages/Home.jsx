@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useRef } from 'react'
 import Nav from '../components/Nav'
 import OBitems from '../components/OBitems'
 import * as Yup from 'yup';
@@ -15,9 +15,12 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
 import { useLocation } from 'react-router-dom';
+import PdfGenerator from '../components/PdfExp';
 
 let now = dayjs();
 function Home() {
+  const tableRef = useRef(null);
+
     const day = now.format("mmss")
     const token = localStorage.getItem('jwt');
     const [RequestID, setRequestID] = useState(day);
@@ -496,7 +499,7 @@ function Home() {
                                 {errors}
                             </div>
                             <div className="basis-1/2 my-2 flex flex-wrap text-gray-500">
-                                <select  name="cars" onChange={(e) => { setCustomer(e.target.value); }} id="cars" className='border-2 p-2 mx-2 border-gray-300 w-40 my-3 rounded'>
+                                <select name="cars" onChange={(e) => { setCustomer(e.target.value); }} id="cars" className='border-2 p-2 mx-2 border-gray-300 w-40 my-3 rounded'>
                                     <option selected className='hidden'>Select Customer</option>
                                     {Projects.map((item) => {
                                         // Exclude items where GoLive, Production, DevEnvironment, or QAEnvironment is 'Cancelled'
@@ -804,13 +807,13 @@ function Home() {
                 </div>
             </div>
         </div>
-        <div className='flex flex-col h-screen p-16'>
+        <div className='flex flex-col  p-16'>
             <Nav settoggleNewRequest={settoggleNewRequest} expJSON={expJSON} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
             <div className="mt-5 pb-5">
-
-                <div class=" relative h-96 overflow-x-auto rounded">
-                    <table class="table-auto relative w-full text-sm text-left rtl:text-right  ">
+                <PdfGenerator tableRef={tableRef} />
+                <div class=" relative min-h-96 overflow-x-auto rounded">
+                    <table ref={tableRef} class="table-auto relative w-full text-sm text-left rtl:text-right  ">
                         <thead class="text-xs  uppercase bg-[#01b6ee] text-white font-light">
                             <tr>
                                 <th scope="col" class="sticky bg-[#01b6ee] z-30 top-0 px-6 py-3 whitespace-nowrap left-0">
@@ -870,21 +873,21 @@ function Home() {
                             </tr>
                         </thead>
                         <tbody className='' >
-                            {filteredData.length != 0 && filteredData.map((item,index) => {
+                            {filteredData.length != 0 && filteredData.map((item, index) => {
                                 if (localStorage.getItem('type') == "User-OB" || localStorage.getItem('type') == "admin" || localStorage.getItem('type') == "view" || item.IPOwner == localStorage.getItem('name') || item.TPSpecialist == localStorage.getItem('name')) {
 
                                     return <OBitems data={item} Users={Users} key={index} settoggleFileUpload={settoggleFileUpload} setsetTime={setsetTime} fileUploadSync={fileUploadSync} setTime={setTime} fileUploadError={fileUploadError} settogglrEdit={settogglrEdit} seteditdata={seteditdata} />
                                 }
 
-                            }) 
-                            // : OB.map((item) => {
+                            })
+                                // : OB.map((item) => {
 
-                            //     if (localStorage.getItem('type') == "User-OB" || localStorage.getItem('type') == "admin" || localStorage.getItem('type') == "view" || item.IPOwner == localStorage.getItem('name') || item.TPSpecialist == localStorage.getItem('name')) {
+                                //     if (localStorage.getItem('type') == "User-OB" || localStorage.getItem('type') == "admin" || localStorage.getItem('type') == "view" || item.IPOwner == localStorage.getItem('name') || item.TPSpecialist == localStorage.getItem('name')) {
 
-                            //         return <OBitems data={item} Users={Users} settoggleFileUpload={settoggleFileUpload} setsetTime={setsetTime} fileUploadSync={fileUploadSync} setTime={setTime} fileUploadError={fileUploadError} settogglrEdit={settogglrEdit} seteditdata={seteditdata} />
-                            //     }
+                                //         return <OBitems data={item} Users={Users} settoggleFileUpload={settoggleFileUpload} setsetTime={setsetTime} fileUploadSync={fileUploadSync} setTime={setTime} fileUploadError={fileUploadError} settogglrEdit={settogglrEdit} seteditdata={seteditdata} />
+                                //     }
 
-                            // })
+                                // })
                             }
 
 
