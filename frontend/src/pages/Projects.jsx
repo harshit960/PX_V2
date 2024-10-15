@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useRef } from 'react'
 import Nav from '../components/Nav'
 import flatpickr from "flatpickr";
 import dayjs from 'dayjs';
@@ -22,6 +22,7 @@ let now = dayjs();
 function Project() {
   const { OB, setOB } = useOBContext();
 
+  const tableRef = useRef(null);
 
   const [options, setOptions] = useState([]);
   const [selected, setSelected] = useState([]);
@@ -690,15 +691,15 @@ function Project() {
         </div>
       </div>
       <div className='flex flex-col h-screen p-16'>
-        <Nav settoggleNewProject={settoggleNewProject} expJSON={expJSON} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        <Nav tableRef={tableRef}  settoggleNewProject={settoggleNewProject} expJSON={expJSON} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
         <div className="text-xs text-red-500 text-center">
 
           {delError}
         </div>
-        <div className="mt-5">
+        <div className="mt-10">
           <div class=" relative min-h-96 overflow-x-auto rounded">
-            <table class="w-full text-sm text-left rtl:text-right ">
+            <table ref={tableRef} class="w-full text-sm text-left rtl:text-right ">
               <thead class="text-xs  uppercase bg-[#01b6ee] text-white font-light">
                 <tr>
                   <th scope="col" class="bg-[#01b6ee] sticky top-0 px-6 py-3 whitespace-nowrap left-0 z-40">

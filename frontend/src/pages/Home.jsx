@@ -808,10 +808,10 @@ function Home() {
             </div>
         </div>
         <div className='flex flex-col  p-16'>
-            <Nav settoggleNewRequest={settoggleNewRequest} expJSON={expJSON} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+            <Nav settoggleNewRequest={settoggleNewRequest} tableRef={tableRef} expJSON={expJSON} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
-            <div className="mt-5 pb-5">
-                <PdfGenerator tableRef={tableRef} />
+            <div className="mt-10 pb-5">
+                {/* <PdfGenerator tableRef={tableRef} /> */}
                 <div class=" relative min-h-96 overflow-x-auto rounded">
                     <table ref={tableRef} class="table-auto relative w-full text-sm text-left rtl:text-right  ">
                         <thead class="text-xs  uppercase bg-[#01b6ee] text-white font-light">

@@ -6,9 +6,17 @@ import { useOBContext } from '../context/OBProvider';
 import { useProjectsContext } from '../context/ProjectsProvider';
 import { CSVLink } from "react-csv";
 import { jwtDecode } from "jwt-decode";
+import { Popper } from '@mui/base/Popper';
+import { useTheme } from '@mui/system';
+import PdfGenerator from './PdfExp';
+
+function useIsDarkMode() {
+    const theme = useTheme();
+    return theme.palette.mode === 'dark';
+}
 
 function Nav(props) {
-    
+
     const token = localStorage.getItem('jwt');
     const { Users, setUsers } = useUserContext();
     const { OB, setOB } = useOBContext();
@@ -20,7 +28,7 @@ function Nav(props) {
     const [OBList, setOBList] = useState([]);
     let location = useLocation();
     const navigate = useNavigate();
-// for setting localStorage value decoded from jwt for sec
+    // for setting localStorage value decoded from jwt for sec
     useEffect(() => {
         const decoded = jwtDecode(token);
         localStorage.setItem('type', decoded.type)
@@ -203,7 +211,7 @@ function Nav(props) {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, [ref]);
-    
+
     useEffect(() => {
         function handleClickOutside(event) {
             if (ref2.current && !ref2.current.contains(event.target)) {
@@ -219,6 +227,21 @@ function Nav(props) {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, [ref2]);
+
+
+
+    const isDarkMode = useIsDarkMode();
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const handleClick = (event) => {
+        setAnchorEl(anchorEl ? null : event.currentTarget);
+    };
+
+    const open = Boolean(anchorEl);
+    const id = open ? 'simple-popper' : undefined;
+
+
     return (
         <div>
 
@@ -340,27 +363,44 @@ function Nav(props) {
                         </button> : <> </>}
 
 
-                        {location.pathname == "/leaderboard" && localStorage.getItem('type') == "admin"  ?
+                        {location.pathname == "/leaderboard" && localStorage.getItem('type') == "admin" ?
                             <Link to={"/newuser"} onClick={newProject} className="rounded-full border-2 mx-2 flex items-center h-8 w-8 justify-center border-black">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                                 </svg>
 
                             </Link> : <></>}
-                        {location.pathname == "/" || location.pathname == "/projects" ?
-                            <button className="rounded-full border-2 flex items-center h-8 w-8 justify-center border-black mx-2">
-                                <CSVLink data={props.expJSON} filename={"EDIPartnerXchange_export.csv"}>
+                        {location.pathname == "/" || location.pathname == "/projects" ? <>
+                            <button onClick={handleClick} className="rounded-full border-2 flex items-center h-8 w-8 justify-center border-black mx-2">
 
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                                    </svg>
-                                </CSVLink>
+
+
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                                </svg>
 
 
                             </button>
+                            <Popper
+                                id={id}
+                                open={open}
+                                anchorEl={anchorEl}
+                                className={``}
+                            >
+                                <div className="flex space-x-4 z-[200] rounded-lg font-medium font-sans text-sm m-1 p-3 border border-solid border-slate-200  bg-white shadow-md text-slate-900 ">
+                                    <CSVLink data={props.expJSON} filename={"EDIPartnerXchange_export.csv"}>
+                                        CSV Export
+                                    </CSVLink>
+                                    <button className="btn">
+                                        <PdfGenerator tableRef={props.tableRef} />
 
+
+                                    </button>
+
+                                </div>
+                            </Popper></>
                             : <></>}
-                        {location.pathname == "/projects" && ( localStorage.getItem('type') == "admin" || localStorage.getItem('type') == "User-PR") ?
+                        {location.pathname == "/projects" && (localStorage.getItem('type') == "admin" || localStorage.getItem('type') == "User-PR") ?
                             <button onClick={newProject} className="rounded-full mx-2 border-2 flex items-center h-8 w-8 justify-center border-black">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
@@ -407,7 +447,7 @@ function Nav(props) {
                                         </button>
                                     </div>
                                     <div className="text-sm font-light relative whitespace-nowrap overflow-x-auto max-h-[100px] max-w-full scroll-smooth text-left">
-                                        {Notification.map((item,index) => (
+                                        {Notification.map((item, index) => (
                                             <div className='my-1' key={index}>{item.msg}</div>
                                         ))}
                                     </div>

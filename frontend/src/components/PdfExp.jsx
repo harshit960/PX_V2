@@ -47,7 +47,7 @@ const PdfGenerator = (props) => {
 
     return (
         <div>
-            <button onClick={exportTableAsHtml}>Export as html</button>
+            <button onClick={exportTableAsHtml}>HTML Export</button>
 
         </div>
     );
