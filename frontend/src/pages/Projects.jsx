@@ -694,7 +694,7 @@ function Project() {
         <Nav tableRef={tableRef}  settoggleNewProject={settoggleNewProject} expJSON={expJSON} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
         <div className="text-xs text-red-500 text-center">
-
+{/* v2 */}
           {delError}
         </div>
         <div className="mt-10">
