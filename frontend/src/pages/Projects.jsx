@@ -467,8 +467,8 @@ function Project() {
                 <div className="flex mt-5 text-gray-500">
                   <div className="basis-1/2 flex flex-col">
 
-                    <input type="text" value={Cname} onChange={(e) => setCname(e.target.value)} className='border-2 border-[#01b6ee] p-2 w-52 my-3 rounded' placeholder='Customer name' />
-                    {/* <select name="cars" onChange={(e) => setEDIVersion(e.target.value)} id="cars" className='border-2 p-2 border-[#01b6ee] w-52 my-3 rounded'>
+                    <input type="text" value={Cname} onChange={(e) => setCname(e.target.value)} className='border-2 border-gray-300 p-2 w-52 my-3 rounded focus:outline-none focus:ring-0 focus:border-gray-300' placeholder='Customer name' />
+                    {/* <select name="cars" onChange={(e) => setEDIVersion(e.target.value)} id="cars" className='border-2 p-2 border-gray-300 w-52 my-3 rounded'>
                       <option value="" selected className='hidden'>EDI Version</option>
                       <option value="X12 4010">X12 4010</option>
                       <option value="X12 5010">X12 5010</option>
@@ -479,10 +479,11 @@ function Project() {
                       isMulti
                       name="colors"
                       options={[{ value: 'X12 4010', label: 'X12 4010' }, { value: 'X12 5010', label: 'X12 5010' }, { value: 'EDIFACT D-09A', label: 'EDIFACT D-09A' }]}
-                      className="basic-multi-select rounded border-2 border-[#01b6ee] my-3 w-52"
+                      className="basic-multi-select rounded border-2 border-gray-300 my-3 w-52 focus:outline-none focus:ring-0 focus:border-gray-300"
                       classNamePrefix="select"
                       placeholder="EDI Version"
                       isSearchable={false}
+                      styles={{ control: (provided, state) => ({ ...provided, boxShadow: state.isFocused ? "none" : null, borderColor: state.isFocused ? "gray" : provided.borderColor }) }}
                       onChange={(e) => {
                         let x = ""
                         for (let i = 0; i < e.length; i++) {
@@ -492,7 +493,7 @@ function Project() {
                         setSelected(e)
                       }}
                     />
-                    {/* <select onChange={(e) => setProjectLead(e.target.value)} id="cars" className='border-2 p-2 border-[#01b6ee] w-52 my-3 rounded'>
+                    {/* <select onChange={(e) => setProjectLead(e.target.value)} id="cars" className='border-2 p-2 border-gray-300 w-52 my-3 rounded'>
                       <option selected className='hidden'>Project Lead</option>
                       {Users.map((item) => (
 
@@ -513,10 +514,11 @@ function Project() {
                         }
                     }).filter(Boolean)}
                     
-                      className="basic-multi-select rounded border-2 border-[#01b6ee] my-3 w-52"
+                      className="basic-multi-select rounded border-2 border-gray-300 my-3 w-52 focus:outline-none focus:ring-0 focus:border-gray-300"
                       classNamePrefix="select"
                       placeholder="Project Lead"
                       isSearchable={false}
+                      styles={{ control: (provided, state) => ({ ...provided, boxShadow: state.isFocused ? "none" : null, borderColor: state.isFocused ? "gray" : provided.borderColor }) }}
                       onChange={(e) => {
                         let x = ""
                         for (let i = 0; i < e.length; i++) {
@@ -534,31 +536,42 @@ function Project() {
                           var n = dayjs(e);
                           console.log(n.format("ll"));
                           setProjectedGoLive(n.format("ll"))
-                        }} value={ProjectedGoLive} className='border-2 border-[#01b6ee] w-40 my-3 rounded '
-                          slotProps={{
-                            textField: {
-                              placeholder: 'Projected Go Live',
+                        }} value={ProjectedGoLive} className='border-2 border-gray-300 w-40 my-3 rounded focus:outline-none focus:ring-0 focus:border-gray-300'
+                        slotProps={{
+                          textField: {
                               size: 'small',
+
                               inputProps: { // This targets the input element directly
-                                style: {
-                                  fontSize: 16, // This reduces the font size
-                                },
+                                  style: {
+                                      fontSize: 16, // This reduces the font size
+                                  },
                               }, // This reduces the height of the TextField
-                            }
-                          }}
-                          sx={{
-                            width: 208,
-                            border: 1,
-                            borderColor: "#01b6ee",
-                            fontSize: 2, // This reduces the font size
-                            lineHeight: 4,
-                            padding: 0,
-                            margin: 0,
-                          }} />
+                          }
+                      }}
+                      sx={{
+                          width: 208,
+                          '& .MuiOutlinedInput-root': {
+                              '& fieldset': {
+                                  borderColor: 'transparent', // No border by default
+                              },
+                              '&:hover fieldset': {
+                                  borderColor: 'transparent', // No border on hover
+                              },
+                              '&.Mui-focused fieldset': {
+                                  borderColor: 'transparent', // No border on focus
+                              },
+                          },
+                          border: 2,
+                          borderColor: "#d1d5db ",
+                          fontSize: 2, // This reduces the font size
+                          lineHeight: 4,
+                          padding: 0,
+                          margin: 0,
+                      }}  />
                       </LocalizationProvider>
 
                     </div>
-                    <select name="cars" onChange={(e) => setProjectType(e.target.value)} id="cars" className='border-2 p-2 border-[#01b6ee] w-52 my-3 rounded'>
+                    <select name="cars" onChange={(e) => setProjectType(e.target.value)} id="cars" className='border-2 p-2 focus:outline-none focus:ring-0 focus:border-gray-300 border-gray-300 w-52 my-3 rounded'>
                       <option value="" selected className='hidden'>Project Type</option>
                       <option value="New">New</option>
                       <option value="Live">Live</option>
@@ -568,8 +581,8 @@ function Project() {
                   </div>
                   <div className="basis-1/2 flex flex-col">
 
-                    {/* <input type="text" onChange={(e) => setCCode(e.target.value)} value={CCode} className='border-2 border-[#01b6ee] p-2 w-52 my-3 rounded' placeholder='Customer Code' /> */}
-                    <div className="border-[#01b6ee] my-3  w-52 border-2 rounded">
+                    {/* <input type="text" onChange={(e) => setCCode(e.target.value)} value={CCode} className='border-2 border-gray-300 p-2 w-52 my-3 rounded' placeholder='Customer Code' /> */}
+                    <div className="border-gray-300 my-3  w-52 border-2 rounded">
 
                       <ReactTags
                         inline
@@ -600,10 +613,11 @@ function Project() {
                       isMulti
                       name="colors"
                       options={options}
-                      className="basic-multi-select rounded border-2 border-[#01b6ee] my-3 w-52"
+                      className="basic-multi-select rounded border-2 border-gray-300 my-3 w-52 focus:outline-none focus:ring-0 focus:border-gray-300"
                       classNamePrefix="select"
                       placeholder="EDI Message Type"
                       isSearchable={false}
+                      styles={{ control: (provided, state) => ({ ...provided, boxShadow: state.isFocused ? "none" : null, borderColor: state.isFocused ? "gray" : provided.borderColor }) }}
                       onChange={(e) => {
                         let x = ""
                         for (let i = 0; i < e.length; i++) {
@@ -616,7 +630,7 @@ function Project() {
                     {/* <input type='file' onChange={handleFileUpload} /> */}
 
                     {/* <label for="file-input" class="sr-only">Upload Mapping Documents</label> */}
-                    <select name="cars" onChange={(e) => setDeveloper(e.target.value)} id="cars" className='border-2 p-2 border-[#01b6ee] w-52 my-3 rounded'>
+                    <select name="cars" onChange={(e) => setDeveloper(e.target.value)} id="cars" className='border-2 p-2 focus:outline-none focus:ring-0 focus:border-gray-300 border-gray-300 w-52 my-3 rounded'>
                       <option value="" selected className='hidden'>Mapper</option>
                       {Users.map((item) => (<>
                         {item.Developer == "Yes" ?
@@ -628,7 +642,7 @@ function Project() {
                       </>))}
 
                     </select>
-                    <select name="cars" onChange={(e) => setImplementor(e.target.value)} id="cars" className='border-2 p-2 border-[#01b6ee] w-52 my-3 rounded'>
+                    <select name="cars" onChange={(e) => setImplementor(e.target.value)} id="cars" className='border-2 p-2 focus:outline-none focus:ring-0 focus:border-gray-300 border-gray-300 w-52 my-3 rounded'>
                       <option value="" selected className='hidden'>Implementor</option>
                       {Users.map((item) => (<>
                         {item.Implementor == "Yes" ?
@@ -641,12 +655,12 @@ function Project() {
 
                     </select>
 
-                    <input type="file" onChange={handleFileUpload} name="file-input" id="file-input" className="text-gray-500 file:text-white my-3 block w-52 border-2 border-[#01b6ee] rounded text-sm disabled:opacity-50 disabled:pointer-events-none file:bg-[#01b6ee] file:border-0 file:me-2 file:py-2 file:px-1" />
+                    <input type="file" onChange={handleFileUpload} name="file-input" id="file-input" className="text-gray-500 file:text-white my-3 block w-52 border-2 border-gray-300 rounded text-sm disabled:opacity-50 disabled:pointer-events-none file:bg-[#01b6ee] file:border-0 file:me-2 file:py-2 file:px-1" />
                   </div>
                 </div>
                 <div className='flex mt-5'>
 
-                  <button onClick={() => { window.location.reload() }} className=" p-1 border-2 w-28 text-center border-[#01b6ee] rounded-md">Cancel</button>
+                  <button onClick={() => { window.location.reload() }} className=" p-1 border-2 w-28 text-center border-gray-300 rounded-md">Cancel</button>
 
 
                   <button onClick={handleSubmit} className="border-2 w-28 mx-14 text-center bg-[#01b6ee] border-black rounded-md text-white">Submit</button>
@@ -667,7 +681,7 @@ function Project() {
               <div className="text-xs mt-3 text-[#E84500]">
                 Note: Ensure that the document contains all the necessary details required for the trading partner setup.
               </div>
-              <div className="border mt-4 p-3 w-60 self-center rounded-lg border-[#01b6ee] flex items-center justify-center">
+              <div className="border mt-4 p-3 w-60 self-center rounded-lg border-gray-300 flex items-center justify-center">
                 <svg width="25" height="18" viewBox="0 0 25 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12.5052 17.3636V10M12.5052 10L16.1002 12.8636M12.5052 10L8.91016 12.8636" stroke="#01b6ee" stroke-linecap="round" stroke-linejoin="round" />
                   <path d="M20.7227 13.7696C22.257 13.2908 23.8042 12.2 23.8042 10C23.8042 6.72727 20.3804 5.90909 18.6684 5.90909C18.6684 4.27273 18.6684 1 12.5056 1C6.34274 1 6.34274 4.27273 6.34274 5.90909C4.63083 5.90909 1.20703 6.72727 1.20703 10C1.20703 12.2 2.75419 13.2908 4.28846 13.7696" stroke="#01b6ee" stroke-linecap="round" stroke-linejoin="round" />
@@ -681,7 +695,7 @@ function Project() {
                 </form>
               </div>
               <div className="flex justify-around mt-6">
-                <div className="border h-8 w-24 flex items-center justify-center rounded-lg border-[#01b6ee] text-[#01b6ee]">Cancel</div>
+                <div className="border h-8 w-24 flex items-center justify-center rounded-lg border-gray-300 text-[#01b6ee]">Cancel</div>
 
                 <div className="border h-8 w-24 flex items-center justify-center rounded-lg bg-[#01b6ee] text-white">Submit</div>
               </div>
@@ -698,7 +712,7 @@ function Project() {
           {delError}
         </div>
         <div className="mt-10">
-          <div class=" relative min-h-96 overflow-x-auto rounded">
+          <div class=" relative h-[500px] overflow-x-auto rounded">
             <table ref={tableRef} class="w-full text-sm text-left rtl:text-right ">
               <thead class="text-xs  uppercase bg-[#01b6ee] text-white font-light">
                 <tr>

@@ -40,7 +40,7 @@ export default function NewUser() {
             type: type,
             username: username,
             email: email,
-            Avatar:Avatar
+            Avatar: Avatar
         }, { abortEarly: false })
             .then(() => {
                 toast("New User", {
@@ -62,7 +62,7 @@ export default function NewUser() {
                         type: type,
                         username: username,
                         email: email,
-                        Avatar:Avatar
+                        Avatar: Avatar
                     }),
                     headers: {
                         'Content-type': 'application/json; charset=UTF-8',
@@ -115,7 +115,7 @@ export default function NewUser() {
         { "value": "Avatar (29).jpg", "label": "Avatar (29)", "image": "/Avatar/Avatar (29).jpg" },
         { "value": "Avatar (30).jpg", "label": "Avatar (30)", "image": "/Avatar/Avatar (30).jpg" }
     ]
-;
+        ;
 
     const formatOptionLabel = ({ value, label, image }) => (
         <div className='flex items-center '>
@@ -136,17 +136,16 @@ export default function NewUser() {
                         <div className="text-2xl font-bold"> Create User</div>
 
                     </div>
-                    <div className="xl:mx-auto xl:w-[352px] xl:max-w-sm 2xl:max-w-md">
+                    <div className="xl:mx-auto xl:w-[652px] xl:max-w-sm 2xl:max-w-md">
 
                         <form action="#" method="POST" className="mt-8" >
-                            <div className="space-y-5">
                                 <div className="text-red-500">
                                     {errors}
                                 </div>
                                 <div>
-                                    <div className="mt-1">
+                                    <div className="my-4">
                                         <input
-                                            className="flex h-10 w-full rounded border border-[#01b6ee]  bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                                            className="flex h-10 w-full rounded border border-gray-300  bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                                             type="text"
                                             placeholder="User ID"
                                             value={username}
@@ -154,10 +153,11 @@ export default function NewUser() {
                                         ></input>
                                     </div>
                                 </div>
+                            <div className="grid grid-cols-2 gap-4">
                                 <div>
                                     <div className="mt-1">
                                         <input
-                                            className="flex h-10 w-full rounded border border-[#01b6ee]  bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                                            className="flex h-10 w-full rounded border border-gray-300  bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                                             type="text"
                                             placeholder="Name"
                                             value={name}
@@ -168,7 +168,7 @@ export default function NewUser() {
                                 <div>
                                     <div className="mt-1">
                                         <input
-                                            className="flex h-10 w-full rounded border border-[#01b6ee]  bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                                            className="flex h-10 w-full rounded border border-gray-300  bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                                             type="text"
                                             placeholder="Email"
                                             value={email}
@@ -185,7 +185,7 @@ export default function NewUser() {
                                     </div>
                                     <div className="mt-1">
                                         <input
-                                            className="flex h-10 w-full rounded border border-[#01b6ee] bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                                            className="flex h-10 w-full rounded border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                                             type="password"
                                             placeholder="Password"
                                             value={password}
@@ -202,7 +202,7 @@ export default function NewUser() {
                                     </div>
                                     <div className="mt-1">
                                         <input
-                                            className="flex h-10 w-full rounded border border-[#01b6ee] bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                                            className="flex h-10 w-full rounded border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                                             type="password"
                                             placeholder="Confirm Password"
                                             value={confirmPassword}
@@ -211,17 +211,19 @@ export default function NewUser() {
                                     </div>
                                 </div>
                                 <Select
-                                    className="basic-multi-select rounded z-10 border-2 border-[#01b6ee] my-3 "
+                                    className="basic-multi-select rounded z-10 border-2 border-gray-300 my-2 "
                                     options={countries}
                                     formatOptionLabel={formatOptionLabel}
                                     isSearchable={false}
                                     placeholder="Select Avatar"
-                                    onChange={(e)=>setAvatar(e.value)}
+                                    onChange={(e) => setAvatar(e.value)}
+                      styles={{ control: (provided, state) => ({ ...provided, boxShadow: state.isFocused ? "none" : null, borderColor: state.isFocused ? "gray" : provided.borderColor }) }}
+
                                 />
                                 <div className='w-full'>
 
                                     <select
-                                        className="mt-2 flex h-10 w-full rounded border-2 border-[#01b6ee] bg-transparent px-5 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                                        className="mt-2 flex h-10 w-full rounded border-2 focus:outline-none focus:ring-0 focus:border-gray-300 border-gray-300 bg-transparent px-5 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                                         onChange={(e) => settype(e.target.value)}
                                     >
                                         <option className='hidden' selected>User Type</option>
@@ -243,16 +245,16 @@ export default function NewUser() {
 
                                     </select>
                                 </div>
-                                <div className='flex w-full items-center justify-center pb-96'>
-                                    <button
-                                        type="button"
-                                        onClick={createUser}
-                                        className="inline-flex w-1/2 items-center justify-center rounded bg-[#01b6ee]  py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
+                            </div>
+                            <div className='flex w-full items-center justify-center pb- mt-8'>
+                                <button
+                                    type="button"
+                                    onClick={createUser}
+                                    className="inline-flex w-1/2 items-center justify-center rounded bg-[#01b6ee]  py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
 
-                                    >
-                                        Create Account
-                                    </button>
-                                </div>
+                                >
+                                    Create Account
+                                </button>
                             </div>
                         </form>
 

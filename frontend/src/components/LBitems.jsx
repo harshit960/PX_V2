@@ -303,8 +303,8 @@ function LBitems(props) {
                 </div>
 
             </th>
-            <th className=" font-normal text-center duration-1000 " >
-                <div className="flex items-center justify-center" onMouseEnter={handleHoverSet} onMouseLeave={handleHoverSet0}>
+            {/* <th className=" font-normal text-center duration-1000 " >
+                <div className="flex items-center justify-center" >
 
                     {props.data.TopPerformer == "Yes" ?
                         <img src="\Performer_Icon.png" alt="" srcSet="" className='w-16 rounded-md ' />
@@ -312,7 +312,7 @@ function LBitems(props) {
                             {props.index + 1}
                         </>}
                 </div>
-            </th>
+            </th> */}
             <div className={profileBox}>
 
                 <div className="absolute drop-shadow-xl	bg-white p-5 rounded -translate-x-16 translate-y-16">
@@ -332,13 +332,13 @@ function LBitems(props) {
                     </div>
                 </div>
             </div>
-            <td className="px-6 py-4 flex items-center justify-start">
+            <td className="px-6 py-4 flex items-center justify-start" onMouseEnter={handleHoverSet} onMouseLeave={handleHoverSet0}>
                 <img src={`Avatar/` + props.data.pp} alt="" className='rounded-full w-12 h-12' />
                 <div className='ml-3 '>{props.data.user}</div>
 
             </td>
             <td className=" py-4">
-                <div className="flex items-center justify-center">
+                <div className="flex items-center justify-left">
                     <div>
                         <span>{String(OBList.length).padStart(2, '0')}/</span>
                         <input type="text" disabled={disabled} value={onboard_capacity} className='text-sm w-8 border-0 p-1 ' onChange={(e) => setonboard_capacity(e.target.value)} />
@@ -347,7 +347,7 @@ function LBitems(props) {
 
             </td>
             <td className=" py-4">
-                <div className="flex justify-center">
+                <div className="flex justify-left">
                     <div>
                         <span>{String(projList.length).padStart(2, '0')}/</span>
                         <input type="text" disabled={disabled} value={projectCapacity} className='text-sm w-8 border-0 p-1' onChange={(e) => setprojectCapacity(e.target.value)} />

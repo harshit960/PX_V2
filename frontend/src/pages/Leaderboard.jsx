@@ -333,19 +333,19 @@ function Leaderboard() {
                                         <th className='sticky bg-[#01b6ee] top-0 px-4 '>
 
                                         </th>
-                                        <th scope="col" className="sticky bg-[#01b6ee] top-0 pr-0 py-3">
+                                        {/* <th scope="col" className="sticky bg-[#01b6ee] top-0 pr-0 py-3">
                                             <div className="flex items-center justify-center">
 
                                                No.
                                             </div>
-                                        </th>
+                                        </th> */}
                                         <th scope="col" className="sticky bg-[#01b6ee] top-0 text-left py-3 px-7 whitespace-nowrap">
                                             Team Members
                                         </th>
-                                        <th scope="col" className="sticky bg-[#01b6ee] top-0  py-3 text-center whitespace-nowrap">
+                                        <th scope="col" className="sticky bg-[#01b6ee] top-0  py-3 text-left whitespace-nowrap">
                                             Onboarding Capacity
                                         </th>
-                                        <th scope="col" className="sticky bg-[#01b6ee] top-0 px-4 py-3 text-center whitespace-nowrap">
+                                        <th scope="col" className="sticky bg-[#01b6ee] top-0  py-3 text-left whitespace-nowrap">
                                             Project Capacity
                                         </th>
                                         {/* <th scope="col" className="sticky bg-[#01b6ee] top-0 px-7 py-3 text-left whitespace-nowrap">

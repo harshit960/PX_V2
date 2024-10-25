@@ -255,32 +255,32 @@ function Nav(props) {
 
                             <div className="absolute flex z-[45] w-48 bg-white font-semibold rounder flex-col border-2 p-4 text-sm pb-8">
                                 {location.pathname == "/" || location.pathname == "/archive" ?
-                                    <div className="flex items-center h-8 ">
+                                    <div className="flex items-center h-8 hover:text-[#01b6ee]">
                                         <span className="relative rounded-full h-2 w-2 mr-5 bg-[#01b6ee]"></span>
                                         <Link to="/" className=" ">Onboarding</Link>
                                     </div>
                                     :
-                                    <div className="flex items-center h-8 ">
-                                        <span className="relative rounded-full h-2 w-2 mr-5 "></span>
+                                    <div className="flex items-center h-8 hover:text-[#01b6ee]">
+                                        <span className="relative rounded-full h-2 w-2 mr-5 hover:text-[#01b6ee]"></span>
                                         <Link to="/" className=" ">Onboarding</Link>
                                     </div>}
                                 {location.pathname == "/projects" || location.pathname == "/projects/archive" ?
-                                    <div className="flex items-center h-8 ">
-                                        <span className="relative rounded-full h-2 w-2 mr-5 bg-[#01b6ee]"></span>
+                                    <div className="flex items-center h-8 hover:text-[#01b6ee]">
+                                        <span className="relative rounded-full h-2 w-2 mr-5 bg-[#01b6ee] "></span>
                                         <Link to="/projects" className=" ">Projects</Link>
                                     </div>
                                     :
-                                    <div className="flex items-center h-8 ">
+                                    <div className="flex items-center h-8 hover:text-[#01b6ee]">
                                         <span className="relative rounded-full h-2 w-2 mr-5 "></span>
                                         <Link to="/projects" className=" ">Projects</Link>
                                     </div>}
                                 {location.pathname == "/leaderboard" || location.pathname == "/leaderboard/archive" ?
-                                    <div className="flex items-center h-8 ">
+                                    <div className="flex items-center h-8 hover:text-[#01b6ee]">
                                         <span className="relative rounded-full h-2 w-2 mr-5 bg-[#01b6ee]"></span>
                                         <a href="/leaderboard" className=" ">Leaderboard</a>
                                     </div>
                                     :
-                                    <div className="flex items-center h-8 ">
+                                    <div className="flex items-center h-8 hover:text-[#01b6ee]">
                                         <span className="relative rounded-full h-2 w-2 mr-5 "></span>
                                         <a href="/leaderboard" className=" ">Leaderboard</a>
                                     </div>}
@@ -294,7 +294,7 @@ function Nav(props) {
                                         <span className="relative rounded-full h-2 w-2 mr-5 "></span>
                                         <Link to="/calendar" className=" ">Calendar</Link>
                                     </div>} */}
-                                <button onClick={() => { localStorage.clear(); navigate("/login") }} className="text-left ml-[29px] h-8 text-red-500">Logout</button>
+                                <button onClick={() => { localStorage.clear(); navigate("/login") }} className="text-left ml-[29px] h-8 text-red-500 hover:text-blasck">Logout</button>
                             </div>
                         </div>
                     </div>
@@ -389,9 +389,12 @@ function Nav(props) {
                             >
                                 <div className="flex space-x-4 z-[200] rounded-lg font-medium font-sans text-sm m-1 p-3 border border-solid border-slate-200  bg-white shadow-md text-slate-900 ">
                                     <CSVLink data={props.expJSON} filename={"EDIPartnerXchange_export.csv"}>
+                                        <div className="hover:text-[#01b6ee]">
+
                                         CSV Export
+                                        </div>
                                     </CSVLink>
-                                    <button className="btn">
+                                    <button className="btn hover:text-[#01b6ee]">
                                         <PdfGenerator tableRef={props.tableRef} />
 
 

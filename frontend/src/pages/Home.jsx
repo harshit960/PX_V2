@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useRef } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import Nav from '../components/Nav'
 import OBitems from '../components/OBitems'
 import * as Yup from 'yup';
@@ -19,7 +19,7 @@ import PdfGenerator from '../components/PdfExp';
 
 let now = dayjs();
 function Home() {
-  const tableRef = useRef(null);
+    const tableRef = useRef(null);
 
     const day = now.format("mmss")
     const token = localStorage.getItem('jwt');
@@ -499,7 +499,7 @@ function Home() {
                                 {errors}
                             </div>
                             <div className="basis-1/2 my-2 flex flex-wrap text-gray-500">
-                                <select name="cars" onChange={(e) => { setCustomer(e.target.value); }} id="cars" className='border-2 p-2 mx-2 border-gray-300 w-40 my-3 rounded'>
+                                <select name="cars" onChange={(e) => { setCustomer(e.target.value); }} id="cars" className='focus:outline-none focus:ring-0 focus:border-gray-300 border-2 p-2 mx-2 border-gray-300 w-40 my-3 rounded'>
                                     <option selected className='hidden'>Select Customer</option>
                                     {Projects.map((item) => {
                                         // Exclude items where GoLive, Production, DevEnvironment, or QAEnvironment is 'Cancelled'
@@ -521,7 +521,7 @@ function Home() {
 
 
                                 </select>
-                                <select type="text" onChange={(e) => setPhase(e.target.value)} className='border-2 border-gray-300 p-2 mx-2 w-40 my-3 rounded' placeholder='Phase' >
+                                <select type="text" onChange={(e) => setPhase(e.target.value)} className='focus:outline-none focus:ring-0 focus:border-gray-300 border-2 border-gray-300 p-2 mx-2 w-40 my-3 rounded' placeholder='Phase' >
                                     <option selected className='hidden'>Select Phase</option>
                                     <option >Phase 1</option>
                                     <option >Phase 2</option>
@@ -538,7 +538,7 @@ function Home() {
                                         isMulti
                                         name="colors"
                                         options={options}
-                                        className="basic-multi-select border-2 border-gray-300 w-40 rounded"
+                                        className="focus:outline-none focus:ring-0 focus:border-gray-300 basic-multi-select border-2 border-gray-300 w-40 rounded"
                                         classNamePrefix="select"
                                         placeholder="Select EDI Message type"
                                         value={selected}
@@ -570,9 +570,9 @@ function Home() {
                                         }}
                                     />
                                 </div>
-                                <input type="text" value={CarrierName} onChange={(e) => setCarrierName(e.target.value)} className='border-2 border-gray-300 p-2 mx-2 w-40 my-3 rounded' placeholder='CarrierName' />
-                                <input type="text" value={TicketNumber} onChange={(e) => setTicketNumber(e.target.value)} className='border-2 border-gray-300 p-2 mx-2 w-40 my-3 rounded' placeholder='TicketNumber' />
-                                <input type="text" value={SCAC} onChange={(e) => setSCAC(e.target.value)} className='border-2 border-gray-300 p-2 mx-2 w-40 my-3 rounded' placeholder='SCAC' />
+                                <input type="text" value={CarrierName} onChange={(e) => setCarrierName(e.target.value)} className='focus:outline-none focus:ring-0 focus:border-gray-300 border-2 border-gray-300 p-2 mx-2 w-40 my-3 rounded' placeholder='CarrierName' />
+                                <input type="text" value={TicketNumber} onChange={(e) => setTicketNumber(e.target.value)} className='focus:outline-none focus:ring-0 focus:border-gray-300 border-2 border-gray-300 p-2 mx-2 w-40 my-3 rounded' placeholder='TicketNumber' />
+                                <input type="text" value={SCAC} onChange={(e) => setSCAC(e.target.value)} className='focus:outline-none focus:ring-0 focus:border-gray-300 border-2 border-gray-300 p-2 mx-2 w-40 my-3 rounded' placeholder='SCAC' />
                                 {/* <input type="text" value={RequestID} onChange={(e) => setCname(e.target.value)} className='border-2 border-[#01b6ee] p-2 w-40 my-3 rounded' placeholder='Customer name' /> */}
                             </div>
                             <div className="flex my-1">
@@ -591,7 +591,7 @@ function Home() {
         <div className={togglrEdit}>
             <div className=" h-screen w-screen fixed bg-black bg-opacity-20 backdrop-blur-sm z-50 transition-opacity	duration-700">
                 <div className="flex flex-col h-screen items-center justify-center ">
-                    <form encType="multipart/form-data" className='w-[580px]'>
+                    <form encType="multipart/form-data" className='w-[580px] focus:outline-none focus:ring-0'>
 
                         <div className="bg-white   rounded-md p-8 flex flex-col ">
                             <div className="font-bold text-xl">
@@ -609,12 +609,12 @@ function Home() {
                                 <div className='flex  pt-2 flex-col'>
 
                                     <label htmlFor="" className=' mx-2'>Carrier Name</label>
-                                    <input type="text" onChange={(e) => seteCarrierName(e.target.value)} className='border-2 border-[#01b6ee] p-2 mx-2 w-60  rounded' placeholder={editdata.CarrierName} value={eCarrierName} />
+                                    <input type="text" onChange={(e) => seteCarrierName(e.target.value)} className='focus:outline-none focus:ring-0 focus:border-gray-300 border-2 border-gray-300 p-2 mx-2 w-60  rounded' placeholder={editdata.CarrierName} value={eCarrierName} />
                                 </div>
                                 <div className='flex flex-col'>
 
                                     <label htmlFor="" className='pt-2 mx-2'>SCAC</label>
-                                    <input type="text" onChange={(e) => seteSCAC(e.target.value)} className='border-2 border-[#01b6ee] p-2 mx-2 w-60  rounded' value={eSCAC} />
+                                    <input type="text" onChange={(e) => seteSCAC(e.target.value)} className='focus:outline-none focus:ring-0 focus:border-gray-300 border-2 border-gray-300 p-2 mx-2 w-60  rounded' value={eSCAC} />
                                 </div>
 
                                 {localStorage.getItem('type') == "admin" || localStorage.getItem('type') == "User-OB" ?
@@ -622,7 +622,7 @@ function Home() {
                                         <div className='flex flex-col'>
 
                                             <label htmlFor="" className='pt-2 mx-2'>Ticket Number</label>
-                                            <input type="text" onChange={(e) => seteTicketNumber(e.target.value)} className='border-2 border-[#01b6ee] p-2 mx-2 w-60  rounded' value={eTicketNumber} />
+                                            <input type="text" onChange={(e) => seteTicketNumber(e.target.value)} className='focus:outline-none focus:ring-0 focus:border-gray-300 border-2 border-gray-300 p-2 mx-2 w-60  rounded' value={eTicketNumber} />
                                         </div>
                                         <div className='mt-2'>
 
@@ -639,28 +639,57 @@ function Home() {
                                                             seteTPS(n.format("ll"))
                                                         }}
                                                         // value={eTPS}
-                                                        className='border-2 border-[#01b6ee] p-2  w-60 my-3 rounded '
+                                                        className='border-2 border-gray-300 p-2  w-60 my-3 rounded focus:outline-none focus:ring-0 focus:border-gray-300'
                                                         slotProps={{
                                                             textField: {
                                                                 placeholder: `${editdata.TradingPartnerSetup}`,
                                                                 size: 'small',
 
-                                                                inputProps: { // This targets the input element directly
-                                                                    style: {
-                                                                        fontSize: 16, // This reduces the font size
+                                                                InputProps: {
+                                                                    sx: {
+                                                                        border: 0, // Initial border
+                                                                        borderColor: '#d1d5db ', // Removes border on hover
+                                                                        '&:hover': {
+                                                                            border: 0,
+                                                                        },
+                                                                        '&.Mui-focused': {
+                                                                            border: 0,
+                                                                            borderColor: 'transparent', // Removes border on focus
+                                                                            outline: 'none',
+                                                                            boxShadow: 'none',
+                                                                        },
                                                                     },
+                                                                    inputProps: {
+                                                                        style: {
+                                                                            fontSize: 16, // Font size inside input
+                                                                        },
+                                                                    },
+
+
                                                                 }, // This reduces the height of the TextField
                                                             }
                                                         }}
                                                         sx={{
                                                             width: 240,
-                                                            border: 1,
-                                                            borderColor: "#01b6ee",
+                                                            '& .MuiOutlinedInput-root': {
+                                                                '& fieldset': {
+                                                                    borderColor: 'transparent', // No border by default
+                                                                },
+                                                                '&:hover fieldset': {
+                                                                    borderColor: 'transparent', // No border on hover
+                                                                },
+                                                                '&.Mui-focused fieldset': {
+                                                                    borderColor: 'transparent', // No border on focus
+                                                                },
+                                                            },
+                                                            border: 2,
+                                                            borderColor: "#d1d5db ",
                                                             fontSize: 2, // This reduces the font size
                                                             lineHeight: 4,
                                                             padding: 0,
                                                             margin: 0,
-                                                        }} />
+                                                        }
+                                                        } />
                                                 </LocalizationProvider>
                                             </div>
                                         </div>
@@ -692,13 +721,25 @@ function Home() {
                                                         }}
                                                         sx={{
                                                             width: 240,
-                                                            border: 1,
-                                                            borderColor: "#01b6ee",
+                                                            '& .MuiOutlinedInput-root': {
+                                                                '& fieldset': {
+                                                                    borderColor: 'transparent', // No border by default
+                                                                },
+                                                                '&:hover fieldset': {
+                                                                    borderColor: 'transparent', // No border on hover
+                                                                },
+                                                                '&.Mui-focused fieldset': {
+                                                                    borderColor: 'transparent', // No border on focus
+                                                                },
+                                                            },
+                                                            border: 2,
+                                                            borderColor: "#d1d5db ",
                                                             fontSize: 2, // This reduces the font size
                                                             lineHeight: 4,
                                                             padding: 0,
                                                             margin: 0,
-                                                        }} />
+                                                        }
+                                                        } />
                                                 </LocalizationProvider>
                                             </div></div>
                                         <div className='mt-2'>
@@ -728,8 +769,19 @@ function Home() {
                                                         }}
                                                         sx={{
                                                             width: 240,
-                                                            border: 1,
-                                                            borderColor: "#01b6ee",
+                                                            '& .MuiOutlinedInput-root': {
+                                                                '& fieldset': {
+                                                                    borderColor: 'transparent', // No border by default
+                                                                },
+                                                                '&:hover fieldset': {
+                                                                    borderColor: 'transparent', // No border on hover
+                                                                },
+                                                                '&.Mui-focused fieldset': {
+                                                                    borderColor: 'transparent', // No border on focus
+                                                                },
+                                                            },
+                                                            border: 2,
+                                                            borderColor: "#d1d5db ",
                                                             fontSize: 2, // This reduces the font size
                                                             lineHeight: 4,
                                                             padding: 0,
@@ -781,8 +833,19 @@ function Home() {
                                                             }}
                                                             sx={{
                                                                 width: 240,
-                                                                border: 1,
-                                                                borderColor: "#01b6ee",
+                                                                '& .MuiOutlinedInput-root': {
+                                                                    '& fieldset': {
+                                                                        borderColor: 'transparent', // No border by default
+                                                                    },
+                                                                    '&:hover fieldset': {
+                                                                        borderColor: 'transparent', // No border on hover
+                                                                    },
+                                                                    '&.Mui-focused fieldset': {
+                                                                        borderColor: 'transparent', // No border on focus
+                                                                    },
+                                                                },
+                                                                border: 2,
+                                                                borderColor: "#d1d5db ",
                                                                 fontSize: 2, // This reduces the font size
                                                                 lineHeight: 4,
                                                                 padding: 0,
@@ -812,7 +875,7 @@ function Home() {
 
             <div className="mt-10 pb-5">
                 {/* <PdfGenerator tableRef={tableRef} /> */}
-                <div class=" relative min-h-96 overflow-x-auto rounded">
+                <div class=" relative h-[500px] overflow-x-auto rounded">
                     <table ref={tableRef} class="table-auto relative w-full text-sm text-left rtl:text-right  ">
                         <thead class="text-xs  uppercase bg-[#01b6ee] text-white font-light">
                             <tr>

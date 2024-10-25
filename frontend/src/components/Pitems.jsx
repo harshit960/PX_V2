@@ -583,9 +583,9 @@ function Pitems(props) {
             <div className={togglrEdit}>
                 <div className=" h-screen w-screen fixed bg-black bg-opacity-20 backdrop-blur-sm z-50 transition-opacity	duration-700">
                     <div className="flex flex-col h-screen items-center justify-center ">
-                        <form enctype="multipart/form-data" className='w-[600px] overflow-auto'>
+                        <form enctype="multipart/form-data" className='w-[600px]  overflow-'>
 
-                            <div className="bg-white   rounded-md p-8 flex flex-col ">
+                            <div className="bg-white scale-75   rounded-md p-8 flex flex-col ">
                                 <div className="font-bold text-xl">
                                     Edit Request
                                 </div>
@@ -601,12 +601,12 @@ function Pitems(props) {
                                     <div className='flex  pt-2 flex-col'>
 
                                         <label htmlFor="" className=' mx-2'>Customer</label>
-                                        <input type="text" onChange={(e) => seteditCustomer(dayjs().format("mmss") + e.target.value)} placeholder={editCustomer.slice(4)} className='border-2 border-gray-300 p-2 mx-2 w-60  rounded' />
+                                        <input type="text" onChange={(e) => seteditCustomer(dayjs().format("mmss") + e.target.value)} placeholder={editCustomer.slice(4)} className='border-2 border-gray-300 p-2 mx-2 w-60  rounded focus:outline-none focus:ring-0 focus:border-gray-300' />
                                     </div>
                                     <div className='flex  pt-2 flex-col'>
 
                                         <label htmlFor="" className=' mx-2'>Customer Code</label>
-                                        <input type="text" onChange={(e) => seteditCC(e.target.value)} value={editCC} className='border-2 border-gray-300 p-2 mx-2 w-60  rounded' />
+                                        <input type="text" onChange={(e) => seteditCC(e.target.value)} value={editCC} className='border-2 border-gray-300 p-2 mx-2 w-60  rounded focus:outline-none focus:ring-0 focus:border-gray-300' />
                                     </div>
                                     <div className='flex  pt-2 flex-col'>
 
@@ -622,7 +622,7 @@ function Pitems(props) {
                                             isMulti
                                             name="colors"
                                             options={[{ value: 'X12 4010', label: 'X12 4010' }, { value: 'X12 5010', label: 'X12 5010' }, { value: 'EDIFACT D-09A', label: 'EDIFACT D-09A' }]}
-                                            className="basic-multi-select rounded border-2 border-gray-300 mx-2 w-[240px]"
+                                            className="basic-multi-select rounded border-2 border-gray-300 mx-2 w-[240px] focus:outline-none focus:ring-0 focus:border-gray-300"
                                             classNamePrefix="select"
                                             placeholder={props.data.EDIVersion.slice(1)}
                                             isSearchable={false}
@@ -654,7 +654,7 @@ function Pitems(props) {
                                             isMulti
                                             name="colors"
                                             options={options}
-                                            className="basic-multi-select rounded border-2 border-gray-300 mx-2 w-[240px]"
+                                            className="basic-multi-select rounded border-2 border-gray-300 mx-2 w-[240px] focus:outline-none focus:ring-0 focus:border-gray-300"
                                             classNamePrefix="select"
                                             placeholder={props.data.EDIMessageType.slice(1)}
                                             isSearchable={false}
@@ -687,7 +687,28 @@ function Pitems(props) {
                                                         seteditPGOLive(n.format("ll"))
                                                     }}
                                                     // value={editPGOLive}
-                                                    className='border-2 border-gray-300 p-2  w-60 my-3 rounded '
+                                                    className='border-2 border-gray-300 p-2  w-60 my-3 rounded focus:outline-none focus:ring-0 focus:border-gray-300'
+                                                    
+                                                    sx={{
+                                                        width: 240,
+                                                        '& .MuiOutlinedInput-root': {
+                                                            '& fieldset': {
+                                                                borderColor: 'transparent', // No border by default
+                                                            },
+                                                            '&:hover fieldset': {
+                                                                borderColor: 'transparent', // No border on hover
+                                                            },
+                                                            '&.Mui-focused fieldset': {
+                                                                borderColor: 'transparent', // No border on focus
+                                                            },
+                                                        },
+                                                        border: 2,
+                                                        borderColor: "#d1d5db ",
+                                                        fontSize: 2, // This reduces the font size
+                                                        lineHeight: 4,
+                                                        padding: 0,
+                                                        margin: 0,
+                                                    }}
                                                     slotProps={{
                                                         textField: {
                                                             placeholder: `${props.data.ProjectedGoLive}`,
@@ -700,15 +721,7 @@ function Pitems(props) {
                                                             }, // This reduces the height of the TextField
                                                         }
                                                     }}
-                                                    sx={{
-                                                        width: 240,
-                                                        border: 0,
-                                                        borderColor: "#01b6ee",
-                                                        fontSize: 2, // This reduces the font size
-                                                        lineHeight: 4,
-                                                        padding: 0,
-                                                        margin: 0,
-                                                    }} />
+                                                     />
                                             </LocalizationProvider>
                                         </div>
                                     </div>
@@ -725,7 +738,28 @@ function Pitems(props) {
                                                         seteditDEV(n.format("ll"))
                                                     }}
                                                     // value={editDEV}
-                                                    className='border-2 border-gray-300 p-2  w-60 my-3 rounded '
+                                                    className='border-2 border-gray-300 p-2  w-60 my-3 rounded focus:outline-none focus:ring-0 focus:border-gray-300'
+                                                    
+                                                    sx={{
+                                                        width: 240,
+                                                        '& .MuiOutlinedInput-root': {
+                                                            '& fieldset': {
+                                                                borderColor: 'transparent', // No border by default
+                                                            },
+                                                            '&:hover fieldset': {
+                                                                borderColor: 'transparent', // No border on hover
+                                                            },
+                                                            '&.Mui-focused fieldset': {
+                                                                borderColor: 'transparent', // No border on focus
+                                                            },
+                                                        },
+                                                        border: 2,
+                                                        borderColor: "#d1d5db ",
+                                                        fontSize: 2, // This reduces the font size
+                                                        lineHeight: 4,
+                                                        padding: 0,
+                                                        margin: 0,
+                                                    }}
                                                     slotProps={{
                                                         textField: {
                                                             placeholder: `${props.data.DevEnviornment}`,
@@ -738,15 +772,7 @@ function Pitems(props) {
                                                             }, // This reduces the height of the TextField
                                                         }
                                                     }}
-                                                    sx={{
-                                                        width: 240,
-                                                        border: 0,
-                                                        borderColor: "#01b6ee",
-                                                        fontSize: 2, // This reduces the font size
-                                                        lineHeight: 4,
-                                                        padding: 0,
-                                                        margin: 0,
-                                                    }} />
+                                                     />
                                             </LocalizationProvider>
                                         </div>
                                     </div>
@@ -763,7 +789,7 @@ function Pitems(props) {
                                                         seteditQA(n.format("ll"))
                                                     }}
                                                     // value={editQA}
-                                                    className='border-2 border-gray-300 p-2  w-60 my-3 rounded '
+                                                    className='border-2 border-gray-300 p-2  w-60 my-3 rounded focus:outline-none focus:ring-0 focus:border-gray-300'
                                                     slotProps={{
                                                         textField: {
                                                             placeholder: `${props.data.QAEnviornment}`,
@@ -778,8 +804,19 @@ function Pitems(props) {
                                                     }}
                                                     sx={{
                                                         width: 240,
-                                                        border: 0,
-                                                        borderColor: "#01b6ee",
+                                                        '& .MuiOutlinedInput-root': {
+                                                            '& fieldset': {
+                                                                borderColor: 'transparent', // No border by default
+                                                            },
+                                                            '&:hover fieldset': {
+                                                                borderColor: 'transparent', // No border on hover
+                                                            },
+                                                            '&.Mui-focused fieldset': {
+                                                                borderColor: 'transparent', // No border on focus
+                                                            },
+                                                        },
+                                                        border: 2,
+                                                        borderColor: "#d1d5db ",
                                                         fontSize: 2, // This reduces the font size
                                                         lineHeight: 4,
                                                         padding: 0,
@@ -801,7 +838,7 @@ function Pitems(props) {
                                                         seteditPro(n.format("ll"))
                                                     }}
                                                     // value={editPro}
-                                                    className='border-2 border-gray-300 p-2  w-60 my-3 rounded '
+                                                    className='border-2 border-gray-300 p-2  w-60 my-3 rounded focus:outline-none focus:ring-0 focus:border-gray-300'
                                                     slotProps={{
                                                         textField: {
                                                             placeholder: `${props.data.Production}`,
@@ -816,13 +853,24 @@ function Pitems(props) {
                                                     }}
                                                     sx={{
                                                         width: 240,
-                                                        border: 0,
-                                                        borderColor: "#01b6ee",
+                                                        '& .MuiOutlinedInput-root': {
+                                                            '& fieldset': {
+                                                                borderColor: 'transparent', // No border by default
+                                                            },
+                                                            '&:hover fieldset': {
+                                                                borderColor: 'transparent', // No border on hover
+                                                            },
+                                                            '&.Mui-focused fieldset': {
+                                                                borderColor: 'transparent', // No border on focus
+                                                            },
+                                                        },
+                                                        border: 2,
+                                                        borderColor: "#d1d5db ",
                                                         fontSize: 2, // This reduces the font size
                                                         lineHeight: 4,
                                                         padding: 0,
                                                         margin: 0,
-                                                    }} />
+                                                    }}/>
                                             </LocalizationProvider>
                                         </div>
                                     </div>
@@ -839,7 +887,7 @@ function Pitems(props) {
                                                         seteditGOLive(n.format("ll"))
                                                     }}
                                                     // value={editGOLive}
-                                                    className='border-2 border-gray-300 p-2  w-60 my-3 rounded '
+                                                    className='border-2 border-gray-300 p-2  w-60 my-3 rounded focus:outline-none focus:ring-0 focus:border-gray-300'
                                                     slotProps={{
                                                         textField: {
                                                             placeholder: `${props.data.GoLive}`,
@@ -854,19 +902,30 @@ function Pitems(props) {
                                                     }}
                                                     sx={{
                                                         width: 240,
-                                                        border: 0,
-                                                        borderColor: "#01b6ee",
+                                                        '& .MuiOutlinedInput-root': {
+                                                            '& fieldset': {
+                                                                borderColor: 'transparent', // No border by default
+                                                            },
+                                                            '&:hover fieldset': {
+                                                                borderColor: 'transparent', // No border on hover
+                                                            },
+                                                            '&.Mui-focused fieldset': {
+                                                                borderColor: 'transparent', // No border on focus
+                                                            },
+                                                        },
+                                                        border: 2,
+                                                        borderColor: "#d1d5db ",
                                                         fontSize: 2, // This reduces the font size
                                                         lineHeight: 4,
                                                         padding: 0,
                                                         margin: 0,
-                                                    }} />
+                                                    }}/>
                                             </LocalizationProvider>
                                         </div>
                                     </div>
                                     <div className='flex  pt-2 flex-col'>
                                         <label htmlFor="" className=' mx-2 pb-1'>Project Type</label>
-                                        <select onChange={(e) => seteditPT(e.target.value)} className='text-gray-600 border-2 p-2 border-gray-300 w-[240px] mx-2 rounded'>
+                                        <select onChange={(e) => seteditPT(e.target.value)} className='text-gray-600 border-2 p-2 border-gray-300 w-[240px] mx-2 rounded focus:outline-none focus:ring-0 focus:border-gray-300'>
                                             <option value="" selected className='hidden'>{editPT}</option>
                                             <option value="New">New</option>
                                             <option value="Live">Live</option>
@@ -876,7 +935,7 @@ function Pitems(props) {
                                     </div>
                                     <div className='flex  pt-2 flex-col'>
                                         <label htmlFor="" className=' mx-2 pb-1'>Mapper</label>
-                                        <select onChange={(e) => seteditDeveloper(e.target.value)} className='text-gray-600 border-2 p-2 border-gray-300 w-[240px] mx-2 rounded'>
+                                        <select onChange={(e) => seteditDeveloper(e.target.value)} className='text-gray-600 border-2 p-2 border-gray-300 w-[240px] mx-2 rounded focus:outline-none focus:ring-0 focus:border-gray-300'>
                                             <option value="" selected className='hidden'>{editDeveloper}</option>
                                             {props.Users.map((item) => (<>
                                                 {item.Developer == "Yes" ?
@@ -891,7 +950,7 @@ function Pitems(props) {
                                     </div>
                                     <div className='flex  pt-2 flex-col'>
                                         <label htmlFor="" className=' mx-2 pb-1'>Implementor</label>
-                                        <select onChange={(e) => seteditImplemnetor(e.target.value)} className='text-gray-600 border-2 p-2 border-gray-300 w-[240px] mx-2 rounded'>
+                                        <select onChange={(e) => seteditImplemnetor(e.target.value)} className='text-gray-600 border-2 p-2 border-gray-300 w-[240px] mx-2 rounded focus:outline-none focus:ring-0 focus:border-gray-300'>
                                             <option value="" selected className='hidden'>{editImplemnetor}</option>
                                             {props.Users.map((item) => (<>
                                                 {item.Implementor == "Yes" ?
@@ -907,7 +966,7 @@ function Pitems(props) {
                                     <div className='flex  pt-2 flex-col'>
 
                                         <label htmlFor="" className=' mx-2 pb-1'>Mapping Specification</label>
-                                        <input type="file" onChange={handleFileUpload} name="file-input" id="file-input" className="text-gray-500 file:text-white mx-2 block w-[240px] border-2 border-gray-300 rounded text-sm disabled:opacity-50 disabled:pointer-events-none file:bg-[#01b6ee] file:border-0 file:me-2 file:py-2 file:px-1" />
+                                        <input type="file" onChange={handleFileUpload} name="file-input" id="file-input" className="text-gray-500 file:text-white mx-2 block w-[240px] border-2 border-gray-300 rounded text-sm disabled:opacity-50 disabled:pointer-events-none file:bg-[#01b6ee] file:border-0 file:me-2 file:py-2 file:px-1 focus:outline-none focus:ring-0 focus:border-gray-300" />
                                     </div>
                                 </div>
                                 <div className="flex pt-4 ">
