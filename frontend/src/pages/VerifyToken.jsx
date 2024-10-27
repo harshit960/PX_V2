@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import logo from '/logo.png';
 import Select from 'react-select';
+import { Link } from 'react-router-dom';
 
 function VerifyToken() {
     // Validation schema
@@ -47,7 +48,16 @@ function VerifyToken() {
             {label}
         </div>
     );
+    const validationSchema = Yup.object({
 
+        password: Yup.string()
+            .required('Required Password'),
+        confirmPassword: Yup.string()
+            .oneOf([Yup.ref('password'), null], 'Passwords must match')
+            .required('Required'),
+        Avatar: Yup.string()
+            .required('Required Avatar'),
+    });
 
     const [Avatar, setAvatar] = useState("Avatar (1).jpg");
     const [Password, setPassword] = useState();
@@ -77,29 +87,47 @@ function VerifyToken() {
     }
     async function formSubmit() {
         try {
-            const response = await fetch(`${import.meta.env.VITE_REACT_APP_BASE_URL}/change-password`, {
-                method: 'POST', // Specify the method as POST
-                headers: {
-                    'Content-Type': 'application/json' // Specify the content type as JSON
-                },
-                body: JSON.stringify({
-                    token: token, // Include the JWT token
-                    password: Password, // New password to be set
-                    newProfilePicture: Avatar // New profile picture URL
+
+            validationSchema.validate({
+                password: Password,
+                confirmPassword: CPassword,
+                Avatar: Avatar
+            }, { abortEarly: false })
+                .then(async () => {
+                    const response = await fetch(`${import.meta.env.VITE_REACT_APP_BASE_URL}/change-password`, {
+                        method: 'POST', // Specify the method as POST
+                        headers: {
+                            'Content-Type': 'application/json' // Specify the content type as JSON
+                        },
+                        body: JSON.stringify({
+                            token: token, // Include the JWT token
+                            password: Password, // New password to be set
+                            newProfilePicture: Avatar // New profile picture URL
+                        })
+                    });
+                    if (response.status == 200) {
+                        setSuccessMessage("Password Reset Successfull")
+                    }
+                    // Handle the response
+                    if (!response.ok) {
+                        // If the response status is not ok, throw an error
+                        const errorData = await response.json();
+                        setResetError('An error occurred')
+                        throw new Error(errorData.error || 'An error occurred');
+                    }
+                    // If successful, parse the response
+                    const data = await response.text(); //
+                }).catch((error) => {
+                    // Handle validation errors here
+                    if (error instanceof Yup.ValidationError) {
+                        // Handle validation error
+                        toast('Validation error: ' + error.errors)
+                        console.error('Validation error:', error.errors);
+                    } else {
+                        // Handle other errors (e.g., network errors)
+                        console.error('Error:', error.message);
+                    }
                 })
-            });
-            if (response.status == 200) {
-                setSuccessMessage("Password Reset Successfull")
-            }
-            // Handle the response
-            if (!response.ok) {
-                // If the response status is not ok, throw an error
-                const errorData = await response.json();
-                setResetError('An error occurred')
-                throw new Error(errorData.error || 'An error occurred');
-            }
-            // If successful, parse the response
-            const data = await response.text(); //
         }
         catch (error) {
             setResetError('An error occurred')
@@ -179,6 +207,10 @@ function VerifyToken() {
                             </div>
                         </button>
                     }
+                    <div className="p-2 flex items-center justify-center">
+
+                    <Link to="/login">Login</Link>
+                    </div>
                 </div>
 
                 <img src="/background.jpg" alt="Background" className="absolute -z-10 bg-cover" />

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import * as Yup from 'yup';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 
 function Login() {
@@ -74,6 +74,9 @@ function Login() {
 
                     {/* <img className="absolute w-[24px] h-[24px] top-0 left-0" alt="Codicon mail" src="codicon-mail.svg" /> */}
 
+                </div>
+                <div className="p-2">
+                    <Link to="/reset-password">Reset Password</Link>
                 </div>
                 <span className='text-xs bold text-red-500'>
                 {loginError}
