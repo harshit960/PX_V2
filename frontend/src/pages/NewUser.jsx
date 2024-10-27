@@ -211,7 +211,7 @@ export default function NewUser() {
                                     </div>
                                 </div>
                                 <Select
-                                    className="basic-multi-select rounded z-10 border-1 focus:border-gray-300 border-gray-300 my-2 focus:border-gray-300 focus:outline-none focus:ring-0 focus:ring-gray-400 focus:ring-offset-0"
+                                    className="basic-multi-select rounded z-10 border-1  border-gray-300 my-2 focus:border-gray-300 focus:outline-none focus:ring-0 focus:ring-gray-400 focus:ring-offset-0"
                                     options={countries}
                                     formatOptionLabel={formatOptionLabel}
                                     isSearchable={false}
@@ -223,7 +223,7 @@ export default function NewUser() {
                                 <div className='w-full'>
 
                                     <select
-                                        className="mt-2 flex h-10 w-full rounded border-1 focus:outline-none focus:ring-0 focus:border-gray-300 border-gray-300 bg-transparent px-5 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-0 focus:ring-gray-400 focus:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-50"
+                                        className="mt-2 flex h-10 w-full rounded border-1  focus:border-gray-300 border-gray-300 bg-transparent px-5 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-0 focus:ring-gray-400 focus:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-50"
                                         onChange={(e) => settype(e.target.value)}
                                     >
                                         <option className='hidden' selected>User Type</option>

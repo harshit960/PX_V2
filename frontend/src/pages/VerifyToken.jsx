@@ -40,7 +40,7 @@ function VerifyToken() {
         { "value": "Avatar (29).jpg", "label": "Avatar (29)", "image": "/Avatar/Avatar (29).jpg" },
         { "value": "Avatar (30).jpg", "label": "Avatar (30)", "image": "/Avatar/Avatar (30).jpg" }
     ]
-    
+
     const formatOptionLabel = ({ value, label, image }) => (
         <div className='flex items-center '>
             <img className='w-8 rounded-full' src={image} alt={label} style={{ marginRight: '10px' }} />
@@ -49,9 +49,10 @@ function VerifyToken() {
     );
 
 
-
-    const [userId, setUserId] = useState('');
-    const [email, setEmail] = useState('');
+    const [Avatar, setAvatar] = useState("Avatar (1).jpg");
+    const [Password, setPassword] = useState();
+    const [CPassword, setCPassword] = useState();
+    const [token, settoken] = useState();
     const [resetError, setResetError] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
     async function verifyToken(token) {
@@ -65,6 +66,7 @@ function VerifyToken() {
             });
 
             if (response.status != 200) {
+                setResetError(`Link Expired! Status: ${response.status}`);
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
             const data = await response.json();
@@ -73,11 +75,42 @@ function VerifyToken() {
             console.error('Error verifying token:', error);
         }
     }
+    async function formSubmit() {
+        try {
+            const response = await fetch(`${import.meta.env.VITE_REACT_APP_BASE_URL}/change-password`, {
+                method: 'POST', // Specify the method as POST
+                headers: {
+                    'Content-Type': 'application/json' // Specify the content type as JSON
+                },
+                body: JSON.stringify({
+                    token: token, // Include the JWT token
+                    password: Password, // New password to be set
+                    newProfilePicture: Avatar // New profile picture URL
+                })
+            });
+            if (response.status == 200) {
+                setSuccessMessage("Password Reset Successfull")
+            }
+            // Handle the response
+            if (!response.ok) {
+                // If the response status is not ok, throw an error
+                const errorData = await response.json();
+                setResetError('An error occurred')
+                throw new Error(errorData.error || 'An error occurred');
+            }
+            // If successful, parse the response
+            const data = await response.text(); //
+        }
+        catch (error) {
+            setResetError('An error occurred')
+
+        }
+    }
     useEffect(() => {
         const url = new URL(window.location.href); // Get the full URL
         const token = url.searchParams.get('token'); // Extract the token from query parameters
-
         verifyToken(token)
+        settoken(token)
     }, []);
 
     return (
@@ -90,20 +123,20 @@ function VerifyToken() {
                 Reset Password
                 <div className="p-2">
                     <input
-                        type="text"
+                        type="password"
                         placeholder="New Password"
-                        value={userId}
-                        onChange={(e) => setUserId(e.target.value)}
+                        value={Password}
+                        onChange={(e) => setPassword(e.target.value)}
                         className="flex flex-col w-[252px] h-[30.54px] items-start justify-center gap-[10px] px-[26px] py-[18px] relative bg-white rounded-[30px] border border-solid border-[#01b6ee4c] focus:outline-none active:border-[#01b6ee] focus:border-[#01b6ee]"
                     />
                 </div>
 
                 <div className="p-2">
                     <input
-                        type="email"
+                        type="password"
                         placeholder="Confirm Password"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        value={CPassword}
+                        onChange={(e) => setCPassword(e.target.value)}
                         className="flex flex-col w-[252px] h-[30.54px] items-start justify-center gap-[10px] px-[26px] py-[18px] relative bg-white rounded-[30px] border border-solid border-[#01b6ee4c] focus:outline-none active:border-[#01b6ee] focus:border-[#01b6ee]"
                     />
                 </div>
@@ -121,16 +154,31 @@ function VerifyToken() {
                 {successMessage && <span className="text-xs bold text-green-500">{successMessage}</span>}
 
                 <div className="p-2">
-                    <button
-                        // onClick={handleReset}
-                        className="flex flex-col w-[252px] h-[30.27px] items-center justify-center gap-[10px] px-[26px] py-[18px] relative bg-[#01b6ee] rounded-[30px]"
-                    >
-                        <div className="relative w-[39px] h-[21px] mt-[-6.87px] mb-[-6.87px]">
-                            <div className="absolute top-0 left-0 font-normal text-white text-[14px] tracking-[0] leading-[normal]">
-                                Submit
+                    {resetError ?
+
+                        <button
+                            // onClick={handleReset}
+                            blocked
+                            className="flex flex-col w-[252px] h-[30.27px] items-center justify-center gap-[10px] px-[26px] py-[18px] relative bg-gray-300 rounded-[30px]"
+                        >
+                            <div className="relative w-[39px] h-[21px] mt-[-6.87px] mb-[-6.87px]">
+                                <div className="absolute top-0 left-0 font-normal text-white text-[14px] tracking-[0] leading-[normal]">
+                                    Submit
+                                </div>
                             </div>
-                        </div>
-                    </button>
+                        </button> :
+                        <button
+                            onClick={formSubmit}
+
+                            className="flex flex-col w-[252px] h-[30.27px] items-center justify-center gap-[10px] px-[26px] py-[18px] relative bg-[#01b6ee] rounded-[30px]"
+                        >
+                            <div className="relative w-[39px] h-[21px] mt-[-6.87px] mb-[-6.87px]">
+                                <div className="absolute top-0 left-0 font-normal text-white text-[14px] tracking-[0] leading-[normal]">
+                                    Submit
+                                </div>
+                            </div>
+                        </button>
+                    }
                 </div>
 
                 <img src="/background.jpg" alt="Background" className="absolute -z-10 bg-cover" />

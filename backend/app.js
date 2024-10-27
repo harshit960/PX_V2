@@ -206,16 +206,43 @@ app.post('/reset-password', (req, res) => {
 
 })
 
-app.post('/verify-token',(req,res) => {
+app.post('/verify-token', (req, res) => {
   try {
-    var decoded = jwt.verify(req.body.token,'key', 'wrong-secret');
-    res.status(200).send({msg:"verified"})
-  } catch(err) {
+    var decoded = jwt.verify(req.body.token, 'key', 'wrong-secret');
+    res.status(200).send({ msg: "verified" })
+  } catch (err) {
     // err
     res.sendStatus(403)
   }
 }
 )
+
+app.post('/change-password', async (req, res) => {  
+  try {
+    var decoded = jwt.verify(req.body.token, 'key');
+    const result = await connection.request()
+      .input('username', sql.VarChar, decoded.userId)
+      .input('newPassword', sql.VarChar, req.body.password)
+      .input('newProfilePicture', sql.VarChar, req.body.newProfilePicture)
+      .query('UPDATE [data].[user] SET password = @newPassword, pp = @newProfilePicture WHERE username = @username');
+console.log(result);
+
+    if (result.rowsAffected[0] === 0) {
+      console.log("lol");
+      
+      return res.status(404).send('User not found');
+    }
+
+    res.status(200).send('User updated successfully');
+
+  } catch (error) {
+    console.log(error);
+    
+    res.send(403).send(JSON.stringify({ error: error }))
+  }
+
+})
+
 
 app.use(authenticateToken);
 
