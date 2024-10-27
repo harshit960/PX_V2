@@ -187,7 +187,7 @@ app.post('/reset-password', async (req, res) => {
 
     if (result.recordset[0].email == req.body.email) {
 
-      token = jwt.sign({ userId: req.body.userId, email: req.body.email }, "key", { expiresIn: '600s' })
+      token = jwt.sign({ userId: req.body.userId, email: req.body.email }, "key", { expiresIn: '1800s' })
       const transporter = nodemailer.createTransport({
         service: "Gmail",
         host: "smtp.gmail.com",
@@ -203,12 +203,12 @@ app.post('/reset-password', async (req, res) => {
       const mailOptions = {
         from: "raj.harshit962@gmail.com",
         to: req.body.email,
-        subject: 'Password reset',
+        subject: 'PartnerXchange Password Reset Request',
         text: `
         You recently requested to reset the password for your PartnerXchange account.
         Please click on this link in order to change your password.
 
-        http://localhost:5173/reset-password/verify?token=${token}
+        ${process.env.FRONTEND_URL}/reset-password/verify?token=${token}
         
         This link is valid for 30 minutes only.
         Request you to contact EDITeam@blueyonder.com if you are having any issues.
