@@ -17,6 +17,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import OBarchive from './pages/OBarchive';
 import ProjArchive from './pages/ProjArchive';
 import CalendarPage from './pages/Calendar';
+import ResetPassword from './pages/ResetPass';
+import VerifyToken from './pages/VerifyToken';
 function App() {
   const [count, setCount] = useState(0)
 
@@ -30,6 +32,8 @@ function App() {
 
                 <Route index element={<Home />} />
                 <Route path="login" element={<Login />} />
+                <Route path="reset-password" element={<ResetPassword />} />
+                <Route path="reset-password/verify" element={<VerifyToken />} />
                 <Route path="leaderboard" element={<Leaderboard />} />
                 <Route path="projects" element={<Projects />} />
                 <Route path="newuser" element={<NewUser />} />

@@ -171,6 +171,52 @@ app.post('/login', (req, res) => {
   });
 });
 
+// reset Pass
+app.post('/reset-password', (req, res) => {
+  console.log(req.body)
+  token = jwt.sign({ userId: req.body.userId, email: req.body.email }, "key", { expiresIn: '600s' })
+  const transporter = nodemailer.createTransport({
+    service: "Gmail",
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: true,
+    auth: {
+      user: "raj.harshit962@gmail.com",
+      pass: "rofh wqpa zpsw hjtq"
+    },
+  });
+
+  // Set up mail options
+  const mailOptions = {
+    from: "raj.harshit962@gmail.com",
+    to: req.body.email,
+    subject: 'Password reset',
+    text: `Link: http://localhost:5173/reset-password/verify?token=${token}`
+  };
+
+  // Send the email
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
+  res.status(200).send("")
+
+})
+
+app.post('/verify-token',(req,res) => {
+  try {
+    var decoded = jwt.verify(req.body.token,'key', 'wrong-secret');
+    res.status(200).send({msg:"verified"})
+  } catch(err) {
+    // err
+    res.sendStatus(403)
+  }
+}
+)
+
 app.use(authenticateToken);
 
 const validateUser = [
@@ -852,7 +898,7 @@ app.get('/getOB', (req, res) => {
 app.get('/getOB/:IPOwner', (req, res) => {
   // Select all records from the onboarding table for a specific IPOwner
   const query = 'SELECT * FROM [data].onboarding WHERE IPOwner = @IPOwner AND GoLive NOT IN (\'Completed\', \'Cancelled\') AND active = \'true\' AND OCValidation != \'Cancelled\'';
-  
+
   // Create a new request using the existing connection
   const request = new sql.Request(connection);
 
@@ -961,7 +1007,7 @@ app.post('/newNoti', async (req, res) => {
       const transporter = nodemailer.createTransport({
         host: process.env.SMTP_SERVICE,
         port: process.env.SMTP_PORT, // Your SMTP port (e.g., 587)
-        
+
       });
 
       // Set up mail options
@@ -999,10 +1045,10 @@ app.post('/newNoti', async (req, res) => {
 app.post('/sendEmail', (req, res) => {
   const { body } = req.body;
   const transporter = nodemailer.createTransport({
-        host: process.env.SMTP_SERVICE,
-        port: process.env.SMTP_PORT, // Your SMTP port (e.g., 587)
-        
-      });
+    host: process.env.SMTP_SERVICE,
+    port: process.env.SMTP_PORT, // Your SMTP port (e.g., 587)
+
+  });
 
   const toList = process.env.TO_LIST.split(','); // Assuming the TO_LIST environment variable contains a comma-separated list of email addresses
   const mailOptions = {
