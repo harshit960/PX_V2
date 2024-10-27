@@ -204,7 +204,16 @@ app.post('/reset-password', async (req, res) => {
         from: "raj.harshit962@gmail.com",
         to: req.body.email,
         subject: 'Password reset',
-        text: `Link: http://localhost:5173/reset-password/verify?token=${token}`
+        text: `
+        You recently requested to reset the password for your PartnerXchange account.
+        Please click on this link in order to change your password.
+
+        http://localhost:5173/reset-password/verify?token=${token}
+        
+        This link is valid for 30 minutes only.
+        Request you to contact EDITeam@blueyonder.com if you are having any issues.
+        `
+        
       };
 
       // Send the email
