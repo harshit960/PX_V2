@@ -105,7 +105,6 @@ function LBitems(props) {
         await fetch(import.meta.env.VITE_REACT_APP_BASE_URL + '/updateLB/' + props.data.id, {
             method: 'PUT',
             body: JSON.stringify({
-                ShiftHour: props.data.ShiftHour,
                 onboard_capacity: onboard_capacity,
                 projectCapacity: projectCapacity,
                 timeChange: false,
@@ -141,23 +140,23 @@ function LBitems(props) {
     }, []);
 
     // Handle Shifthour and Archive Fun
-    const [ShiftHour, setShiftHour] = useState(props.data.ShiftHour);
-    useEffect(() => {
-        const obj = JSON.parse(props.data.ShiftHour);
-        const shiftStart = dayjs(obj.ShiftStart).tz(obj.timeZone);
-        const shiftEnd = dayjs(obj.ShiftEnds).tz(obj.timeZone);
+    // const [ShiftHour, setShiftHour] = useState(props.data.ShiftHour);
+    // useEffect(() => {
+    //     const obj = JSON.parse(props.data.ShiftHour);
+    //     const shiftStart = dayjs(obj.ShiftStart).tz(obj.timeZone);
+    //     const shiftEnd = dayjs(obj.ShiftEnds).tz(obj.timeZone);
         
-        // Get the current time in the specified time zone
-        const currentTime = dayjs().tz(obj.timeZone);
+    //     // Get the current time in the specified time zone
+    //     const currentTime = dayjs().tz(obj.timeZone);
         
-        // Check if the current time is within the shift period
-        if (currentTime.isBefore(shiftEnd)) {
-        //   console.log('yes');
-        } else {
-            setShiftHour(JSON.stringify({"ShiftStart":dayjs().startOf('year'),"ShiftEnds":dayjs().startOf('year'),"timeZone":"CST"}))
-        }
+    //     // Check if the current time is within the shift period
+    //     if (currentTime.isBefore(shiftEnd)) {
+    //     //   console.log('yes');
+    //     } else {
+    //         setShiftHour(JSON.stringify({"ShiftStart":dayjs().startOf('year'),"ShiftEnds":dayjs().startOf('year'),"timeZone":"CST"}))
+    //     }
 
-    }, [props.data.ShiftHour]);
+    // }, [props.data.ShiftHour]);
     // For calculationg topper
     const [Milestone, setMilestone] = useState(0);
     useEffect(() => {

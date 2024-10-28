@@ -352,7 +352,6 @@ app.get('/leaderboard', (req, res) => {
              [data].[leaderboard].[user], 
              [data].[leaderboard].onboard_capacity, 
              [data].[leaderboard].projectCapacity, 
-             [data].[leaderboard].ShiftHour,
              [data].[leaderboard].files,
              [data].[leaderboard].milestone,
              [data].[leaderboard].TopPerformer,
@@ -401,7 +400,6 @@ app.get('/archive', (req, res) => {
       SELECT [data].LBarchive.id, 
              [data].LBarchive.date, 
              [data].LBarchive.[user], 
-             [data].LBarchive.ShiftHour,
              [data].LBarchive.files, 
              [data].[user].pp 
       FROM [data].LBarchive 
@@ -422,14 +420,14 @@ app.get('/archive', (req, res) => {
 
 app.put('/updateLB/:id', (req, res) => {
   // Extract data from the request body
-  const { ShiftHour, projectCapacity, onboard_capacity, file, achieBtn, Notes, dateRange } = req.body;
+  const { projectCapacity, onboard_capacity, file, achieBtn, Notes, dateRange } = req.body;
   const id = req.params.id;
   const timechange = req.body.timeChange;
 
   // Update query for leaderboard table
   const updateQuery = `
       UPDATE [data].leaderboard 
-      SET ShiftHour = @ShiftHour, 
+      SET  
           projectCapacity = @projectCapacity, 
           onboard_capacity = @onboard_capacity,
           files = @file,
@@ -442,7 +440,6 @@ app.put('/updateLB/:id', (req, res) => {
   const request = new sql.Request(connection);
 
   // Add input parameters
-  request.input('ShiftHour', sql.NVarChar, ShiftHour);
   request.input('projectCapacity', sql.NVarChar, projectCapacity);
   request.input('onboard_capacity', sql.NVarChar, onboard_capacity);
   request.input('file', sql.NVarChar, file);
