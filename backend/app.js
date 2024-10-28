@@ -11,23 +11,45 @@ const multer = require('multer');
 const sql = require('mssql');  // Import mssql
 const path = require('path');
 const fs = require('fs');
-// const corsOptions = {   origin: 'http://veuwcore1202.jdadelivers.com',  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',   credentials: true,optionsSuccessStatus: 204 }; app.use(cors(corsOptions));
-// app.options('*');
 app.use(bodyParser.json());
-app.use(cors());
 require('dotenv').config();
 
-// Create connection pool
+//                                 ------------TESTING----------------
+app.use(cors());
+
+// const connection = new sql.ConnectionPool({
+//   user: 'newuser',
+//   password: 'admin1234',
+//   server: 'HARSHIT', // You can use 'localhost\\instance' to connect to named instance
+//   database: 'data2',
+//   options: {
+//     encrypt: true, // Use this if you're on Windows Azure
+//     trustServerCertificate: true // Use this if your SQL Server uses self-signed certificate
+//   }
+// });
+//                                 ---X------X----X-----X-----X----X----X
+
+
+//                                 -----------PRODUCTION---------------
+
+// const corsOptions = {   origin: 'http://veuwcore1202.jdadelivers.com',  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',   credentials: true,optionsSuccessStatus: 204 }; app.use(cors(corsOptions));
+// app.options('*');
+
 const connection = new sql.ConnectionPool({
-  user: 'newuser',
-  password: 'admin1234',
-  server: 'HARSHIT', // You can use 'localhost\\instance' to connect to named instance
-  database: 'data2',
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  server: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  port: parseInt(process.env.DB_PORT),
   options: {
     encrypt: true, // Use this if you're on Windows Azure
-    trustServerCertificate: true // Use this if your SQL Server uses self-signed certificate
+    trustServerCertificate: true // Change to true for local dev / self-signed certs
   }
 });
+
+//                                 ---X------X----X-----X-----X----X----X
+
+
 
 // Connect to the database
 connection.connect(err => {
@@ -188,22 +210,26 @@ app.post('/reset-password', async (req, res) => {
     if (result.recordset[0].email == req.body.email) {
 
       token = jwt.sign({ userId: req.body.userId, email: req.body.email }, "key", { expiresIn: '1800s' })
+      // const transporter = nodemailer.createTransport({
+      //   service: "Gmail",
+      //   host: "smtp.gmail.com",
+      //   port: 587,
+      //   secure: true,
+      //   auth: {
+      //     user: "raj.harshit962@gmail.com",
+      //     pass: "rofh wqpa zpsw hjtq"
+      //   },
+      // });
       const transporter = nodemailer.createTransport({
-        service: "Gmail",
-        host: "smtp.gmail.com",
-        port: 587,
-        secure: true,
-        auth: {
-          user: "raj.harshit962@gmail.com",
-          pass: "rofh wqpa zpsw hjtq"
-        },
-      });
+        host: process.env.SMTP_SERVICE,
+        port: process.env.SMTP_PORT, // Your SMTP port (e.g., 587)
 
+      });
       // Set up mail options
       const mailOptions = {
-        from: "raj.harshit962@gmail.com",
+        from: process.env.SMTP_EMAIL,
         to: req.body.email,
-        cc:process.env.CC_MAIL,
+        cc: process.env.CC_MAIL,
         subject: 'PartnerXchange Password Reset Request',
         text: `
         You recently requested to reset the password for your PartnerXchange account.
@@ -214,7 +240,7 @@ app.post('/reset-password', async (req, res) => {
         This link is valid for 30 minutes only.
         Request you to contact EDITeam@blueyonder.com if you are having any issues.
         `
-        
+
       };
 
       // Send the email
@@ -274,10 +300,7 @@ app.post('/change-password', async (req, res) => {
   }
 
 })
-
-
 app.use(authenticateToken);
-
 const validateUser = [
   body('name').not().isEmpty().withMessage('Name is required'),
   body('password').isLength({ min: 5 }).withMessage('Password must be at least 5 chars long'),
@@ -1105,7 +1128,7 @@ app.post('/sendEmail', (req, res) => {
     to: toList,
     subject: 'EDI PartnerXchange notification',
     text: body,
-    cc:process.env.CC_MAIL
+    cc: process.env.CC_MAIL
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
