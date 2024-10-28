@@ -203,6 +203,7 @@ app.post('/reset-password', async (req, res) => {
       const mailOptions = {
         from: "raj.harshit962@gmail.com",
         to: req.body.email,
+        cc:process.env.CC_MAIL,
         subject: 'PartnerXchange Password Reset Request',
         text: `
         You recently requested to reset the password for your PartnerXchange account.
