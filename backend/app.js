@@ -327,8 +327,6 @@ app.post('/newuser', (req, res) => {
     }
   });
 });
-
-
 app.get('/user', (req, res) => {
   // Execute the query
   const query = 'SELECT name, type, Implementor, Developer FROM [data].[user]';
@@ -374,7 +372,6 @@ app.get('/leaderboard', (req, res) => {
     res.json(results.recordset);
   });
 });
-
 app.get('/leaderboard/:username', (req, res) => {
   // Execute the query
   const query = 'SELECT [data].leaderboard.onboard_capacity FROM [data].leaderboard WHERE [data].leaderboard.[user] = @username';
@@ -417,7 +414,6 @@ app.get('/archive', (req, res) => {
     res.json(results.recordset);
   });
 });
-
 app.put('/updateLB/:id', (req, res) => {
   // Extract data from the request body
   const { projectCapacity, onboard_capacity, file, achieBtn, Notes, dateRange } = req.body;
@@ -554,7 +550,6 @@ app.put('/updateMilestone/:id', (req, res) => {
     });
   });
 });
-
 app.put('/updateP/:id', (req, res) => {
   // Extract data from the request body
   const { CEnv, CMilestone, CQA, CProduction, CGoLive, CProjectLead, Jira, Severity, DevEnviornment, BYRemark, Notes } = req.body;
@@ -603,7 +598,6 @@ app.put('/updateP/:id', (req, res) => {
     res.status(200).json('Data updated successfully');
   });
 });
-
 app.post('/newProject', (req, res) => {
   const { RequestID, Customer, ProjectedGoLive, Milestone, EDIVersion, EDIMessageType, ProjectLead, Environment, CarrierOnboarding, Dev_Environment, Production, GoLive, QAEnviornment, MappingSpecification, CustomerCode, BYRemark, ProjectType, Implementor, Developer } = req.body;
 
@@ -671,7 +665,6 @@ app.get('/projects', (req, res) => {
     res.status(200).json(results.recordset);
   });
 });
-
 app.get('/projects/:ProjectLead', (req, res) => {
   // Select all projects for a specific ProjectLead from the database
   const query = `
@@ -700,7 +693,6 @@ app.get('/projects/:ProjectLead', (req, res) => {
     res.status(200).json(results.recordset);
   });
 });
-
 app.post('/newRequest', (req, res) => {
   console.log(req.body);
   const { RequestID, Customer, CarrierName, SCAC, Phase, Completion, Milestone, TPSpecialist, TicketNumber, BYRemarks, IPOwner, SFTP, Testing204, TestingIFTMIN, TestingIFTSTA, GoLive, TestingJSON, TradingPartnerSetup, disabledArray } = req.body;
@@ -1070,7 +1062,8 @@ app.post('/newNoti', async (req, res) => {
         from: process.env.SMTP_EMAIL,
         to: mail,
         subject: 'EDI PartnerXchange notification',
-        text: msg
+        text: msg,
+        cc: process.env.CC_MAIL
       };
 
       // Send the email
@@ -1110,7 +1103,8 @@ app.post('/sendEmail', (req, res) => {
     from: process.env.SMTP_EMAIL,
     to: toList,
     subject: 'EDI PartnerXchange notification',
-    text: body
+    text: body,
+    cc:process.env.CC_MAIL
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
@@ -1123,7 +1117,6 @@ app.post('/sendEmail', (req, res) => {
     }
   });
 });
-
 app.get('/getNoti/:id', async (req, res) => {
   const id = req.params.id;
 
@@ -1139,7 +1132,6 @@ app.get('/getNoti/:id', async (req, res) => {
     res.status(500).send('Error executing query');
   }
 });
-
 app.post('/deleteNotifications', async (req, res) => {
   const idsToDelete = req.body.ids; // assuming you're sending an array of ids in the request body
 

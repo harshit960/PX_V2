@@ -467,7 +467,7 @@ function Project() {
                 <div className="flex mt-5 text-gray-500">
                   <div className="basis-1/2 flex flex-col">
 
-                    <input type="text" value={Cname} onChange={(e) => setCname(e.target.value)} className='border-2 border-gray-300 p-2 w-52 my-3 rounded focus:outline-none focus:ring-0 focus:border-gray-300' placeholder='Customer name' />
+                    <input type="text" value={Cname} onChange={(e) => setCname(e.target.value)} className='border-2 border-gray-300 p-2 w-52 my-3 rounded focus:outline-none focus:ring-0 focus:border-gray-300' placeholder='Customer Name' />
                     {/* <select name="cars" onChange={(e) => setEDIVersion(e.target.value)} id="cars" className='border-2 p-2 border-gray-300 w-52 my-3 rounded'>
                       <option value="" selected className='hidden'>EDI Version</option>
                       <option value="X12 4010">X12 4010</option>
@@ -588,12 +588,12 @@ function Project() {
                         inline
                         tags={tags}
                         classNames={{
-                          tags: 'flex flex-wrap',
-                          tagInput: 'w-auto border-0 focus:outline-none',
-                          tagInputField: 'border-0 focus:outline-none',
-                          selected: 'flex flex-wrap gap-2',
-                          tag: 'bg-[#01b6ee] p-[2px] m-[2px] text-white rounded text-xs',
-                          remove: 'ml-1 cursor-pointer'
+                          tags: 'flex flex-wrap focus:outline-none outline-none',
+                          tagInput: 'w-auto border-0 focus:outline-none outline-none',
+                          tagInputField: 'border-0 focus:border-0 focus:outline-none outline-none focus:ring-0 focus:border-gray-300',
+                          selected: 'flex flex-wrap gap-2 focus:outline-none outline-none',
+                          tag: 'bg-[#01b6ee] p-[2px] m-[2px] text-white rounded text-xs focus:outline-none outline-none',
+                          remove: 'ml-1 cursor-pointer focus:outline-none outline-none'
                         }}
                         delimiters={delimiters}
                         handleDelete={handleDelete}
@@ -663,7 +663,7 @@ function Project() {
                   <button onClick={() => { window.location.reload() }} className=" p-1 border-2 w-28 text-center border-gray-300 rounded-md">Cancel</button>
 
 
-                  <button onClick={handleSubmit} className="border-2 w-28 mx-14 text-center bg-[#01b6ee] border-black rounded-md text-white">Submit</button>
+                  <button onClick={handleSubmit} className="border-2 w-28 mx-14 text-center bg-[#01b6ee]  rounded-md text-white">Submit</button>
 
                 </div>
               </div>

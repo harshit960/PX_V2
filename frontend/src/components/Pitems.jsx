@@ -312,7 +312,7 @@ function Pitems(props) {
         seteditPro(dayjs(props.data.Production).isValid() ? dayjs(props.data.Production) : props.data.Production)
         seteditFile(props.data.MappingSpecification)
     }, [props])
-    
+
     const submitFile = async () => {
         // event.preventDefault();
         const formData = new FormData();
@@ -620,9 +620,11 @@ function Pitems(props) {
                                         </select> */}
                                         <Select
                                             isMulti
+                                            styles={{ control: (provided, state) => ({ ...provided, boxShadow: state.isFocused ? "none" : null, borderColor: state.isFocused ? "gray" : provided.borderColor }) }}
+
                                             name="colors"
                                             options={[{ value: 'X12 4010', label: 'X12 4010' }, { value: 'X12 5010', label: 'X12 5010' }, { value: 'EDIFACT D-09A', label: 'EDIFACT D-09A' }]}
-                                            className="basic-multi-select rounded border-2 border-gray-300 mx-2 w-[240px] focus:outline-none focus:ring-0 focus:border-gray-300"
+                                            className="basic-multi-select rounded border-2 border-gray-300 mx-2 w-[240px] focus:border-gray-300 focus:outline-none focus:ring-0 focus:ring-gray-400 focus:ring-offset-0"
                                             classNamePrefix="select"
                                             placeholder={props.data.EDIVersion.slice(1)}
                                             isSearchable={false}
@@ -652,9 +654,11 @@ function Pitems(props) {
                                         {/* <span className='bold text-gray-500 text-xs ml-3'>{props.data.EDIMessageType.slice(1)}</span> */}
                                         <Select
                                             isMulti
+                                            styles={{ control: (provided, state) => ({ ...provided, boxShadow: state.isFocused ? "none" : null, borderColor: state.isFocused ? "gray" : provided.borderColor }) }}
+
                                             name="colors"
                                             options={options}
-                                            className="basic-multi-select rounded border-2 border-gray-300 mx-2 w-[240px] focus:outline-none focus:ring-0 focus:border-gray-300"
+                                            className="basic-multi-select rounded border-2 border-gray-300 mx-2 w-[240px] focus:border-gray-300 focus:outline-none focus:ring-0 focus:ring-gray-400 focus:ring-offset-0"
                                             classNamePrefix="select"
                                             placeholder={props.data.EDIMessageType.slice(1)}
                                             isSearchable={false}
@@ -688,7 +692,7 @@ function Pitems(props) {
                                                     }}
                                                     // value={editPGOLive}
                                                     className='border-2 border-gray-300 p-2  w-60 my-3 rounded focus:outline-none focus:ring-0 focus:border-gray-300'
-                                                    
+
                                                     sx={{
                                                         width: 240,
                                                         '& .MuiOutlinedInput-root': {
@@ -721,7 +725,7 @@ function Pitems(props) {
                                                             }, // This reduces the height of the TextField
                                                         }
                                                     }}
-                                                     />
+                                                />
                                             </LocalizationProvider>
                                         </div>
                                     </div>
@@ -739,7 +743,7 @@ function Pitems(props) {
                                                     }}
                                                     // value={editDEV}
                                                     className='border-2 border-gray-300 p-2  w-60 my-3 rounded focus:outline-none focus:ring-0 focus:border-gray-300'
-                                                    
+
                                                     sx={{
                                                         width: 240,
                                                         '& .MuiOutlinedInput-root': {
@@ -772,7 +776,7 @@ function Pitems(props) {
                                                             }, // This reduces the height of the TextField
                                                         }
                                                     }}
-                                                     />
+                                                />
                                             </LocalizationProvider>
                                         </div>
                                     </div>
@@ -870,7 +874,7 @@ function Pitems(props) {
                                                         lineHeight: 4,
                                                         padding: 0,
                                                         margin: 0,
-                                                    }}/>
+                                                    }} />
                                             </LocalizationProvider>
                                         </div>
                                     </div>
@@ -919,7 +923,7 @@ function Pitems(props) {
                                                         lineHeight: 4,
                                                         padding: 0,
                                                         margin: 0,
-                                                    }}/>
+                                                    }} />
                                             </LocalizationProvider>
                                         </div>
                                     </div>
@@ -1125,6 +1129,7 @@ function Pitems(props) {
                         <Select
                             isMulti
                             styles={customStyles}
+
                             options={props.Users.filter(item => item.type !== 'admin').map(item => ({
                                 value: item.name,
                                 label: item.name
@@ -1267,7 +1272,7 @@ function Pitems(props) {
 
                 <td>
                     <div className='flex items-center justify-center pr-6'>
-                        {localStorage.getItem('type') == "admin" || localStorage.getItem('type') == "User-PR"  || props.data.ProjectLead.split(', ').includes(localStorage.getItem('name')) ?
+                        {localStorage.getItem('type') == "admin" || localStorage.getItem('type') == "User-PR" || props.data.ProjectLead.split(', ').includes(localStorage.getItem('name')) ?
                             <>
                                 <button onClick={sync} className="border- border-gray-300 rounded-md  mx-2 ">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 text-[#01b6ee]">

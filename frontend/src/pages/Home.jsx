@@ -538,11 +538,12 @@ function Home() {
                                         isMulti
                                         name="colors"
                                         options={options}
-                                        className="focus:outline-none focus:ring-0 focus:border-gray-300 basic-multi-select border-2 border-gray-300 w-40 rounded"
+                                        className="focus:border-gray-300 focus:outline-none focus:ring-0 focus:ring-gray-400 focus:ring-offset-0 basic-multi-select border-2 border-gray-300 w-40 rounded"
                                         classNamePrefix="select"
                                         placeholder="Select EDI Message type"
                                         value={selected}
                                         isSearchable={false}
+                                        styles={{ control: (provided, state) => ({ ...provided, boxShadow: state.isFocused ? "none" : null, borderColor: state.isFocused ? "gray" : provided.borderColor }) }}
                                         onChange={(e) => {
                                             let x = []
                                             for (let i = 0; i < e.length; i++) {
