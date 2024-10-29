@@ -55,7 +55,7 @@ function ResetPassword() {
                 <div className="flex mt-10 mb-5">
                     <img src="logo.png" alt="Logo" className="w-[300px] pl-1" />
                 </div>
-                Reset Password
+                {/* Reset Password */}
                 <div className="p-2">
                     <input
                         type="text"
@@ -84,8 +84,8 @@ function ResetPassword() {
                         onClick={handleReset}
                         className="flex flex-col w-[252px] h-[30.27px] items-center justify-center gap-[10px] px-[26px] py-[18px] relative bg-[#01b6ee] rounded-[30px]"
                     >
-                        <div className="relative w-[39px] h-[21px] mt-[-6.87px] mb-[-6.87px]">
-                            <div className="absolute top-0 left-0 font-normal text-white text-[14px] tracking-[0] leading-[normal]">
+                        <div className="relative w-[39px] h-[21px] mt-[-6.87px] mb-[-6.87px] flex items-center justify-center">
+                            <div className="font-normal text-white text-[14px] tracking-[0] leading-[normal]">
                                 Submit
                             </div>
                         </div>

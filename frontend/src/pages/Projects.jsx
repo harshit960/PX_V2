@@ -663,7 +663,7 @@ function Project() {
                   <button onClick={() => { window.location.reload() }} className=" p-1 border-2 w-28 text-center border-gray-300 rounded-md">Cancel</button>
 
 
-                  <button onClick={handleSubmit} className="border-2 w-28 mx-14 text-center bg-[#01b6ee]  rounded-md text-white">Submit</button>
+                  <button onClick={handleSubmit} className="border-0 w-28 mx-14 text-center bg-[#01b6ee]  rounded-md text-white">Submit</button>
 
                 </div>
               </div>

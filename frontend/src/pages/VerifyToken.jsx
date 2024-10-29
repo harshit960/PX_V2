@@ -200,8 +200,8 @@ function VerifyToken() {
 
                             className="flex flex-col w-[252px] h-[30.27px] items-center justify-center gap-[10px] px-[26px] py-[18px] relative bg-[#01b6ee] rounded-[30px]"
                         >
-                            <div className="relative w-[39px] h-[21px] mt-[-6.87px] mb-[-6.87px]">
-                                <div className="absolute top-0 left-0 font-normal text-white text-[14px] tracking-[0] leading-[normal]">
+                            <div className="flex items-center justify-center relative w-[39px] h-[21px] mt-[-6.87px] mb-[-6.87px]">
+                                <div className=" font-normal text-white text-[14px] tracking-[0] leading-[normal]">
                                     Submit
                                 </div>
                             </div>

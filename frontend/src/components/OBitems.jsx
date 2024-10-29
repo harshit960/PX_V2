@@ -47,17 +47,9 @@ function OBitems(props) {
         // console.log(x);
         setcompletion((setCompleted / (x.length + 3)) * 100)
     }, [props, OCValidation, TestingJSON, SFTP]);
-
-    useEffect(() => {
-
-        // book("  ")
-
-    }, [completion]);
-
+         
     function book(time) {
         if (props.data.IPOwner != IPOwner) {
-            console.log(props.data.IPOwner, IPOwner);
-
             fetch(import.meta.env.VITE_REACT_APP_BASE_URL + '/newNoti', {
                 method: 'POST',
                 body: JSON.stringify({

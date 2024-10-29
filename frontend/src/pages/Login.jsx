@@ -75,9 +75,6 @@ function Login() {
                     {/* <img className="absolute w-[24px] h-[24px] top-0 left-0" alt="Codicon mail" src="codicon-mail.svg" /> */}
 
                 </div>
-                <div className="p-2">
-                    <Link to="/reset-password">Reset Password</Link>
-                </div>
                 <span className='text-xs bold text-red-500'>
                 {loginError}
                 </span>
@@ -89,6 +86,9 @@ function Login() {
                             </div>
                         </div>
                     </button>
+                <div className="p-2 text-xs underline flex items-center justify-center text-gray-500">
+                    <Link to="/reset-password">Forgot Password?</Link>
+                </div>
                 </div>
                 <img src="background.jpg" alt="" className='absolute -z-10 bg-cover	'/>
             </div>

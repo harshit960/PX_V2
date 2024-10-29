@@ -17,16 +17,16 @@ require('dotenv').config();
 //                                 ------------TESTING----------------
 app.use(cors());
 
-// const connection = new sql.ConnectionPool({
-//   user: 'newuser',
-//   password: 'admin1234',
-//   server: 'HARSHIT', // You can use 'localhost\\instance' to connect to named instance
-//   database: 'data2',
-//   options: {
-//     encrypt: true, // Use this if you're on Windows Azure
-//     trustServerCertificate: true // Use this if your SQL Server uses self-signed certificate
-//   }
-// });
+const connection = new sql.ConnectionPool({
+  user: 'newuser',
+  password: 'admin1234',
+  server: 'HARSHIT', // You can use 'localhost\\instance' to connect to named instance
+  database: 'data2',
+  options: {
+    encrypt: true, // Use this if you're on Windows Azure
+    trustServerCertificate: true // Use this if your SQL Server uses self-signed certificate
+  }
+});
 //                                 ---X------X----X-----X-----X----X----X
 
 
@@ -35,17 +35,17 @@ app.use(cors());
 // const corsOptions = {   origin: 'http://veuwcore1202.jdadelivers.com',  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',   credentials: true,optionsSuccessStatus: 204 }; app.use(cors(corsOptions));
 // app.options('*');
 
-const connection = new sql.ConnectionPool({
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  server: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  port: parseInt(process.env.DB_PORT),
-  options: {
-    encrypt: true, // Use this if you're on Windows Azure
-    trustServerCertificate: true // Change to true for local dev / self-signed certs
-  }
-});
+// const connection = new sql.ConnectionPool({
+//   user: process.env.DB_USER,
+//   password: process.env.DB_PASSWORD,
+//   server: process.env.DB_HOST,
+//   database: process.env.DB_NAME,
+//   port: parseInt(process.env.DB_PORT),
+//   options: {
+//     encrypt: true, // Use this if you're on Windows Azure
+//     trustServerCertificate: true // Change to true for local dev / self-signed certs
+//   }
+// });
 
 //                                 ---X------X----X-----X-----X----X----X
 
@@ -201,7 +201,7 @@ app.post('/reset-password', async (req, res) => {
       .input('username', sql.VarChar, req.body.userId)
       .query(`
             SELECT [email]
-            FROM [data2].[data].[user]
+            FROM [data].[user]
             WHERE [username] = @username;
         `);
     console.log(result);
@@ -229,7 +229,7 @@ app.post('/reset-password', async (req, res) => {
       const mailOptions = {
         from: process.env.SMTP_EMAIL,
         to: req.body.email,
-        cc: process.env.CC_MAIL,
+        // cc: process.env.CC_MAIL,
         subject: 'PartnerXchange Password Reset Request',
         text: `
         You recently requested to reset the password for your PartnerXchange account.
@@ -524,6 +524,7 @@ app.put('/updateLB/:id', (req, res) => {
 app.put('/updateMilestone/:id', (req, res) => {
   // Extract data from the request body
   const id = req.params.id;
+  console.log(req.body);
 
   // Select query to retrieve the leaderboard record
   const selectQuery = 'SELECT * FROM [data].leaderboard WHERE [user] = @id';

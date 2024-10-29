@@ -483,7 +483,27 @@ function Home() {
         );
         setfilteredData(newfilteredData)
     }, [OB, searchTerm]);
+    const [TotalCounter, setTotalCounter] = useState([]);
+    useEffect(() => {
+        console.log(filteredData.length);
 
+        if (filteredData.length != 0) {
+
+            filteredData.map((item, index) => {
+                if (localStorage.getItem('type') == "User-OB" || localStorage.getItem('type') == "admin" || localStorage.getItem('type') == "view" || item.IPOwner == localStorage.getItem('name') || item.TPSpecialist == localStorage.getItem('name')) {
+                    setTotalCounter((TotalCounter) => {
+                        const uniqueItems = new Set([...TotalCounter, item.id]);
+                        return Array.from(uniqueItems);
+                    })
+                    return <OBitems data={item} Users={Users} key={index} settoggleFileUpload={settoggleFileUpload} setsetTime={setsetTime} fileUploadSync={fileUploadSync} setTime={setTime} fileUploadError={fileUploadError} settogglrEdit={settogglrEdit} seteditdata={seteditdata} />
+                }
+            })
+        }
+
+
+console.log(TotalCounter);
+
+    }, [OB, searchTerm])
     return (<>
 
         <div className={toggleNewRequest}>
@@ -579,7 +599,7 @@ function Home() {
                             <div className="flex my-1">
 
                                 <button onClick={() => { window.location.reload() }} className="mx-2 p-1 border-2 w-28 text-center border-gray-300 rounded-md">Cancel</button>
-                                <button onClick={handleSubmit} className="border-0 w-28 mx-14 text-center bg-[#01b6ee]  border-black rounded-md text-white">Submit</button>
+                                <button onClick={handleSubmit} className=" w-28 mx-14 text-center bg-[#01b6ee]  rounded-md text-white">Submit</button>
                             </div>
                         </div>
                         <div className="basis-1/2">
@@ -863,7 +883,7 @@ function Home() {
                             <div className="flex pt-4 justify-between">
                                 {/* <div onClick={() => settogglrEdit("hidden")}>Cancel</div> */}
                                 <button onClick={() => { settogglrEdit("hidden") }} className="mx-2 p-1 border-2 w-28 text-center  rounded-md">Cancel</button>
-                                <div onClick={handleEditSubmit} className="border-2 w-28 cursor-pointer flex items-center justify-center text-center bg-[#01b6ee]  rounded-md text-white mr-3">Submit</div>
+                                <div onClick={handleEditSubmit} className="border-0 w-28 cursor-pointer flex items-center justify-center text-center bg-[#01b6ee]  rounded-md text-white mr-3">Submit</div>
 
                             </div>
                         </div>
@@ -937,28 +957,20 @@ function Home() {
                             </tr>
                         </thead>
                         <tbody className='' >
-                            {filteredData.length != 0 && filteredData.map((item, index) => {
-                                if (localStorage.getItem('type') == "User-OB" || localStorage.getItem('type') == "admin" || localStorage.getItem('type') == "view" || item.IPOwner == localStorage.getItem('name') || item.TPSpecialist == localStorage.getItem('name')) {
-
-                                    return <OBitems data={item} Users={Users} key={index} settoggleFileUpload={settoggleFileUpload} setsetTime={setsetTime} fileUploadSync={fileUploadSync} setTime={setTime} fileUploadError={fileUploadError} settogglrEdit={settogglrEdit} seteditdata={seteditdata} />
-                                }
-
-                            })
-                                // : OB.map((item) => {
-
-                                //     if (localStorage.getItem('type') == "User-OB" || localStorage.getItem('type') == "admin" || localStorage.getItem('type') == "view" || item.IPOwner == localStorage.getItem('name') || item.TPSpecialist == localStorage.getItem('name')) {
-
-                                //         return <OBitems data={item} Users={Users} settoggleFileUpload={settoggleFileUpload} setsetTime={setsetTime} fileUploadSync={fileUploadSync} setTime={setTime} fileUploadError={fileUploadError} settogglrEdit={settogglrEdit} seteditdata={seteditdata} />
-                                //     }
-
-                                // })
+                            {
+                                filteredData.length != 0 &&
+                                filteredData.map((item, index) => {
+                                    if (localStorage.getItem('type') == "User-OB" || localStorage.getItem('type') == "admin" || localStorage.getItem('type') == "view" || item.IPOwner == localStorage.getItem('name') || item.TPSpecialist == localStorage.getItem('name')) {
+                                        return <OBitems data={item} Users={Users} key={index} settoggleFileUpload={settoggleFileUpload} setsetTime={setsetTime} fileUploadSync={fileUploadSync} setTime={setTime} fileUploadError={fileUploadError} settogglrEdit={settogglrEdit} seteditdata={seteditdata} />
+                                    }
+                                })
                             }
 
 
                         </tbody>
                     </table>
                 </div>
-                <div className='mt-[20px]'>Total Count: {filteredData.length}</div>
+                <div className='mt-[20px]'>Total Count: {TotalCounter.length}</div>
 
             </div>
         </div>

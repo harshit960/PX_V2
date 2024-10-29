@@ -976,7 +976,7 @@ function Pitems(props) {
                                 <div className="flex pt-4 ">
                                     {/* <div onClick={() => settogglrEdit("hidden")}>Cancel</div> */}
                                     <button onClick={() => { settogglrEdit("hidden") }} className="mx-2 p-1 border-2 w-28 text-center border-gray-300 rounded-md">Cancel</button>
-                                    <div onClick={handleEditSubmit} className="flex items-center justify-center border-2 ml-[136px] w-28 cursor-pointer text-center bg-[#01b6ee] border-black rounded-md text-white mr-3">Submit</div>
+                                    <div onClick={handleEditSubmit} className="flex items-center justify-center border-0 ml-[136px] w-28 cursor-pointer text-center bg-[#01b6ee] border-black rounded-md text-white mr-3">Submit</div>
 
                                 </div>
                             </div>
