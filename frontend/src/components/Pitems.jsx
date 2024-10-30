@@ -624,7 +624,7 @@ function Pitems(props) {
 
                                             name="colors"
                                             options={[{ value: 'X12 4010', label: 'X12 4010' }, { value: 'X12 5010', label: 'X12 5010' }, { value: 'EDIFACT D-09A', label: 'EDIFACT D-09A' }]}
-                                            className="basic-multi-select rounded border-2 border-gray-300 mx-2 w-[240px] focus:border-gray-300 focus:outline-none focus:ring-0 focus:ring-gray-400 focus:ring-offset-0"
+                                            className="basic-multi-select rounded border-0 border-gray-300 mx-2 w-[240px] focus:border-gray-300 focus:outline-none focus:ring-0 focus:ring-gray-400 focus:ring-offset-0"
                                             classNamePrefix="select"
                                             placeholder={props.data.EDIVersion.slice(1)}
                                             isSearchable={false}
@@ -658,7 +658,7 @@ function Pitems(props) {
 
                                             name="colors"
                                             options={options}
-                                            className="basic-multi-select rounded border-2 border-gray-300 mx-2 w-[240px] focus:border-gray-300 focus:outline-none focus:ring-0 focus:ring-gray-400 focus:ring-offset-0"
+                                            className="basic-multi-select rounded border-0 border-gray-300 mx-2 w-[240px] focus:border-gray-300 focus:outline-none focus:ring-0 focus:ring-gray-400 focus:ring-offset-0"
                                             classNamePrefix="select"
                                             placeholder={props.data.EDIMessageType.slice(1)}
                                             isSearchable={false}
@@ -921,6 +921,7 @@ function Pitems(props) {
                                                         borderColor: "#d1d5db ",
                                                         fontSize: 2, // This reduces the font size
                                                         lineHeight: 4,
+        
                                                         padding: 0,
                                                         margin: 0,
                                                     }} />

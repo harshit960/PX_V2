@@ -209,7 +209,7 @@ function VerifyToken() {
                     }
                     <div className="p-2 flex items-center justify-center">
 
-                    <Link to="/login">Login</Link>
+                    <Link to="/login" className="text-xs underline text-gray-500">Back to login</Link>
                     </div>
                 </div>
 

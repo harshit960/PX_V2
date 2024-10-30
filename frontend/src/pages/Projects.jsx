@@ -479,7 +479,7 @@ function Project() {
                       isMulti
                       name="colors"
                       options={[{ value: 'X12 4010', label: 'X12 4010' }, { value: 'X12 5010', label: 'X12 5010' }, { value: 'EDIFACT D-09A', label: 'EDIFACT D-09A' }]}
-                      className="basic-multi-select rounded border-2 border-gray-300 my-3 w-52 focus:outline-none focus:ring-0 focus:border-gray-300"
+                      className="basic-multi-select rounded border-0 border-gray-300 my-3 w-52 focus:outline-none focus:ring-0 focus:border-gray-300"
                       classNamePrefix="select"
                       placeholder="EDI Version"
                       isSearchable={false}
@@ -514,7 +514,7 @@ function Project() {
                         }
                     }).filter(Boolean)}
                     
-                      className="basic-multi-select rounded border-2 border-gray-300 my-3 w-52 focus:outline-none focus:ring-0 focus:border-gray-300"
+                      className="basic-multi-select rounded border-0 border-gray-300 my-3 w-52 focus:outline-none focus:ring-0 focus:border-gray-300"
                       classNamePrefix="select"
                       placeholder="Project Lead"
                       isSearchable={false}
@@ -613,7 +613,7 @@ function Project() {
                       isMulti
                       name="colors"
                       options={options}
-                      className="basic-multi-select rounded border-2 border-gray-300 my-3 w-52 focus:outline-none focus:ring-0 focus:border-gray-300"
+                      className="basic-multi-select rounded border-0 border-gray-300 my-3 w-52 focus:outline-none focus:ring-0 focus:border-gray-300"
                       classNamePrefix="select"
                       placeholder="EDI Message Type"
                       isSearchable={false}

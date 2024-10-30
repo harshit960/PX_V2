@@ -558,7 +558,7 @@ console.log(TotalCounter);
                                         isMulti
                                         name="colors"
                                         options={options}
-                                        className="focus:border-gray-300 focus:outline-none focus:ring-0 focus:ring-gray-400 focus:ring-offset-0 basic-multi-select border-2 border-gray-300 w-40 rounded"
+                                        className="focus:border-gray-300 focus:outline-none focus:ring-0 focus:ring-gray-400 focus:ring-offset-0 basic-multi-select border-0 border-gray-300 w-40 rounded"
                                         classNamePrefix="select"
                                         placeholder="Select EDI Message type"
                                         value={selected}
