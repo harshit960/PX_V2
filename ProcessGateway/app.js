@@ -148,7 +148,7 @@ function sendEmailNotification(data, status, recipientEmail) {
             }
         });
     } else {
-        console.log(`Testing mode: ${message}`);
+        console.log(`Email: ${recipientEmail} Testing mode: ${message}`);
     }
 }
 
