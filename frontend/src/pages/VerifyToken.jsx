@@ -59,7 +59,7 @@ function VerifyToken() {
             .required('Required Avatar'),
     });
 
-    const [Avatar, setAvatar] = useState("Avatar (1).jpg");
+    const [Avatar, setAvatar] = useState("NA");
     const [Password, setPassword] = useState();
     const [CPassword, setCPassword] = useState();
     const [token, settoken] = useState();

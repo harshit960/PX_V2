@@ -278,15 +278,23 @@ app.post('/verify-token', (req, res) => {
 app.post('/change-password', async (req, res) => {
   try {
     var decoded = jwt.verify(req.body.token, 'key');
-    const result = await connection.request()
+    if (decoded.pp != "NA") { 
+      const result = await connection.request()
       .input('username', sql.VarChar, decoded.userId)
       .input('newPassword', sql.VarChar, req.body.password)
       .input('newProfilePicture', sql.VarChar, req.body.newProfilePicture)
       .query('UPDATE [data].[user] SET password = @newPassword, pp = @newProfilePicture WHERE username = @username');
-    console.log(result);
+      console.log(result);
+    }
+    else{
+      const result = await connection.request()
+      .input('username', sql.VarChar, decoded.userId)
+      .input('newPassword', sql.VarChar, req.body.password)
+      .query('UPDATE [data].[user] SET password = @newPassword WHERE username = @username');
+      console.log(result);
+    }
 
     if (result.rowsAffected[0] === 0) {
-      console.log("lol");
 
       return res.status(404).send('User not found');
     }
