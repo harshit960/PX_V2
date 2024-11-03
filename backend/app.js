@@ -210,21 +210,21 @@ app.post('/reset-password', async (req, res) => {
     if (result.recordset[0].email == req.body.email) {
 
       token = jwt.sign({ userId: req.body.userId, email: req.body.email }, "key", { expiresIn: '1800s' })
-      // const transporter = nodemailer.createTransport({
-      //   service: "Gmail",
-      //   host: "smtp.gmail.com",
-      //   port: 587,
-      //   secure: true,
-      //   auth: {
-      //     user: "raj.harshit962@gmail.com",
-      //     pass: "rofh wqpa zpsw hjtq"
-      //   },
-      // });
       const transporter = nodemailer.createTransport({
-        host: process.env.SMTP_SERVICE,
-        port: process.env.SMTP_PORT, // Your SMTP port (e.g., 587)
-
+        service: "Gmail",
+        host: "smtp.gmail.com",
+        port: 587,
+        secure: true,
+        auth: {
+          user: "raj.harshit962@gmail.com",
+          pass: "rofh wqpa zpsw hjtq"
+        },
       });
+      // const transporter = nodemailer.createTransport({
+      //   host: process.env.SMTP_SERVICE,
+      //   port: process.env.SMTP_PORT, // Your SMTP port (e.g., 587)
+
+      // });
       // Set up mail options
       const mailOptions = {
         from: process.env.SMTP_EMAIL,
@@ -278,13 +278,19 @@ app.post('/verify-token', (req, res) => {
 app.post('/change-password', async (req, res) => {
   try {
     var decoded = jwt.verify(req.body.token, 'key');
-    if (decoded.pp != "NA") { 
+    
+    if (req.body.newProfilePicture != "NA") { 
       const result = await connection.request()
       .input('username', sql.VarChar, decoded.userId)
       .input('newPassword', sql.VarChar, req.body.password)
       .input('newProfilePicture', sql.VarChar, req.body.newProfilePicture)
       .query('UPDATE [data].[user] SET password = @newPassword, pp = @newProfilePicture WHERE username = @username');
       console.log(result);
+      if (result.rowsAffected[0] === 0) {
+  
+        return res.status(404).send('User not found');
+      }
+      res.status(200).send('User updated successfully');
     }
     else{
       const result = await connection.request()
@@ -292,14 +298,14 @@ app.post('/change-password', async (req, res) => {
       .input('newPassword', sql.VarChar, req.body.password)
       .query('UPDATE [data].[user] SET password = @newPassword WHERE username = @username');
       console.log(result);
+      if (result.rowsAffected[0] === 0) {
+  
+        return res.status(404).send('User not found');
+      }
+      res.status(200).send('User updated successfully');
     }
 
-    if (result.rowsAffected[0] === 0) {
 
-      return res.status(404).send('User not found');
-    }
-
-    res.status(200).send('User updated successfully');
 
   } catch (error) {
     console.log(error);
