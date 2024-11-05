@@ -713,15 +713,35 @@ function Pitems(props) {
                                                         padding: 0,
                                                         margin: 0,
                                                     }}
+                                                    
                                                     slotProps={{
                                                         textField: {
                                                             placeholder: `${props.data.ProjectedGoLive}`,
                                                             size: 'small',
 
-                                                            inputProps: { // This targets the input element directly
-                                                                style: {
-                                                                    fontSize: 16, // This reduces the font size
+                                                            InputProps: {
+                                                                sx: {
+                                                                    border: 0, // Initial border
+                                                                    borderColor: '#d1d5db ',
+                                                                    paddingRight:0,
+                                                                    '&:hover': {
+                                                                        border: 0,
+                                                                    },
+                                                                    '&.Mui-focused': {
+                                                                        border: 0,
+                                                                        borderColor: 'transparent', // Removes border on focus
+                                                                        outline: 'none',
+                                                                        boxShadow: 'none',
+                                                                    },
                                                                 },
+                                                                inputProps: {
+                                                                    style: {
+                                                                        fontSize: 16,
+                                                                         // Font size inside input
+                                                                    },
+                                                                },
+
+
                                                             }, // This reduces the height of the TextField
                                                         }
                                                     }}
@@ -764,15 +784,36 @@ function Pitems(props) {
                                                         padding: 0,
                                                         margin: 0,
                                                     }}
+                                                    
                                                     slotProps={{
                                                         textField: {
                                                             placeholder: `${props.data.DevEnviornment}`,
+                                                            // placeholder: `${props.data.ProjectedGoLive}`,
                                                             size: 'small',
 
-                                                            inputProps: { // This targets the input element directly
-                                                                style: {
-                                                                    fontSize: 16, // This reduces the font size
+                                                            InputProps: {
+                                                                sx: {
+                                                                    border: 0, // Initial border
+                                                                    borderColor: '#d1d5db ',
+                                                                    paddingRight:0,
+                                                                    '&:hover': {
+                                                                        border: 0,
+                                                                    },
+                                                                    '&.Mui-focused': {
+                                                                        border: 0,
+                                                                        borderColor: 'transparent', // Removes border on focus
+                                                                        outline: 'none',
+                                                                        boxShadow: 'none',
+                                                                    },
                                                                 },
+                                                                inputProps: {
+                                                                    style: {
+                                                                        fontSize: 16,
+                                                                         // Font size inside input
+                                                                    },
+                                                                },
+
+
                                                             }, // This reduces the height of the TextField
                                                         }
                                                     }}
@@ -794,15 +835,36 @@ function Pitems(props) {
                                                     }}
                                                     // value={editQA}
                                                     className='border-2 border-gray-300 p-2  w-60 my-3 rounded focus:outline-none focus:ring-0 focus:border-gray-300'
+                                                    
                                                     slotProps={{
                                                         textField: {
                                                             placeholder: `${props.data.QAEnviornment}`,
+                                                            // placeholder: `${props.data.ProjectedGoLive}`,
                                                             size: 'small',
 
-                                                            inputProps: { // This targets the input element directly
-                                                                style: {
-                                                                    fontSize: 16, // This reduces the font size
+                                                            InputProps: {
+                                                                sx: {
+                                                                    border: 0, // Initial border
+                                                                    borderColor: '#d1d5db ',
+                                                                    paddingRight:0,
+                                                                    '&:hover': {
+                                                                        border: 0,
+                                                                    },
+                                                                    '&.Mui-focused': {
+                                                                        border: 0,
+                                                                        borderColor: 'transparent', // Removes border on focus
+                                                                        outline: 'none',
+                                                                        boxShadow: 'none',
+                                                                    },
                                                                 },
+                                                                inputProps: {
+                                                                    style: {
+                                                                        fontSize: 16,
+                                                                         // Font size inside input
+                                                                    },
+                                                                },
+
+
                                                             }, // This reduces the height of the TextField
                                                         }
                                                     }}
@@ -843,15 +905,36 @@ function Pitems(props) {
                                                     }}
                                                     // value={editPro}
                                                     className='border-2 border-gray-300 p-2  w-60 my-3 rounded focus:outline-none focus:ring-0 focus:border-gray-300'
+                                                    
                                                     slotProps={{
                                                         textField: {
                                                             placeholder: `${props.data.Production}`,
+                                                            // placeholder: `${props.data.ProjectedGoLive}`,
                                                             size: 'small',
 
-                                                            inputProps: { // This targets the input element directly
-                                                                style: {
-                                                                    fontSize: 16, // This reduces the font size
+                                                            InputProps: {
+                                                                sx: {
+                                                                    border: 0, // Initial border
+                                                                    borderColor: '#d1d5db ',
+                                                                    paddingRight:0,
+                                                                    '&:hover': {
+                                                                        border: 0,
+                                                                    },
+                                                                    '&.Mui-focused': {
+                                                                        border: 0,
+                                                                        borderColor: 'transparent', // Removes border on focus
+                                                                        outline: 'none',
+                                                                        boxShadow: 'none',
+                                                                    },
                                                                 },
+                                                                inputProps: {
+                                                                    style: {
+                                                                        fontSize: 16,
+                                                                         // Font size inside input
+                                                                    },
+                                                                },
+
+
                                                             }, // This reduces the height of the TextField
                                                         }
                                                     }}
@@ -892,15 +975,36 @@ function Pitems(props) {
                                                     }}
                                                     // value={editGOLive}
                                                     className='border-2 border-gray-300 p-2  w-60 my-3 rounded focus:outline-none focus:ring-0 focus:border-gray-300'
+                                                    
                                                     slotProps={{
                                                         textField: {
                                                             placeholder: `${props.data.GoLive}`,
+                                                            // placeholder: `${props.data.ProjectedGoLive}`,
                                                             size: 'small',
 
-                                                            inputProps: { // This targets the input element directly
-                                                                style: {
-                                                                    fontSize: 16, // This reduces the font size
+                                                            InputProps: {
+                                                                sx: {
+                                                                    border: 0, // Initial border
+                                                                    borderColor: '#d1d5db ',
+                                                                    paddingRight:0,
+                                                                    '&:hover': {
+                                                                        border: 0,
+                                                                    },
+                                                                    '&.Mui-focused': {
+                                                                        border: 0,
+                                                                        borderColor: 'transparent', // Removes border on focus
+                                                                        outline: 'none',
+                                                                        boxShadow: 'none',
+                                                                    },
                                                                 },
+                                                                inputProps: {
+                                                                    style: {
+                                                                        fontSize: 16,
+                                                                         // Font size inside input
+                                                                    },
+                                                                },
+
+
                                                             }, // This reduces the height of the TextField
                                                         }
                                                     }}

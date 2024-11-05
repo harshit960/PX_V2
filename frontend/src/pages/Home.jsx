@@ -669,7 +669,8 @@ console.log(TotalCounter);
                                                                 InputProps: {
                                                                     sx: {
                                                                         border: 0, // Initial border
-                                                                        borderColor: '#d1d5db ', // Removes border on hover
+                                                                        borderColor: '#d1d5db ',
+                                                                        paddingRight:0,
                                                                         '&:hover': {
                                                                             border: 0,
                                                                         },
@@ -682,7 +683,8 @@ console.log(TotalCounter);
                                                                     },
                                                                     inputProps: {
                                                                         style: {
-                                                                            fontSize: 16, // Font size inside input
+                                                                            fontSize: 16,
+                                                                             // Font size inside input
                                                                         },
                                                                     },
 
@@ -728,20 +730,41 @@ console.log(TotalCounter);
                                                         }}
                                                         // value={eSFTP}
                                                         className='border-2 border-[#01b6ee] p-2  w-60 my-3 rounded '
+                                                        
                                                         slotProps={{
                                                             textField: {
                                                                 placeholder: `${editdata.SFTP}`,
                                                                 size: 'small',
 
-                                                                inputProps: { // This targets the input element directly
-                                                                    style: {
-                                                                        fontSize: 16, // This reduces the font size
+                                                                InputProps: {
+                                                                    sx: {
+                                                                        border: 0, // Initial border
+                                                                        borderColor: '#d1d5db ',
+                                                                        paddingRight:0,
+                                                                        '&:hover': {
+                                                                            border: 0,
+                                                                        },
+                                                                        '&.Mui-focused': {
+                                                                            border: 0,
+                                                                            borderColor: 'transparent', // Removes border on focus
+                                                                            outline: 'none',
+                                                                            boxShadow: 'none',
+                                                                        },
                                                                     },
+                                                                    inputProps: {
+                                                                        style: {
+                                                                            fontSize: 16,
+                                                                             // Font size inside input
+                                                                        },
+                                                                    },
+
+
                                                                 }, // This reduces the height of the TextField
                                                             }
                                                         }}
                                                         sx={{
                                                             width: 240,
+                                                            
                                                             '& .MuiOutlinedInput-root': {
                                                                 '& fieldset': {
                                                                     borderColor: 'transparent', // No border by default
@@ -776,15 +799,35 @@ console.log(TotalCounter);
                                                         }}
                                                         // value={eGoLive}
                                                         className='border-2 border-[#01b6ee] p-2  w-60 my-3 rounded '
+                                                        
                                                         slotProps={{
                                                             textField: {
                                                                 placeholder: `${editdata.GoLive}`,
                                                                 size: 'small',
 
-                                                                inputProps: { // This targets the input element directly
-                                                                    style: {
-                                                                        fontSize: 16, // This reduces the font size
+                                                                InputProps: {
+                                                                    sx: {
+                                                                        border: 0, // Initial border
+                                                                        borderColor: '#d1d5db ',
+                                                                        paddingRight:0,
+                                                                        '&:hover': {
+                                                                            border: 0,
+                                                                        },
+                                                                        '&.Mui-focused': {
+                                                                            border: 0,
+                                                                            borderColor: 'transparent', // Removes border on focus
+                                                                            outline: 'none',
+                                                                            boxShadow: 'none',
+                                                                        },
                                                                     },
+                                                                    inputProps: {
+                                                                        style: {
+                                                                            fontSize: 16,
+                                                                             // Font size inside input
+                                                                        },
+                                                                    },
+
+
                                                                 }, // This reduces the height of the TextField
                                                             }
                                                         }}
@@ -840,15 +883,35 @@ console.log(TotalCounter);
 
                                                             }}
                                                             // value={dayjs(item.value)}
+                                                            
                                                             slotProps={{
                                                                 textField: {
                                                                     placeholder: `${item.value}`,
                                                                     size: 'small',
-
-                                                                    inputProps: { // This targets the input element directly
-                                                                        style: {
-                                                                            fontSize: 16, // This reduces the font size
+    
+                                                                    InputProps: {
+                                                                        sx: {
+                                                                            border: 0, // Initial border
+                                                                            borderColor: '#d1d5db ',
+                                                                            paddingRight:0,
+                                                                            '&:hover': {
+                                                                                border: 0,
+                                                                            },
+                                                                            '&.Mui-focused': {
+                                                                                border: 0,
+                                                                                borderColor: 'transparent', // Removes border on focus
+                                                                                outline: 'none',
+                                                                                boxShadow: 'none',
+                                                                            },
                                                                         },
+                                                                        inputProps: {
+                                                                            style: {
+                                                                                fontSize: 16,
+                                                                                 // Font size inside input
+                                                                            },
+                                                                        },
+    
+    
                                                                     }, // This reduces the height of the TextField
                                                                 }
                                                             }}
