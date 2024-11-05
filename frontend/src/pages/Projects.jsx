@@ -532,22 +532,42 @@ function Project() {
 
                       <LocalizationProvider dateAdapter={AdapterDayjs} >
 
-                        <DatePicker onChange={(e) => {
+                        <MobileDatePicker onChange={(e) => {
                           var n = dayjs(e);
                           console.log(n.format("ll"));
                           setProjectedGoLive(n.format("ll"))
                         }} value={ProjectedGoLive} className='border-2 border-gray-300 w-40 my-3 rounded focus:outline-none focus:ring-0 focus:border-gray-300'
-                        slotProps={{
-                          textField: {
-                              size: 'small',
+                        
+                      slotProps={{
+                        textField: {
+                            size: 'small',
 
-                              inputProps: { // This targets the input element directly
-                                  style: {
-                                      fontSize: 16, // This reduces the font size
-                                  },
-                              }, // This reduces the height of the TextField
-                          }
-                      }}
+                            InputProps: {
+                                sx: {
+                                    border: 0, // Initial border
+                                    borderColor: '#d1d5db ',
+                                    paddingRight:0,
+                                    '&:hover': {
+                                        border: 0,
+                                    },
+                                    '&.Mui-focused': {
+                                        border: 0,
+                                        borderColor: 'transparent', // Removes border on focus
+                                        outline: 'none',
+                                        boxShadow: 'none',
+                                    },
+                                },
+                                inputProps: {
+                                    style: {
+                                        fontSize: 16,
+                                         // Font size inside input
+                                    },
+                                },
+
+
+                            }, // This reduces the height of the TextField
+                        }
+                    }}
                       sx={{
                           width: 208,
                           '& .MuiOutlinedInput-root': {
