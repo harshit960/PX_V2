@@ -324,7 +324,7 @@ function Leaderboard() {
                 <Nav />
                 <div className='flex mt-6'>
                     <div className=" basis-3/4">
-                        <div className="table-fixed relative h-96 overflow-x-auto rounded pb-20">
+                        <div className="table-fixed relative h-[600px] overflow-x-auto rounded pb-20">
                             <table className="w-full text-sm text-left rtl:text-right  ">
 
 
