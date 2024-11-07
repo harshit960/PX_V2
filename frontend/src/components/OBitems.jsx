@@ -48,8 +48,8 @@ function OBitems(props) {
         setcompletion((setCompleted / (x.length + 3)) * 100)
     }, [props, OCValidation, TestingJSON, SFTP]);
 
-    function book(event,time) {
-        event.preventDefault();
+    function book(time) {
+        alert(props.data.IPOwner+ " + " +IPOwner)
         if (props.data.IPOwner !== IPOwner) {
             fetch(import.meta.env.VITE_REACT_APP_BASE_URL + '/newNoti', {
                 method: 'POST',
@@ -1117,7 +1117,7 @@ function OBitems(props) {
                 </td>
                 <td class="px-6 py-4">
 
-                    <select onChange={(e) => { setIPOwner(e.target.value) }} className='border-0 py-0 w-56 focus:border-0 text-sm'>
+                    <select onChange={(e) => {e.preventDefault; setIPOwner(e.target.value) }} className='border-0 py-0 w-56 focus:border-0 text-sm'>
                         <option selected className='hidden'>{props.data.IPOwner}</option>
                         {props.Users.map((item, index) => (<>
                             {item.type != "admin" ?
