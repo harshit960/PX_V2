@@ -47,16 +47,16 @@ function OBitems(props) {
         // console.log(x);
         setcompletion((setCompleted / (x.length + 3)) * 100)
     }, [props, OCValidation, TestingJSON, SFTP]);
-         
-    function book(time) {
-        if (props.data.IPOwner != IPOwner) {
+
+    function book(event,time) {
+        event.preventDefault();
+        if (props.data.IPOwner !== IPOwner) {
             fetch(import.meta.env.VITE_REACT_APP_BASE_URL + '/newNoti', {
                 method: 'POST',
                 body: JSON.stringify({
                     userID: IPOwner,
                     msg: `${props.data.RequestID} has been assigned to you by ${localStorage.getItem('name')}`,
                     assignedBY: localStorage.getItem('name')
-
                 }),
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
@@ -214,7 +214,7 @@ function OBitems(props) {
                 console.log('There was an error: ', error);
             });
 
-        
+
     }
     // Calculating Milestone
     useEffect(() => {
@@ -244,7 +244,7 @@ function OBitems(props) {
                             // break
                         }
 
-                    }  
+                    }
                     if (JSON.parse(props.data.TestingJSON)[i].value == "On Hold") {
                         setcalMilestione("Critical")
                         break
@@ -300,9 +300,9 @@ function OBitems(props) {
         if (props.data.GoLive == "On Hold") {
             setcalMilestione("Critical")
         }
-        
+
     });
-// Calculating colour of progress bar
+    // Calculating colour of progress bar
     const [progressColor, setprogressColor] = useState();
     useEffect(() => {
         if (calMilestione == "Stable") {
@@ -328,7 +328,7 @@ function OBitems(props) {
     const [CQDOC, setCQDOC] = useState(props.data.CQDoc);
     const [run, setrun] = useState();
 
-// managing testing JSON as per requirement
+    // managing testing JSON as per requirement
     function handleOC(e) {
         setOCValidation(e.target.value)
         if (e.target.value == "Completed") {
@@ -869,21 +869,21 @@ function OBitems(props) {
     };
     const [tempByRemark, settempByRemark] = useState("");
     function handleAddnotes() {
-        
+
         let BYRemarkObj = BYRemark ? JSON.parse(BYRemark) : { notes: [] };
 
-        
+
         BYRemarkObj.notes.push(tempByRemark);
 
-        
+
         let updatedBYRemark = JSON.stringify(BYRemarkObj);
 
-        
+
         setBYRemark(updatedBYRemark);
 
     }
     useEffect(() => {
-        
+
         if (props.data.BYRemarks != BYRemark) {
 
             book("")
@@ -926,7 +926,7 @@ function OBitems(props) {
                     userID: props.data.TPSpecialist,
                     msg: `Check ${props.data.RequestID} Notes in Onboarding`,
                     assignedBY: localStorage.getItem('name'),
-                    onEmail:false
+                    onEmail: false
 
                 }),
                 headers: {
@@ -938,7 +938,7 @@ function OBitems(props) {
         }
 
     }, [Notes]);
-    
+
     const [Notesdilogbox, setNotesdilogbox] = useState("scale-0");
     function deleteNotes(index) {
         let arr = JSON.parse(props.data.Notes).notes
@@ -1119,7 +1119,7 @@ function OBitems(props) {
 
                     <select onChange={(e) => { setIPOwner(e.target.value) }} className='border-0 py-0 w-56 focus:border-0 text-sm'>
                         <option selected className='hidden'>{props.data.IPOwner}</option>
-                        {props.Users.map((item,index) => (<>
+                        {props.Users.map((item, index) => (<>
                             {item.type != "admin" ?
                                 <option key={index}>
 
@@ -1140,7 +1140,7 @@ function OBitems(props) {
                     </select>
 
                     {OCValidation == "Completed" && props.data.CQDoc != null ?
-                        <a href={import.meta.env.VITE_REACT_APP_BASE_URL+props.data.CQDoc} className='text-xs pt-2 text-[#01b6ee] underline font-semibold'>Carrier Questionnaire</a>
+                        <a href={import.meta.env.VITE_REACT_APP_BASE_URL + props.data.CQDoc} className='text-xs pt-2 text-[#01b6ee] underline font-semibold'>Carrier Questionnaire</a>
                         : <></>}
 
                 </td>

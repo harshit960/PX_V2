@@ -538,7 +538,6 @@ app.put('/updateLB/:id', (req, res) => {
 app.put('/updateMilestone/:id', (req, res) => {
   // Extract data from the request body
   const id = req.params.id;
-  console.log(req.body);
 
   // Select query to retrieve the leaderboard record
   const selectQuery = 'SELECT * FROM [data].leaderboard WHERE [user] = @id';
@@ -733,7 +732,7 @@ app.get('/projects/:ProjectLead', (req, res) => {
   });
 });
 app.post('/newRequest', (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   const { RequestID, Customer, CarrierName, SCAC, Phase, Completion, Milestone, TPSpecialist, TicketNumber, BYRemarks, IPOwner, SFTP, Testing204, TestingIFTMIN, TestingIFTSTA, GoLive, TestingJSON, TradingPartnerSetup, disabledArray } = req.body;
 
   // Insert query for onboarding table
@@ -779,7 +778,7 @@ app.post('/newRequest', (req, res) => {
 });
 app.patch('/updateOB/:id', (req, res) => {
   // Extract data from the request body
-  console.log(req.body)
+  // console.log(req.body)
   const { IPOwner, OCValidation, Testing204, GoLive, TestingJSON, SFTP, BYRemarks, TradingPartnerSetup, Completion, Milestone, disabledArray, active, Notes } = req.body;
   const id = req.params.id;
 
@@ -1074,9 +1073,10 @@ app.get('/getOBCustomer/:Customer', (req, res) => {
 });
 app.post('/newNoti', async (req, res) => {
   const { userID, msg, assignedBY, onEmail } = req.body;
-
+  
   try {
     if (onEmail != false) {
+      console.log("mail triggend");
 
       // Get the email of the user
       const emailResult = await connection.request()
