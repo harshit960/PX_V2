@@ -485,8 +485,7 @@ function Home() {
     }, [OB, searchTerm]);
     const [TotalCounter, setTotalCounter] = useState([]);
     useEffect(() => {
-        console.log(filteredData.length);
-
+        setTotalCounter([])
         if (filteredData.length != 0) {
 
             filteredData.map((item, index) => {
@@ -501,9 +500,9 @@ function Home() {
         }
 
 
-console.log(TotalCounter);
+        console.log("new",TotalCounter);
 
-    }, [OB, searchTerm])
+    }, [OB, searchTerm, filteredData])
     return (<>
 
         <div className={toggleNewRequest}>
@@ -670,7 +669,7 @@ console.log(TotalCounter);
                                                                     sx: {
                                                                         border: 0, // Initial border
                                                                         borderColor: '#d1d5db ',
-                                                                        paddingRight:0,
+                                                                        paddingRight: 0,
                                                                         '&:hover': {
                                                                             border: 0,
                                                                         },
@@ -684,7 +683,7 @@ console.log(TotalCounter);
                                                                     inputProps: {
                                                                         style: {
                                                                             fontSize: 16,
-                                                                             // Font size inside input
+                                                                            // Font size inside input
                                                                         },
                                                                     },
 
@@ -730,7 +729,7 @@ console.log(TotalCounter);
                                                         }}
                                                         // value={eSFTP}
                                                         className='border-2 border-[#01b6ee] p-2  w-60 my-3 rounded '
-                                                        
+
                                                         slotProps={{
                                                             textField: {
                                                                 placeholder: `${editdata.SFTP}`,
@@ -740,7 +739,7 @@ console.log(TotalCounter);
                                                                     sx: {
                                                                         border: 0, // Initial border
                                                                         borderColor: '#d1d5db ',
-                                                                        paddingRight:0,
+                                                                        paddingRight: 0,
                                                                         '&:hover': {
                                                                             border: 0,
                                                                         },
@@ -754,7 +753,7 @@ console.log(TotalCounter);
                                                                     inputProps: {
                                                                         style: {
                                                                             fontSize: 16,
-                                                                             // Font size inside input
+                                                                            // Font size inside input
                                                                         },
                                                                     },
 
@@ -764,7 +763,7 @@ console.log(TotalCounter);
                                                         }}
                                                         sx={{
                                                             width: 240,
-                                                            
+
                                                             '& .MuiOutlinedInput-root': {
                                                                 '& fieldset': {
                                                                     borderColor: 'transparent', // No border by default
@@ -799,7 +798,7 @@ console.log(TotalCounter);
                                                         }}
                                                         // value={eGoLive}
                                                         className='border-2 border-[#01b6ee] p-2  w-60 my-3 rounded '
-                                                        
+
                                                         slotProps={{
                                                             textField: {
                                                                 placeholder: `${editdata.GoLive}`,
@@ -809,7 +808,7 @@ console.log(TotalCounter);
                                                                     sx: {
                                                                         border: 0, // Initial border
                                                                         borderColor: '#d1d5db ',
-                                                                        paddingRight:0,
+                                                                        paddingRight: 0,
                                                                         '&:hover': {
                                                                             border: 0,
                                                                         },
@@ -823,7 +822,7 @@ console.log(TotalCounter);
                                                                     inputProps: {
                                                                         style: {
                                                                             fontSize: 16,
-                                                                             // Font size inside input
+                                                                            // Font size inside input
                                                                         },
                                                                     },
 
@@ -883,17 +882,17 @@ console.log(TotalCounter);
 
                                                             }}
                                                             // value={dayjs(item.value)}
-                                                            
+
                                                             slotProps={{
                                                                 textField: {
                                                                     placeholder: `${item.value}`,
                                                                     size: 'small',
-    
+
                                                                     InputProps: {
                                                                         sx: {
                                                                             border: 0, // Initial border
                                                                             borderColor: '#d1d5db ',
-                                                                            paddingRight:0,
+                                                                            paddingRight: 0,
                                                                             '&:hover': {
                                                                                 border: 0,
                                                                             },
@@ -907,11 +906,11 @@ console.log(TotalCounter);
                                                                         inputProps: {
                                                                             style: {
                                                                                 fontSize: 16,
-                                                                                 // Font size inside input
+                                                                                // Font size inside input
                                                                             },
                                                                         },
-    
-    
+
+
                                                                     }, // This reduces the height of the TextField
                                                                 }
                                                             }}

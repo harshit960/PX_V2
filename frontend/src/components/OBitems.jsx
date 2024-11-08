@@ -26,6 +26,9 @@ function OBitems(props) {
     const [completion, setcompletion] = useState();
 
     let x = JSON.parse(TestingJSON);
+    useEffect(() => {
+        setIPOwner(props.data.IPOwner)
+    }, [props]);
     // calculating completion
     useEffect(() => {
         let setCompleted = 0
@@ -49,13 +52,12 @@ function OBitems(props) {
     }, [props, OCValidation, TestingJSON, SFTP]);
 
     function book(time) {
-        alert(props.data.IPOwner+ " + " +IPOwner)
         if (props.data.IPOwner !== IPOwner) {
             fetch(import.meta.env.VITE_REACT_APP_BASE_URL + '/newNoti', {
                 method: 'POST',
                 body: JSON.stringify({
                     userID: IPOwner,
-                    msg: `${props.data.RequestID} has been assigned to you by ${localStorage.getItem('name')}`,
+                    msg: `${props.data.RequestID} has been assigned to you by ${localStorage.getItem('name')}. Notes: `,
                     assignedBY: localStorage.getItem('name')
                 }),
                 headers: {
@@ -1117,12 +1119,13 @@ function OBitems(props) {
                 </td>
                 <td class="px-6 py-4">
 
-                    <select onChange={(e) => {e.preventDefault; setIPOwner(e.target.value) }} className='border-0 py-0 w-56 focus:border-0 text-sm'>
-                        <option selected className='hidden'>{props.data.IPOwner}</option>
+                    <select onChange={(e) => {e.preventDefault; 
+                        setIPOwner(e.target.value) 
+                        }} className='border-0 py-0 w-56 focus:border-0 text-sm'>
+                        <option selected className='hidden' value={props.data.IPOwner}>{props.data.IPOwner}</option>
                         {props.Users.map((item, index) => (<>
                             {item.type != "admin" ?
-                                <option key={index}>
-
+                                <option key={index} value={item.user}>
                                     {item.user}
                                 </option>
                                 : <></>}
