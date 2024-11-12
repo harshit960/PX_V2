@@ -57,7 +57,7 @@ function OBitems(props) {
                 method: 'POST',
                 body: JSON.stringify({
                     userID: IPOwner,
-                    msg: `${props.data.RequestID} has been assigned to you by ${localStorage.getItem('name')}. Notes: ${JSON.parse(props.data.Notes) && JSON.parse(props.data.Notes).notes[0]}`,
+                    msg: `${props.data.RequestID} has been assigned to you by ${localStorage.getItem('name')}. Notes: ${JSON.parse(props.data.Notes) && JSON.parse(props.data.Notes).notes[-1]}`,
                     assignedBY: localStorage.getItem('name')
                 }),
                 headers: {
@@ -1081,7 +1081,7 @@ function OBitems(props) {
                 </div>
             </div>
             <tr class="bg-white text-left border-b ">
-                <td scope="row" class="px-6 py-4 sticky left-0 bg-white z-20">
+                <td scope="row" class=" px-6 py-4 sticky left-0 bg-white z-20">
                     {props.data.RequestID}
                 </td>
                 <td scope="row" class="px-6 py-4 whitespace-nowrap sticky left-[116px] bg-white z-20">
@@ -1093,7 +1093,7 @@ function OBitems(props) {
                 <td class="px-6 py-4">
                     {props.data.SCAC}
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap">
+                <td id='Phase_tr' class="px-6 py-4 whitespace-nowrap">
                     {props.data.Phase}
                 </td>
                 <td class="px-6 py-4">
@@ -1114,7 +1114,7 @@ function OBitems(props) {
                     {props.data.TicketNumber}
                 </td>
 
-                <td class="px-6 py-4">
+                <td id='TPSpecialist_tr' class="px-6 py-4">
                     {props.data.TPSpecialist}
                 </td>
                 <td class="px-6 py-4">
@@ -1233,7 +1233,7 @@ function OBitems(props) {
                     </select>
                 </td>
                 <td >
-                    <div class="px-6 py-6 flex items-center justify-center">
+                    <div id='NextStp_tr' class="px-6 py-6 flex items-center justify-center">
 
                         <button onClick={() => setbyRemarkdilogbox("")}>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
@@ -1243,7 +1243,7 @@ function OBitems(props) {
                     </div>
                 </td>
                 <td >
-                    <div class="px-6 py-6 flex items-center justify-center">
+                    <div id='Notes_tr' class="px-6 py-6 flex items-center justify-center">
 
                         <button onClick={() => setNotesdilogbox("")}>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
@@ -1252,7 +1252,7 @@ function OBitems(props) {
                         </button>
                     </div>
                 </td>
-                <td className="pr-4">
+                <td id='Sync_tr' className="pr-4">
                     <div className='flex items-center justify-center'>
                         {localStorage.getItem('type') == "admin" || localStorage.getItem('type') == "User-OB" || props.data.IPOwner == localStorage.getItem('name') || props.data.TPSpecialist == localStorage.getItem('name') ?
                             <>

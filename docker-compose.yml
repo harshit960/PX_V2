@@ -1,0 +1,21 @@
+# version: '3.9'
+services:
+  backend:
+    build:
+      context: ./backend  # Path to your backend Dockerfile
+    ports:
+      - "5000:5000"  # Maps host port 5000 to container port 5000
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: /frontend  # Path to your frontend Dockerfile
+    ports:
+      - "80:80"  # Maps host port 80 to container port 80 (served by Nginx in this case)
+    depends_on:
+      - backend  # Ensures backend starts before frontend
+    environment:
+      - REACT_APP_API_URL=http://backend:5000  # Sets the backend API URL in the frontend
+    restart: unless-stopped

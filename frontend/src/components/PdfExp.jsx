@@ -19,6 +19,16 @@ const PdfGenerator = (props) => {
         <meta charset="UTF-8">
         <title>Exported Table</title>
         ${tailwindCDN} <!-- Tailwind CSS link -->
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('#Phase_Thread,#Sync_tr,#Notes_tr,#NextStp_tr,#TPSpecialist_tr,#Phase_tr,#Phase_Thread,#TPSpecialist_Thread,#StatusNextSteps_Thread,#InternalNotes_Thread,#Empty_Thread');
+            elements.forEach(element => {
+              if (element) {
+                element.style.display = 'none';
+              }
+            });
+          });
+        </script>
       </head>
       <body class=""> <!-- Add padding or other body styles as needed -->
         ${tableHTML} <!-- The table HTML -->

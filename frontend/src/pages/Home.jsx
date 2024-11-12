@@ -500,7 +500,7 @@ function Home() {
         }
 
 
-        console.log("new",TotalCounter);
+        console.log("new", TotalCounter);
 
     }, [OB, searchTerm, filteredData])
     return (<>
@@ -962,59 +962,58 @@ function Home() {
                     <table ref={tableRef} class="table-auto relative w-full text-sm text-left rtl:text-right  ">
                         <thead class="text-xs  uppercase bg-[#01b6ee] text-white font-light">
                             <tr>
-                                <th scope="col" class="sticky bg-[#01b6ee] z-30 top-0 px-6 py-3 whitespace-nowrap left-0">
+                                <th id='RequestId_Thread' scope="col" class="sticky  bg-[#01b6ee] z-30 top-0 px-6 py-3 whitespace-nowrap left-0">
                                     Request ID
                                 </th>
-                                <th scope="col" class="sticky bg-[#01b6ee] z-30 top-0 px-6 py-3  left-[116px]">
+                                <th id='Customer_Thread' scope="col" class="sticky bg-[#01b6ee] z-30 top-0 px-6 py-3 left-[116px]">
                                     Customer
                                 </th>
-                                <th scope="col" class="sticky bg-[#01b6ee] z-30 top-0 px-6 py-3 whitespace-nowrap left-[228px]">
+                                <th id='CarrierName_Thread' scope="col" class="sticky bg-[#01b6ee] z-30 top-0 px-6 py-3 whitespace-nowrap left-[228px]">
                                     Carrier Name
                                 </th>
-                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3">
+                                <th id='SCAC_Thread' scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3">
                                     SCAC
                                 </th>
-                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3">
+                                <th id='Phase_Thread' scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3">
                                     Phase
                                 </th>
-                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3">
+                                <th id='Completion_Thread' scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3">
                                     Completion
                                 </th>
-                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3">
+                                <th id='Milestone_Thread' scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3">
                                     Milestone
                                 </th>
-                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3">
+                                <th id='Ticket_Thread' scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3">
                                     Ticket
                                 </th>
-                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3 whitespace-nowrap">
+                                <th id='TPSpecialist_Thread' scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3 whitespace-nowrap">
                                     TP Specialist
                                 </th>
-                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-9 py-3 whitespace-nowrap">
+                                <th id='ActionOwner_Thread' scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-9 py-3 whitespace-nowrap">
                                     Action Owner
                                 </th>
-                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-9 py-3 whitespace-nowrap">
+                                <th id='CQValidation_Thread' scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-9 py-3 whitespace-nowrap">
                                     CQ Validation
                                 </th>
-                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-9 py-3 whitespace-nowrap">
+                                <th id='TradingPartnerSetup_Thread' scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-9 py-3 whitespace-nowrap">
                                     Trading Partner Setup
                                 </th>
-                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-9 py-3 whitespace-nowrap">
+                                <th id='SFTPTesting_Thread' scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-9 py-3 whitespace-nowrap">
                                     SFTP Testing
                                 </th>
-                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3">
+                                <th id='Testing_Thread' scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3">
                                     Testing
                                 </th>
-                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-9 py-3 whitespace-nowrap">
+                                <th id='GoLive_Thread' scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-9 py-3 whitespace-nowrap">
                                     Go Live
                                 </th>
-                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3 whitespace-nowrap">
+                                <th id='StatusNextSteps_Thread' scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3 whitespace-nowrap">
                                     Status/Next Steps
                                 </th>
-                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3 whitespace-nowrap">
+                                <th id='InternalNotes_Thread' scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3 whitespace-nowrap">
                                     Internal Notes
                                 </th>
-                                <th scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3 whitespace-nowrap">
-
+                                <th id='Empty_Thread' scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3 whitespace-nowrap">
                                 </th>
                             </tr>
                         </thead>
