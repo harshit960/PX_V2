@@ -6,7 +6,14 @@ export default defineConfig({
   define: {
     'process.env': process.env
   },
+  server: {
+    host: '0.0.0.0',  // Enables Vite to listen on all IPs, useful for Docker
+    port: 3000,
+    watch: {
+      usePolling: true,  // Enables polling for file changes, useful in Docker environments
+    },
+  },
   build: {
-    outDir: 'dist', // Make sure this matches your build output location
+    outDir: 'build', // Make sure this matches your build output location
   },
 });

@@ -4,7 +4,7 @@ services:
     build:
       context: ./backend  # Path to your backend Dockerfile
     ports:
-      - "5000:5000"  # Maps host port 5000 to container port 5000
+      - "10000:10000"  # Maps host port 5000 to container port 5000
     environment:
       - NODE_ENV=production
     restart: unless-stopped
@@ -13,9 +13,9 @@ services:
     build:
       context: /frontend  # Path to your frontend Dockerfile
     ports:
-      - "80:80"  # Maps host port 80 to container port 80 (served by Nginx in this case)
+      - "3000:3000"  # Maps host port 80 to container port 80 (served by Nginx in this case)
     depends_on:
       - backend  # Ensures backend starts before frontend
     environment:
-      - REACT_APP_API_URL=http://backend:5000  # Sets the backend API URL in the frontend
+      - REACT_APP_API_URL=http://backend:10000  # Sets the backend API URL in the frontend
     restart: unless-stopped

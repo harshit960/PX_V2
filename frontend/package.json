@@ -35,6 +35,7 @@
     "react-select": "^5.8.0",
     "react-tag-input": "^6.9.0",
     "react-toastify": "^10.0.5",
+    "serve": "^14.2.4",
     "styled-components": "^6.1.8",
     "yup": "^1.4.0"
   },
