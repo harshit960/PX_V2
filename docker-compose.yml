@@ -3,7 +3,7 @@ services:
   backend:
     build:
       context: ./backend  # Path to your backend Dockerfile
-      image: harhsit960/px_v2:backend  # Single repo with "backend" tag
+    image: harhsit960/px_v2:backend  # Single repo with "backend" tag
 
     ports:
       - "10000:10000"  # Maps host port 5000 to container port 5000
@@ -14,7 +14,7 @@ services:
   frontend:
     build:
       context: ./frontend  # Path to your frontend Dockerfile
-      image: harhsit960/px_v2:frontend  # Single repo with "backend" tag
+    image: harhsit960/px_v2:frontend  # Single repo with "backend" tag
 
     ports:
       - "3000:3000"  # Maps host port 80 to container port 80 (served by Nginx in this case)
