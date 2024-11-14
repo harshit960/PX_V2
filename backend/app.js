@@ -20,7 +20,7 @@ app.use(cors());
 const connection = new sql.ConnectionPool({
   user: 'newuser',
   password: 'admin1234',
-  server: 'HARSHIT', // You can use 'localhost\\instance' to connect to named instance
+  server: 'host.docker.internal', // You can use 'localhost\\instance' to connect to named instance
   database: 'data2',
   options: {
     encrypt: true, // Use this if you're on Windows Azure
