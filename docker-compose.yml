@@ -9,7 +9,6 @@ services:
       - "10000:10000"  # Maps host port 5000 to container port 5000
     environment:
       - NODE_ENV=production
-      - VITE_REACT_APP_BASE_URL="http://localhost:10000"   
 
     restart: unless-stopped
 
@@ -23,5 +22,7 @@ services:
     depends_on:
       - backend  # Ensures backend starts before frontend
     environment:
-      - REACT_APP_API_URL=http://backend:10000  # Sets the backend API URL in the frontend
+      # - REACT_APP_API_URL=http://backend:10000  # Sets the backend API URL in the frontend
+      - VITE_REACT_APP_BASE_URL="http://localhost:10000"   
+
     restart: unless-stopped
