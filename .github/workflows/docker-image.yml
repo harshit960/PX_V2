@@ -39,7 +39,9 @@ jobs:
 
       # Step 3: Build and start services with Docker Compose
       - name: Build and start services
-        run: docker-compose -f docker-compose.yml up -d --build
+        run: |
+            export VITE_REACT_APP_BASE_URL=${{ secrets.VITE_REACT_APP_BASE_URL }}
+            docker-compose -f docker-compose.yml up -d --build
 
          # Step 5: Push Docker images to Docker Hub
       - name: Push Docker images
