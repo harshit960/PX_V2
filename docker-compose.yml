@@ -9,6 +9,8 @@ services:
       - "10000:10000"  # Maps host port 5000 to container port 5000
     environment:
       - NODE_ENV=production
+      - VITE_REACT_APP_BASE_URL="http://localhost:10000"   
+
     restart: unless-stopped
 
   frontend:
