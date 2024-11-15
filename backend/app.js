@@ -17,16 +17,16 @@ require('dotenv').config();
 //                                 ------------TESTING----------------
 app.use(cors());
 
-const connection = new sql.ConnectionPool({
-  user: 'newuser',
-  password: 'admin1234',
-  server: 'HARSHIT', // You can use 'localhost\\instance' to connect to named instance
-  database: 'data2',
-  options: {
-    encrypt: true, // Use this if you're on Windows Azure
-    trustServerCertificate: true // Use this if your SQL Server uses self-signed certificate
-  }
-});
+// const connection = new sql.ConnectionPool({
+//   user: 'newuser',
+//   password: 'admin1234',
+//   server: 'HARSHIT', // You can use 'localhost\\instance' to connect to named instance
+//   database: 'data2',
+//   options: {
+//     encrypt: true, // Use this if you're on Windows Azure
+//     trustServerCertificate: true // Use this if your SQL Server uses self-signed certificate
+//   }
+// });
 //                                 ---X------X----X-----X-----X----X----X
 
 
@@ -35,17 +35,17 @@ const connection = new sql.ConnectionPool({
 // const corsOptions = {   origin: 'http://veuwcore1202.jdadelivers.com',  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',   credentials: true,optionsSuccessStatus: 204 }; app.use(cors(corsOptions));
 // app.options('*');
 
-// const connection = new sql.ConnectionPool({
-//   user: process.env.DB_USER,
-//   password: process.env.DB_PASSWORD,
-//   server: process.env.DB_HOST,
-//   database: process.env.DB_NAME,
-//   port: parseInt(process.env.DB_PORT),
-//   options: {
-//     encrypt: true, // Use this if you're on Windows Azure
-//     trustServerCertificate: true // Change to true for local dev / self-signed certs
-//   }
-// });
+const connection = new sql.ConnectionPool({
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  server: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  port: parseInt(process.env.DB_PORT),
+  options: {
+    encrypt: true, // Use this if you're on Windows Azure
+    trustServerCertificate: true // Change to true for local dev / self-signed certs
+  }
+});
 
 //                                 ---X------X----X-----X-----X----X----X
 
@@ -210,21 +210,11 @@ app.post('/reset-password', async (req, res) => {
     if (result.recordset[0].email == req.body.email) {
 
       token = jwt.sign({ userId: req.body.userId, email: req.body.email }, "key", { expiresIn: '1800s' })
-      const transporter = nodemailer.createTransport({
-        service: "Gmail",
-        host: "smtp.gmail.com",
-        port: 587,
-        secure: true,
-        auth: {
-          user: "raj.harshit962@gmail.com",
-          pass: "rofh wqpa zpsw hjtq"
-        },
-      });
-      // const transporter = nodemailer.createTransport({
-      //   host: process.env.SMTP_SERVICE,
-      //   port: process.env.SMTP_PORT, // Your SMTP port (e.g., 587)
 
-      // });
+      const transporter = nodemailer.createTransport({
+        host: process.env.SMTP_SERVICE,
+        port: process.env.SMTP_PORT, // Your SMTP port (e.g., 587)
+      });
       // Set up mail options
       const mailOptions = {
         from: process.env.SMTP_EMAIL,
