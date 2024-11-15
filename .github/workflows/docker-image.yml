@@ -41,7 +41,12 @@ jobs:
       - name: Build and start services
         run: docker-compose -f docker-compose.yml up -d --build
 
-         # Step 5: Push Docker images to Docker Hub
-      - name: Push Docker images
+       # Step 4: Tag combined image for Docker Hub
+      - name: Tag combined image
         run: |
-          docker-compose -f docker-compose.yml push
+          docker tag your_frontend_image ${{ secrets.DOCKER_USERNAME }}/px_v2:latest
+          docker tag your_backend_image ${{ secrets.DOCKER_USERNAME }}/px_v2:latest
+
+      # Step 5: Push combined image to Docker Hub
+      - name: Push combined image
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/px_v2:latest
