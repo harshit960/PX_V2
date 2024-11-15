@@ -51,6 +51,7 @@ function Login() {
             // console.log("incorect pass")
             setloginError("Invalid Credentials")
         }
+        console.log(import.meta.env.VITE_REACT_APP_BASE_URL);
         
     };
     return (
