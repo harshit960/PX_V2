@@ -16,6 +16,7 @@ function OBitems(props) {
     const day = now.format("DDMMYYHHMMss")
     const token = localStorage.getItem('jwt');
     const [IPOwner, setIPOwner] = useState(props.data.IPOwner)
+    const [ResponsibleParty, setResponsibleParty] = useState(props.data.ResponsibleParty)
     const [OCValidation, setOCValidation] = useState(props.data.OCValidation);
     const [TestingJSON, setTestingJSON] = useState(props.data.TestingJSON);
     const [GoLive, setGoLive] = useState(props.data.GoLive);
@@ -122,6 +123,7 @@ function OBitems(props) {
                 method: 'PATCH',
                 body: JSON.stringify({
                     IPOwner: IPOwner,
+                    ResponsibleParty:ResponsibleParty,
                     OCValidation: OCValidation,
                     TestingJSON: TestingJSON,
                     GoLive: GoLive,
@@ -1117,11 +1119,21 @@ function OBitems(props) {
                 <td id='TPSpecialist_tr' class="px-6 py-4">
                     {props.data.TPSpecialist}
                 </td>
+                <td id='' class="px-6 py-4">
+                    <select onChange={(e) => setResponsibleParty(e.target.value)} name="" id="" className='border-0 py-0 w-36 text-sm'>
+                        <option selected className='hidden'>{ResponsibleParty}</option>
+                        <option value="Customer">Customer</option>
+                        <option value="Carrier">Carrier</option>
+                        <option value="BlueYonder">BlueYonder</option>
+                    </select>
+
+                </td>
                 <td class="px-6 py-4">
 
-                    <select onChange={(e) => {e.preventDefault; 
-                        setIPOwner(e.target.value) 
-                        }} className='border-0 py-0 w-56 focus:border-0 text-sm'>
+                    <select onChange={(e) => {
+                        e.preventDefault;
+                        setIPOwner(e.target.value)
+                    }} className='border-0 py-0 w-56 focus:border-0 text-sm'>
                         <option selected className='hidden' value={props.data.IPOwner}>{props.data.IPOwner}</option>
                         {props.Users.map((item, index) => (<>
                             {item.type != "admin" ?

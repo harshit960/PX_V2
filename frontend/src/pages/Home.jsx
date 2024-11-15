@@ -989,6 +989,9 @@ function Home() {
                                 <th id='TPSpecialist_Thread' scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3 whitespace-nowrap">
                                     TP Specialist
                                 </th>
+                                <th id='TPSpecialist_Thread' scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-6 py-3 whitespace-nowrap">
+                                Responsible party
+                                </th>
                                 <th id='ActionOwner_Thread' scope="col" class="sticky bg-[#01b6ee] z-20 top-0 px-9 py-3 whitespace-nowrap">
                                     Action Owner
                                 </th>

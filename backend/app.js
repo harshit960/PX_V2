@@ -20,7 +20,7 @@ app.use(cors());
 const connection = new sql.ConnectionPool({
   user: 'newuser',
   password: 'admin1234',
-  server: 'host.docker.internal', // You can use 'localhost\\instance' to connect to named instance
+  server: 'HARSHIT', // You can use 'localhost\\instance' to connect to named instance
   database: 'data2',
   options: {
     encrypt: true, // Use this if you're on Windows Azure
@@ -779,7 +779,7 @@ app.post('/newRequest', (req, res) => {
 app.patch('/updateOB/:id', (req, res) => {
   // Extract data from the request body
   // console.log(req.body)
-  const { IPOwner, OCValidation, Testing204, GoLive, TestingJSON, SFTP, BYRemarks, TradingPartnerSetup, Completion, Milestone, disabledArray, active, Notes } = req.body;
+  const { IPOwner, OCValidation,ResponsibleParty, Testing204, GoLive, TestingJSON, SFTP, BYRemarks, TradingPartnerSetup, Completion, Milestone, disabledArray, active, Notes } = req.body;
   const id = req.params.id;
 
   // Update query for onboarding table
@@ -787,6 +787,7 @@ app.patch('/updateOB/:id', (req, res) => {
       UPDATE [data].onboarding 
       SET IPOwner = @IPOwner, 
           OCValidation = @OCValidation, 
+          ResponsibleParty = @ResponsibleParty, 
           Testing204 = @Testing204,
           GoLive = @GoLive,
           TestingJSON = @TestingJSON,
@@ -805,6 +806,7 @@ app.patch('/updateOB/:id', (req, res) => {
 
   // Add input parameters for the update query
   request.input('IPOwner', sql.NVarChar, IPOwner);
+  request.input('ResponsibleParty', sql.NVarChar, ResponsibleParty);
   request.input('OCValidation', sql.NVarChar, OCValidation);
   request.input('Testing204', sql.NVarChar, Testing204);
   request.input('GoLive', sql.NVarChar, GoLive);
