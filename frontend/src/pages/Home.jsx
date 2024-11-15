@@ -307,6 +307,7 @@ function Home() {
                 // "Milestone": OB[i].Milestone,
                 "Ticket Number": OB[i].TicketNumber,
                 "TP Specialist	": OB[i].TPSpecialist,
+                "ResponsibleParty	": OB[i].ResponsibleParty,
                 "Action Owner": OB[i].IPOwner,
                 "GoLive": OB[i].GoLive,
                 "CQ Validation": OB[i].OCValidation,
