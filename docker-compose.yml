@@ -1,4 +1,4 @@
-# version: '3.9'
+version: '3.9'
 services:
   backend:
     build:
@@ -6,7 +6,7 @@ services:
     image: harhsit960/px_v2:backend  # Single repo with "backend" tag
 
     ports:
-      - "10000:10000"  # Maps host port 5000 to container port 5000
+      - "10000:10000" 
     environment:
       - NODE_ENV=production
 
