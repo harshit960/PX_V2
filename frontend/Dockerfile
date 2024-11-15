@@ -5,6 +5,8 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install && npm install -g vite@latest
 COPY . .
+ARG VITE_REACT_APP_BASE_URL
+ENV VITE_REACT_APP_BASE_URL=$VITE_REACT_APP_BASE_URL
 
 RUN npm run build
 

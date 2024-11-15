@@ -14,6 +14,8 @@ services:
   frontend:
     build:
       context: ./frontend 
+      args:
+        VITE_REACT_APP_BASE_URL: ${VITE_REACT_APP_BASE_URL}
     image: harhsit960/px_v2:frontend  # Single repo with "backend" tag
 
     ports:
