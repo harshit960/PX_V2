@@ -55,6 +55,8 @@ function Login() {
     };
     return (
         <div className='no-scrollbar'>
+            
+            
             <div class="flex flex-col h-screen justify-center items-center ">
                 <div className="flex mt-10 mb-5">
                     <img src="logo.png" alt="" className='w-[300px] pl-1' />

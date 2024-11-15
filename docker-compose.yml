@@ -1,4 +1,4 @@
-version: '3.9'
+# version: '3.9'
 services:
   backend:
     build:
@@ -14,15 +14,17 @@ services:
 
   frontend:
     build:
-      context: ./frontend  # Path to your frontend Dockerfile
+      context: ./frontend 
+      # args:
+        # VITE_REACT_APP_BASE_URL: $VITE_REACT_APP_BASE_URL
     image: harhsit960/px_v2:frontend  # Single repo with "backend" tag
 
     ports:
       - "3000:3000"  # Maps host port 80 to container port 80 (served by Nginx in this case)
     depends_on:
       - backend  # Ensures backend starts before frontend
-    environment:
-      - VITE_REACT_APP_BASE_URL=http://backend:10000 
-      # - VITE_REACT_APP_BASE_URL=http://localhost:10000
+    # environment:
+      # - REACT_APP_BASE_URL=http://backend:10000 
+      # - VITE_REACT_APP_BASE_URL="${VITE_REACT_APP_BASE_URL}"
 
     restart: unless-stopped
