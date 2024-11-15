@@ -22,7 +22,7 @@ services:
     depends_on:
       - backend  # Ensures backend starts before frontend
     environment:
-      # - REACT_APP_API_URL=http://backend:10000  # Sets the backend API URL in the frontend
-      - VITE_REACT_APP_BASE_URL=http://localhost:10000
+      - VITE_REACT_APP_BASE_URL=http://backend:10000  # Sets the backend API URL in the frontend
+      # - VITE_REACT_APP_BASE_URL=http://localhost:10000
 
     restart: unless-stopped
