@@ -15,7 +15,7 @@ if (TestingMode === true) {
     user: "newuser",
     password: "admin1234",
     database: "data2",
-    server: 'HARSHIT',
+    server: 'localhost\HARSHIT',
     options: {
       encrypt: true,
       trustServerCertificate: true,
