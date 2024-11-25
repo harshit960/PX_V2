@@ -25,10 +25,12 @@ function OBitems(props) {
     const [calMilestione, setcalMilestione] = useState();
     const [TradingPartnerSetup, setTradingPartnerSetup] = useState(props.data.TradingPartnerSetup);
     const [completion, setcompletion] = useState();
+    const [Notes, setNotes] = useState(props.data.Notes);
 
     let x = JSON.parse(TestingJSON);
     useEffect(() => {
         setIPOwner(props.data.IPOwner)
+        setNotes(props.data.Notes)
     }, [props]);
     // calculating completion
     useEffect(() => {
@@ -905,7 +907,6 @@ function OBitems(props) {
         setBYRemark(updatedBYRemark);
 
     }
-    const [Notes, setNotes] = useState(props.data.Notes);
     const [tempNotes, settempNotes] = useState("");
     function handleAddNotes() {
         // Parse the JSON string to an object
