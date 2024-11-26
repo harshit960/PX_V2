@@ -60,7 +60,7 @@ function OBitems(props) {
                 method: 'POST',
                 body: JSON.stringify({
                     userID: IPOwner,
-                    msg: `${props.data.RequestID} has been assigned to you by ${localStorage.getItem('name')}. Notes: ${JSON.parse(props.data.Notes) && JSON.parse(props.data.Notes).notes[-1]}`,
+                    msg: `${props.data.RequestID} has been assigned to you by ${localStorage.getItem('name')}. Please check notes`,
                     assignedBY: localStorage.getItem('name')
                 }),
                 headers: {
