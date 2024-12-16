@@ -154,7 +154,7 @@ function Home() {
                         GoLive: goLive,
                         TestingJSON: JSON.stringify(TestingJSON),
                         TradingPartnerSetup: TradingPartnerSetup,
-
+                        active: "true",
                         disabledArray: JSON.stringify(new Array(21).fill(true))
                     }),
                     headers: {
