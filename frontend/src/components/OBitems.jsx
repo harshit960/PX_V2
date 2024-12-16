@@ -31,6 +31,7 @@ function OBitems(props) {
     useEffect(() => {
         setIPOwner(props.data.IPOwner)
         setNotes(props.data.Notes)
+        setOCValidation(props.data.OCValidation)
     }, [props]);
     // calculating completion
     useEffect(() => {
@@ -136,7 +137,7 @@ function OBitems(props) {
                     // Completion: Math.floor(completion),
                     Milestone: calMilestione,
                     disabledArray: JSON.stringify(disabled),
-                    active: active.toString()
+                    active: active
 
                 }),
                 headers: {
@@ -925,6 +926,7 @@ function OBitems(props) {
     useEffect(() => {
         if (props.data.Notes != Notes) {
             // send notiification on notes
+            alert(props.data.Notes,Notes)
             fetch(import.meta.env.VITE_REACT_APP_BASE_URL + "/newNoti", {
                 method: 'POST',
                 body: JSON.stringify({
