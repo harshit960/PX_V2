@@ -31,6 +31,7 @@ function OBitems(props) {
     useEffect(() => {
         setIPOwner(props.data.IPOwner)
         setNotes(props.data.Notes)
+        setBYRemark(props.data.BYRemarks)
         setOCValidation(props.data.OCValidation)
     }, [props]);
     // calculating completion
@@ -74,7 +75,7 @@ function OBitems(props) {
 
         }
         if (time == "") {
-            toast("Sync", {
+            toast("Sync"+time, {
                 position: "top-right",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -892,7 +893,6 @@ function OBitems(props) {
     useEffect(() => {
 
         if (props.data.BYRemarks != BYRemark) {
-
             book("")
         }
 
@@ -926,7 +926,7 @@ function OBitems(props) {
     useEffect(() => {
         if (props.data.Notes != Notes) {
             // send notiification on notes
-            alert(props.data.Notes,Notes)
+            // alert(props.data.Notes,Notes)
             fetch(import.meta.env.VITE_REACT_APP_BASE_URL + "/newNoti", {
                 method: 'POST',
                 body: JSON.stringify({
