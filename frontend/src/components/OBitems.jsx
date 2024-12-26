@@ -876,7 +876,7 @@ function OBitems(props) {
         );
     };
     const [tempByRemark, settempByRemark] = useState("");
-    function handleAddnotes() {
+    function handleAddByRemark() {
 
         let BYRemarkObj = BYRemark ? JSON.parse(BYRemark) : { notes: [] };
 
@@ -1032,7 +1032,7 @@ function OBitems(props) {
                                 <textarea onChange={(e) => settempByRemark(dayjs().format("DD/MM/YY") + ": " + e.target.value)} className="flex flex-col m-2 h-36">
 
                                 </textarea>
-                                <button onClick={handleAddnotes} className="flex flex-col m-2 bg-[#01b6ee] rounded h-10 items-center justify-center text-white font-medium">
+                                <button onClick={handleAddByRemark} className="flex flex-col m-2 bg-[#01b6ee] rounded h-10 items-center justify-center text-white font-medium">
                                     Add Note
                                 </button>
                             </div>
