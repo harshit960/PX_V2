@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Form, Link, useLocation, useNavigate } from 'react-router-dom'
 import dayjs from 'dayjs';
 import { useUserContext } from '../context/UserProvider';
 import { useOBContext } from '../context/OBProvider';
@@ -241,7 +241,11 @@ function Nav(props) {
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popper' : undefined;
 
-
+    const [searchTxt, setsearchTxt] = useState("");
+    const handleSearchSubmit = (e) =>{
+        e.preventDefault(); 
+        window.location.href=`/?search=`+searchTxt
+    }
     return (
         <div>
 
@@ -330,13 +334,14 @@ function Nav(props) {
 
                         </Link> : <> </>} */}
                         {location.pathname == "/" || location.pathname == "/projects" ?
-                            <input
-                                type="text"
-                                placeholder="Search..."
-                                value={props.searchTerm}
-                                onChange={e => props.setSearchTerm(e.target.value)}
-                                className='py-1 px-4 text-sm font-normal border-[#01b6ee] border-2 my-1 mx-2 rounded-full justify-end'
-                            /> : <></>}
+                            <form onSubmit={handleSearchSubmit}>
+                                <input
+                                    type="text"
+                                    placeholder="Search..."
+                                    value={searchTxt}
+                                    onChange={e => setsearchTxt(e.target.value)}
+                                    className='py-1 px-4 text-sm font-normal border-[#01b6ee] border-2 my-1 mx-2 rounded-full justify-end'
+                                /></form> : <></>}
                         {location.pathname == "/" ? <Link to={"/archive"} className='flex items-center justify-center  mx-2 border-2  w-8 h-8 border-black rounded-full'>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-4 h-4">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5m8.25 3v6.75m0 0-3-3m3 3 3-3M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
@@ -391,7 +396,7 @@ function Nav(props) {
                                     <CSVLink data={props.expJSON} filename={"EDIPartnerXchange_export.csv"}>
                                         <div className="hover:text-[#01b6ee]">
 
-                                        CSV Export
+                                            CSV Export
                                         </div>
                                     </CSVLink>
                                     <button className="btn hover:text-[#01b6ee]">
