@@ -59,7 +59,7 @@ const connection = new sql.ConnectionPool({
 connection.connect(err => {
   if (err) {
     console.log(connection);
-    
+
     console.error('Error connecting to database: ' + err.stack);
     return;
   }
@@ -274,28 +274,28 @@ app.post('/verify-token', (req, res) => {
 app.post('/change-password', async (req, res) => {
   try {
     var decoded = jwt.verify(req.body.token, 'key');
-    
-    if (req.body.newProfilePicture != "NA") { 
+
+    if (req.body.newProfilePicture != "NA") {
       const result = await connection.request()
-      .input('username', sql.VarChar, decoded.userId)
-      .input('newPassword', sql.VarChar, req.body.password)
-      .input('newProfilePicture', sql.VarChar, req.body.newProfilePicture)
-      .query('UPDATE [data].[user] SET password = @newPassword, pp = @newProfilePicture WHERE username = @username');
+        .input('username', sql.VarChar, decoded.userId)
+        .input('newPassword', sql.VarChar, req.body.password)
+        .input('newProfilePicture', sql.VarChar, req.body.newProfilePicture)
+        .query('UPDATE [data].[user] SET password = @newPassword, pp = @newProfilePicture WHERE username = @username');
       console.log(result);
       if (result.rowsAffected[0] === 0) {
-  
+
         return res.status(404).send('User not found');
       }
       res.status(200).send('User updated successfully');
     }
-    else{
+    else {
       const result = await connection.request()
-      .input('username', sql.VarChar, decoded.userId)
-      .input('newPassword', sql.VarChar, req.body.password)
-      .query('UPDATE [data].[user] SET password = @newPassword WHERE username = @username');
+        .input('username', sql.VarChar, decoded.userId)
+        .input('newPassword', sql.VarChar, req.body.password)
+        .query('UPDATE [data].[user] SET password = @newPassword WHERE username = @username');
       console.log(result);
       if (result.rowsAffected[0] === 0) {
-  
+
         return res.status(404).send('User not found');
       }
       res.status(200).send('User updated successfully');
@@ -775,7 +775,7 @@ app.post('/newRequest', (req, res) => {
 app.patch('/updateOB/:id', (req, res) => {
   // Extract data from the request body
   // console.log(req.body)
-  const { IPOwner, OCValidation,ResponsibleParty, Testing204, GoLive, TestingJSON, SFTP, BYRemarks, TradingPartnerSetup, Completion, Milestone, disabledArray, active, Notes } = req.body;
+  const { IPOwner, OCValidation, ResponsibleParty, Testing204, GoLive, TestingJSON, SFTP, BYRemarks, TradingPartnerSetup, Completion, Milestone, disabledArray, active, Notes } = req.body;
   const id = req.params.id;
 
   // Update query for onboarding table
@@ -1071,7 +1071,7 @@ app.get('/getOBCustomer/:Customer', (req, res) => {
 });
 app.post('/newNoti', async (req, res) => {
   const { userID, msg, assignedBY, onEmail } = req.body;
-  
+
   try {
     if (onEmail != false) {
       console.log("mail triggend");
