@@ -36,11 +36,11 @@ app.use(cors());
 // app.options('*');
 
 const connection = new sql.ConnectionPool({
+  server: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
-  server: process.env.DB_HOST,
   database: process.env.DB_NAME,
-  port: parseInt(process.env.DB_PORT),
+  port: 1433,
   options: {
     encrypt: true, // Use this if you're on Windows Azure
     trustServerCertificate: true // Change to true for local dev / self-signed certs
@@ -54,6 +54,8 @@ const connection = new sql.ConnectionPool({
 // Connect to the database
 connection.connect(err => {
   if (err) {
+    console.log(connection);
+    
     console.error('Error connecting to database: ' + err.stack);
     return;
   }
