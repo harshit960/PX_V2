@@ -36,10 +36,14 @@ app.use(cors());
 // app.options('*');
 
 const connection = new sql.ConnectionPool({
-  server: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
+  // server: process.env.DB_HOST,
+  // user: process.env.DB_USER,
+  // database: process.env.DB_NAME,
+  // password: process.env.DB_PASSWORD,
+  server: 'database-1.c1oqwqw00p58.ap-south-1.rds.amazonaws.com',
+  user: 'admin',
+  password: 'g9F195_(~*Ts',
+  database: 'newdb',
   port: 1433,
   options: {
     encrypt: true, // Use this if you're on Windows Azure
