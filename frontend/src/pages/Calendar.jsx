@@ -65,6 +65,7 @@ function CalendarPage() {
         });
         console.log(additionalEvents);
         // seteventsList(events.concat(additionalEvents))
+        //deploy
         const additionalEvents2 = OB.map(item => {
             return {
                 start: dayjs(item.GoLive).toDate(),
