@@ -16,6 +16,7 @@ import { useOBContext } from '../context/OBProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import { WithContext as ReactTags } from 'react-tag-input';
 import axios from 'axios';
+import { useLocation } from 'react-router-dom';
 
 let now = dayjs();
 
@@ -397,6 +398,15 @@ function Project() {
   }, [Projects, OB,filteredData]);
   const [searchMilestone, setsearchMilestone] = useState();
   const [seachItemM, setseachItemM] = useState();
+  const location = useLocation();
+      useEffect(() => {
+          const searchParams = new URLSearchParams(location.search);
+          const search = searchParams.get('search');
+          if (search) {
+  
+              setSearchTerm(search)
+          }
+      }, []);
   function MilestoneSearch(x, y) {
     setseachItemM(x)
     setsearchMilestone(y)
