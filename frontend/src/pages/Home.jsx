@@ -469,20 +469,28 @@ function Home() {
         }
     }, []);
     useEffect(() => {
-        const newfilteredData = OB.filter(item =>
-            (item.Customer && item.Customer.slice(4).toLowerCase().includes(searchTerm.toLowerCase())) ||
-            (item.Phase && item.Phase.toLowerCase().includes(searchTerm.toLowerCase())) ||
-            (item.RequestID && item.RequestID.toLowerCase().includes(searchTerm.toLowerCase())) ||
-            (item.CarrierName && item.CarrierName.toLowerCase().includes(searchTerm.toLowerCase())) ||
-            (item.SCAC && item.SCAC.toLowerCase().includes(searchTerm.toLowerCase())) ||
-            (item.TPSpecialist && item.TPSpecialist.toLowerCase().includes(searchTerm.toLowerCase())) ||
-            (item.TicketNumber && item.TicketNumber.toLowerCase().includes(searchTerm.toLowerCase())) ||
-            (item.IPOwner && item.IPOwner.toLowerCase().includes(searchTerm.toLowerCase())) ||
-            (item.Milestone && item.Milestone.toLowerCase().includes(searchTerm.toLowerCase())) ||
-            (item.IPOwner && item.IPOwner.toLowerCase().includes(searchTerm.toLowerCase())) ||
-            (item.OCValidation && item.OCValidation.toLowerCase().includes(searchTerm.toLowerCase()))
-        );
-        setfilteredData(newfilteredData)
+        if (OB[0] && OB[0].Milestone) {
+        console.log(OB);
+            
+            const newfilteredData = OB.filter(item =>
+                (item.Customer && item.Customer.slice(4).toLowerCase().includes(searchTerm.toLowerCase())) ||
+                (item.Phase && item.Phase.toLowerCase().includes(searchTerm.toLowerCase())) ||
+                (item.RequestID && item.RequestID.toLowerCase().includes(searchTerm.toLowerCase())) ||
+                (item.CarrierName && item.CarrierName.toLowerCase().includes(searchTerm.toLowerCase())) ||
+                (item.SCAC && item.SCAC.toLowerCase().includes(searchTerm.toLowerCase())) ||
+                (item.TPSpecialist && item.TPSpecialist.toLowerCase().includes(searchTerm.toLowerCase())) ||
+                (item.TicketNumber && item.TicketNumber.toLowerCase().includes(searchTerm.toLowerCase())) ||
+                (item.IPOwner && item.IPOwner.toLowerCase().includes(searchTerm.toLowerCase())) ||
+                (item.Milestone && item.Milestone.toLowerCase().includes(searchTerm.toLowerCase())) ||
+                (item.IPOwner && item.IPOwner.toLowerCase().includes(searchTerm.toLowerCase())) ||
+                (item.OCValidation && item.OCValidation.toLowerCase().includes(searchTerm.toLowerCase()))
+            );
+            setfilteredData(newfilteredData)
+        }
+        else{
+            setfilteredData(OB)
+
+        }
     }, [OB, searchTerm]);
     const [TotalCounter, setTotalCounter] = useState([]);
     useEffect(() => {

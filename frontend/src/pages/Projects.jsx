@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useRef } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import Nav from '../components/Nav'
 import flatpickr from "flatpickr";
 import dayjs from 'dayjs';
@@ -187,7 +187,7 @@ function Project() {
   const [errors, seterrors] = useState("");
   function newProject(newFileName) {
 
-   
+
     projectSchema.validate({
       RequestID: day + CCode,
       Customer: Cname,
@@ -214,7 +214,7 @@ function Project() {
           method: 'POST',
           body: JSON.stringify({
             RequestID: day + CCode.split(",")[0].toString(),
-            Customer: ProjectType === 'Upgrade' ? day+Cname + '_' + ProjectType : day+Cname,
+            Customer: ProjectType === 'Upgrade' ? day + Cname + '_' + ProjectType : day + Cname,
             CustomerCode: CCode,
             ProjectedGoLive: ProjectedGoLive,
             Milestone: Milestone,
@@ -395,18 +395,18 @@ function Project() {
     }
     // console.log(templist);
     setexpJSON(templist)
-  }, [Projects, OB,filteredData]);
+  }, [Projects, OB, filteredData]);
   const [searchMilestone, setsearchMilestone] = useState();
   const [seachItemM, setseachItemM] = useState();
   const location = useLocation();
-      useEffect(() => {
-          const searchParams = new URLSearchParams(location.search);
-          const search = searchParams.get('search');
-          if (search) {
-  
-              setSearchTerm(search)
-          }
-      }, []);
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const search = searchParams.get('search');
+    if (search) {
+
+      setSearchTerm(search)
+    }
+  }, []);
   function MilestoneSearch(x, y) {
     setseachItemM(x)
     setsearchMilestone(y)
@@ -418,26 +418,33 @@ function Project() {
     MilestoneSearch()
   }, [seachItemM]);
   useEffect(() => {
-    const newfilteredData = Projects.filter(item =>
-      (item.Customer && item.Customer.slice(4).toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (item.RequestID && item.RequestID.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (item.CustomerCode && item.CustomerCode.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (item.ProjectType && item.ProjectType.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (item.Jira && item.Jira.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (item.Severity && item.Severity.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (item.Developer && item.Developer.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (item.Implementor && item.Implementor.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (item.Environment && item.Environment.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (item.EDIVersion && item.EDIVersion.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (item.EDIMessageType && item.EDIMessageType.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (item.ProjectLead && item.ProjectLead.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      // (item.seachMilestone && item.searchMilestone.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (item.Milestone && item.Milestone.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (item.ProjectLead && item.ProjectLead.toLowerCase().includes(searchTerm.toLowerCase()))
-    );
-    setfilteredData(newfilteredData)
+    if (Projects[0] && Projects[0].Milestone) {
+
+      console.log(Projects);
+
+      const newfilteredData = Projects.filter(item =>
+        (item.Customer && item.Customer.slice(4).toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (item.RequestID && item.RequestID.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (item.CustomerCode && item.CustomerCode.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (item.ProjectType && item.ProjectType.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (item.Jira && item.Jira.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (item.Severity && item.Severity.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (item.Developer && item.Developer.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (item.Implementor && item.Implementor.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (item.Environment && item.Environment.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (item.EDIVersion && item.EDIVersion.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (item.EDIMessageType && item.EDIMessageType.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (item.ProjectLead && item.ProjectLead.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        // (item.seachMilestone && item.searchMilestone.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (item.Milestone && item.Milestone.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (item.ProjectLead && item.ProjectLead.toLowerCase().includes(searchTerm.toLowerCase()))
+      );
+      setfilteredData(newfilteredData)
+    } else {
+      setfilteredData(Projects)
+    }
     // console.log(newfilteredData);
-  }, [Projects,searchTerm]);
+  }, [Projects, searchTerm]);
   const [tags, setTags] = React.useState([]);
 
   const handleDelete = i => {
@@ -517,13 +524,13 @@ function Project() {
                       name="colors"
                       options={Users.map(item => {
                         if (item.type !== 'admin') {
-                            return {
-                                value: item.name,
-                                label: item.name
-                            }
+                          return {
+                            value: item.name,
+                            label: item.name
+                          }
                         }
-                    }).filter(Boolean)}
-                    
+                      }).filter(Boolean)}
+
                       className="basic-multi-select rounded border-0 border-gray-300 my-3 w-52 focus:outline-none focus:ring-0 focus:border-gray-300"
                       classNamePrefix="select"
                       placeholder="Project Lead"
@@ -547,57 +554,57 @@ function Project() {
                           console.log(n.format("ll"));
                           setProjectedGoLive(n.format("ll"))
                         }} value={ProjectedGoLive} className='border-2 border-gray-300 w-40 my-3 rounded focus:outline-none focus:ring-0 focus:border-gray-300'
-                        
-                      slotProps={{
-                        textField: {
-                            size: 'small',
 
-                            InputProps: {
+                          slotProps={{
+                            textField: {
+                              size: 'small',
+
+                              InputProps: {
                                 sx: {
-                                    border: 0, // Initial border
-                                    borderColor: '#d1d5db ',
-                                    paddingRight:0,
-                                    '&:hover': {
-                                        border: 0,
-                                    },
-                                    '&.Mui-focused': {
-                                        border: 0,
-                                        borderColor: 'transparent', // Removes border on focus
-                                        outline: 'none',
-                                        boxShadow: 'none',
-                                    },
+                                  border: 0, // Initial border
+                                  borderColor: '#d1d5db ',
+                                  paddingRight: 0,
+                                  '&:hover': {
+                                    border: 0,
+                                  },
+                                  '&.Mui-focused': {
+                                    border: 0,
+                                    borderColor: 'transparent', // Removes border on focus
+                                    outline: 'none',
+                                    boxShadow: 'none',
+                                  },
                                 },
                                 inputProps: {
-                                    style: {
-                                        fontSize: 16,
-                                         // Font size inside input
-                                    },
+                                  style: {
+                                    fontSize: 16,
+                                    // Font size inside input
+                                  },
                                 },
 
 
-                            }, // This reduces the height of the TextField
-                        }
-                    }}
-                      sx={{
-                          width: 208,
-                          '& .MuiOutlinedInput-root': {
+                              }, // This reduces the height of the TextField
+                            }
+                          }}
+                          sx={{
+                            width: 208,
+                            '& .MuiOutlinedInput-root': {
                               '& fieldset': {
-                                  borderColor: 'transparent', // No border by default
+                                borderColor: 'transparent', // No border by default
                               },
                               '&:hover fieldset': {
-                                  borderColor: 'transparent', // No border on hover
+                                borderColor: 'transparent', // No border on hover
                               },
                               '&.Mui-focused fieldset': {
-                                  borderColor: 'transparent', // No border on focus
+                                borderColor: 'transparent', // No border on focus
                               },
-                          },
-                          border: 2,
-                          borderColor: "#d1d5db ",
-                          fontSize: 2, // This reduces the font size
-                          lineHeight: 4,
-                          padding: 0,
-                          margin: 0,
-                      }}  />
+                            },
+                            border: 2,
+                            borderColor: "#d1d5db ",
+                            fontSize: 2, // This reduces the font size
+                            lineHeight: 4,
+                            padding: 0,
+                            margin: 0,
+                          }} />
                       </LocalizationProvider>
 
                     </div>
@@ -631,12 +638,12 @@ function Project() {
                         inputFieldPosition="inline"
                         placeholder='Customer Code'
                         autofocus={false}
-                            handleInputBlur={(e) => {
-                                if (e != "") {
+                        handleInputBlur={(e) => {
+                          if (e != "") {
 
-                                    setTags([...tags, { id: e, text: e }])
-                                }
-                            }}
+                            setTags([...tags, { id: e, text: e }])
+                          }
+                        }}
                       />
                     </div>
                     <Select
@@ -735,10 +742,10 @@ function Project() {
         </div>
       </div>
       <div className='flex flex-col h-screen p-16'>
-        <Nav tableRef={tableRef}  settoggleNewProject={settoggleNewProject} expJSON={expJSON} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        <Nav tableRef={tableRef} settoggleNewProject={settoggleNewProject} expJSON={expJSON} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
         <div className="text-xs text-red-500 text-center">
-{/* v2 */}
+          {/* v2 */}
           {delError}
         </div>
         <div className="mt-10">
@@ -827,11 +834,11 @@ function Project() {
                 {filteredData.length != 0 && filteredData.map((item, index) => (
 
                   <Pitems data={item} setEnvironment={setEnvironment} Users={Users} setdelError={setdelError} MilestoneSearch={MilestoneSearch} index={index} />
-                )) 
-                // : Projects.map((item, index) => (
+                ))
+                  // : Projects.map((item, index) => (
 
-                //   <Pitems data={item} setEnvironment={setEnvironment} Users={Users} setdelError={setdelError} MilestoneSearch={MilestoneSearch} index={index} />
-                // ))
+                  //   <Pitems data={item} setEnvironment={setEnvironment} Users={Users} setdelError={setdelError} MilestoneSearch={MilestoneSearch} index={index} />
+                  // ))
                 }
 
 
