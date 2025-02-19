@@ -481,7 +481,7 @@ function Home() {
                 (item.TPSpecialist && item.TPSpecialist.toLowerCase().includes(searchTerm.toLowerCase())) ||
                 (item.TicketNumber && item.TicketNumber.toLowerCase().includes(searchTerm.toLowerCase())) ||
                 (item.IPOwner && item.IPOwner.toLowerCase().includes(searchTerm.toLowerCase())) ||
-                (item.Milestone && item.Milestone.toLowerCase().includes(searchTerm.toLowerCase())) ||
+                // (item.Milestone && item.Milestone.toLowerCase().includes(searchTerm.toLowerCase())) ||
                 (item.IPOwner && item.IPOwner.toLowerCase().includes(searchTerm.toLowerCase())) ||
                 (item.OCValidation && item.OCValidation.toLowerCase().includes(searchTerm.toLowerCase()))
             );

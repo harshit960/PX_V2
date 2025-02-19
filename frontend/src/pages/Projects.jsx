@@ -436,7 +436,7 @@ function Project() {
         (item.EDIMessageType && item.EDIMessageType.toLowerCase().includes(searchTerm.toLowerCase())) ||
         (item.ProjectLead && item.ProjectLead.toLowerCase().includes(searchTerm.toLowerCase())) ||
         // (item.seachMilestone && item.searchMilestone.toLowerCase().includes(searchTerm.toLowerCase())) ||
-        (item.Milestone && item.Milestone.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        // (item.Milestone && item.Milestone.toLowerCase().includes(searchTerm.toLowerCase())) ||
         (item.ProjectLead && item.ProjectLead.toLowerCase().includes(searchTerm.toLowerCase()))
       );
       setfilteredData(newfilteredData)
