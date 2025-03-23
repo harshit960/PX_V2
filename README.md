@@ -127,7 +127,7 @@ The application includes configurations to run in Docker environments with setti
 ### Frontend Setup
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/harshit960/PX_V2
    cd PX_V2/frontend
    ```
 
