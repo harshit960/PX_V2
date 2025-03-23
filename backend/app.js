@@ -16,7 +16,7 @@ require('dotenv').config();
 
 //                                 ------------TESTING----------------
 app.use(cors());
-
+// local connection
 // const connection = new sql.ConnectionPool({
 //   user: 'newuser',
 //   password: 'admin1234',
@@ -32,18 +32,12 @@ app.use(cors());
 
 //                                 -----------PRODUCTION---------------
 
-// const corsOptions = {   origin: 'http://veuwcore1202.jdadelivers.com',  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',   credentials: true,optionsSuccessStatus: 204 }; app.use(cors(corsOptions));
-// app.options('*');
-
+// Azure connection
 const connection = new sql.ConnectionPool({
   server: process.env.DB_HOST,
   user: process.env.DB_USER,
   database: process.env.DB_NAME,
   password: process.env.DB_PASSWORD,
-  // server: 'database-1.c1oqwqw00p58.ap-south-1.rds.amazonaws.com',
-  // user: 'admin',
-  // password: 'g9F195_(~*Ts',
-  // database: 'newdb',
   port: 1433,
   options: {
     encrypt: true, // Use this if you're on Windows Azure

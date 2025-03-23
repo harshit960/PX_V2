@@ -3,7 +3,7 @@ services:
   backend:
     build:
       context: ./backend  # Path to your backend Dockerfile
-    image: ashwinrdocker/px_v3:backend  # Single repo with "backend" tag
+    image: name/px_v3:backend  # Single repo with "backend" tag
     ports:
       - "10000:10000" 
     environment:
@@ -16,7 +16,7 @@ services:
       context: ./frontend 
       args:
         VITE_REACT_APP_BASE_URL: ${VITE_REACT_APP_BASE_URL}
-    image: ashwinrdocker/px_v3:frontend  # Single repo with "frontend" tag
+    image: name/px_v3:frontend  # Single repo with "frontend" tag
 
     ports:
       - "3000:3000"  # Maps host port 80 to container port 80 (served by Nginx in this case)
